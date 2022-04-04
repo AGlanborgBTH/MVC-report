@@ -1,7 +1,7 @@
 <header>
     <nav>
-        <a href="<?= $_SERVER['SERVER_NAME'] ?>/">Home</a> |
-        <a href="<?= $_SERVER['SERVER_NAME'] ?>/about">About</a> |
-        <a href="<?= $_SERVER['SERVER_NAME'] ?>/report">Report</a>
+        <a href="{{ app.request.getBaseURL() }}/">Home</a> |
+        <a href="{{ app.request.getBaseURL() }}/about">About</a> |
+        <a href="{{ app.request.getBaseURL() }}/report">Report</a>
     </nav>
 </header>
