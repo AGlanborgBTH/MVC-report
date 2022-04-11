@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card | Draw{% endblock %}
+
+{% block header %}Draw{% endblock %}
+
+{% block nav %}card{% endblock %}
+
+{% block content %}
+
+<h2>
+    Draw from deck
+</h2>
+<p>
+    Is this your card?
+</p>
+{% for card in app.flashes["card"] %}
+    <div class="highlight">
+        <p>
+            {{ card }}
+        </p>
+    </div>
+{% endfor %}
+<p>
+    There are {{ rem }} cards remaining in the pile
+</p>
+
+{% endblock %}

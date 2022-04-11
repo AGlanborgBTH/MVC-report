@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card{% endblock %}
+
+{% block header %}Card Homepage{% endblock %}
+
+{% block nav %}card{% endblock %}
+
+{% block content %}
+
+<h2>
+    kmom02
+</h2>
+<p>
+    This is the homepage for kmom02: the card/deck practice
+</p>
+<p>
+    Above, you can find all links related to this practice as well as a link back to the main page (report homepage).
+</p>
+<p>
+    Following is a button for clearing the "$session"-variable
+</p>
+<form method="post">
+    <input type="submit" name="clear" value="Clear session">
+</form>
+
+{% endblock %}

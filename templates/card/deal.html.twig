@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card | Deal{% endblock %}
+
+{% block header %}Deal{% endblock %}
+
+{% block nav %}card{% endblock %}
+
+{% block content %}
+
+{% set flash = app.flashes %}
+
+{% if flash["person"] is defined %}
+    {% set count = 1 %}
+    <div class="center">
+        {% for person in flash["person"] %}
+            <div class="person">
+                <h2>
+                    Player {{ count }}
+                    {% set count = count + 1 %}
+                </h2>
+                {% for card in person.hand %}
+                    <p class="centered">
+                        {{ card.get_value() ~ card.get_pattern() }}
+                    </p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<p>
+    There are {{ rem }} cards remaining in the pile
+</p>
+
+{% endblock %}

@@ -40,9 +40,13 @@ h2 {
     margin: 40px;
 }
 
-label {
+label:not(input) {
     margin: 10px;
     margin-left: 0;
+}
+
+label:has(input) {
+    margin: 0;
 }
 
 input,
@@ -55,6 +59,8 @@ select {
 input[type=text],
 input[type=number],
 input[type=date],
+input[type=password],
+input[type=search],
 select {
     display: block;
     margin: 10px;
@@ -66,7 +72,7 @@ select {
 input[type=submit] {
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
-    margin-top: 30px;
+    margin: 10px;
     padding: 10px;
     cursor: pointer;
 }
@@ -92,8 +98,30 @@ input[type="submit"].unique:hover {
     background-color: rgb(70, 70, 70);
 }
 
+figure,
+.code {
+    border: inset 10px rgb(100, 100, 100);
+    background-color: rgb(70, 70, 70);
+    margin: 20px;
+    padding: 30px;
+}
+
+blockquote {
+    margin: 0;
+}
+
+figcaption {
+    margin-left: 50px;
+}
+
 .centered {
     text-align: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .maincontainer {
@@ -114,4 +142,60 @@ input[type="submit"].unique:hover {
     float: right;
     margin-left: 10px;
     margin-right: 50px;
+}
+
+.red,
+.black {
+    padding: 10px;
+}
+
+.red {
+    background-color: rgba(200, 50, 50, 0.5);
+}
+
+.black,
+.highlight,
+.person {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.red>h4,
+.red>p,
+.black>h4,
+.black>p {
+    margin: 10px;
+}
+
+.highlight,
+.person {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+}
+
+.highlight>p {
+    display: inline-block;
+    margin: 0;
+    font-size: 25px;
+}
+
+.person>h2 {
+    text-align: center;
+}
+
+.blackjack {
+    width: 1250px;
+    height: 708px;
+}
+
+.classes {
+    height: 302px;
+    width: 361px;
+}
+
+.blackjack,
+.classes {
+    border: outset 10px rgb(100, 100, 100);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
 }

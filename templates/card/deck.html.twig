@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card | Deck{% endblock %}
+
+{% block header %}Deck{% endblock %}
+
+{% block nav %}card{% endblock %}
+
+{% block content %}
+
+<h2>
+    Full Deck
+</h2>
+<h3>
+    Red cards
+</h3>
+<div class="red">
+    <h4>
+        Diamonds
+    </h4>
+    <p>
+        {{ diamonds }}
+    </p>
+    <h4>
+        Hearts
+    </h4>
+    <p>
+        {{ hearts }}
+    </p>
+</div>
+<h3>
+    Black cards
+</h3>
+<div class="black">
+    <h4>
+        Clubs
+    </h4>
+    <p>
+        {{ clubs }}
+    </p>
+    <h4>
+        Spades
+    </h4>
+    <p>
+        {{ spades }}
+    </p>
+</div>
+{% if "deck2" in path(app.request.attributes.get('_route')) %}
+    <h3>
+        Remaining
+    </h3>
+    <p>
+        {{ remaining }}
+    </p>
+{% endif %}
+
+{% endblock %}

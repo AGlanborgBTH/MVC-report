@@ -1,0 +1,237 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game | Card
+{% endblock %}
+
+{% block header %}Game plan
+{% endblock %}
+
+{% block content %}
+
+<h2>
+    Blackjack
+</h2>
+<figure>
+    <blockquote>
+        "Blackjack (formerly Black Jack and Vingt-Un) is a casino banking game.
+        The most widely played casino banking game in the world, it uses decks of 52
+        cards... Blackjack players do not compete against each other. The game is
+        a comparing card game where each player competes against the dealer. "
+    </blockquote>
+    <figcaption>
+        - Wikipedia contributors.
+        (2022, March 27). <cite>Blackjack. In Wikipedia, The Free
+        Encyclopedia</cite>.<br>
+        Retrieved April 9, 2022,
+        <a href="https://en.wikipedia.org/w/index.php?title=Blackjack&oldid=1079497012" target="_blank">
+            from wikipedia
+        </a>
+    </figcaption>
+</figure>
+<p>
+    Blackjack is a game made for one to an undefined amount of players. It is played
+    with one person or other, dealing cards to every player, as the role of bank, cassino
+    or dealer (dealer/it from now on). The dealer is none-player that plays the game just
+    like the players. It holds cards and follows the same rules as the players, but it
+    also follows additional rules (more on that coming up).
+</p>
+<p>
+    The game is played with everyone being delt 2 cards each. The goal is to get a higher
+    total value then the dealer, but also to not get a total value past 21. If one gets a
+    value higher then 21, they "bust" and loose the game.
+</p>
+<p>
+    A player can ask to "hit" to draw extra cards or declare "stand" to end his/her turn
+    with the cards currently assigned to that person.
+</p>
+<p>
+    The additional rules that the dealer must follow are the following:
+</p>
+<ul>
+    <li>
+        The dealer plays its turn last
+    </li>
+    <li>
+        The dealer has its second card hidden while the players are playing thier turns.
+    </li>
+    <li>
+        Once all players played their turns, the dealer then reveals its second card and
+        then plays its turn
+    </li>
+    <li>
+        The dealer has to "hit" and draw cards untill it gets a total value of 16 or more,
+        or gets a total value of 21.
+    </li>
+</ul>
+<p>
+    Additional rules are:
+</p>
+<ul>
+    <li>
+        Face cards has the value of 10 points
+    </li>
+    <li>
+        Aces have the value of 11 or 1 point/s
+    </li>
+    <li>
+        If a player has the same value as the dealer, they then tie that round
+    </li>
+</ul>
+<h2>
+    Plan
+</h2>
+<p>
+    Take a look at the graph
+</p>
+<img class="blackjack" src="{{ app.request.getBaseURL() }}/img/Blackjack.png" />
+<p>
+    Nice, is it not? Took a lot of time to make.
+</p>
+<p>
+    And the code will look something similar to the following
+</p>
+<img class="classes" src="{{ app.request.getBaseURL() }}/img/Classes.png" />
+<p>
+    The classes will contain minimal code and wont really do much. They will only carry
+    the most needed information.
+</p>
+<p>
+    The idea for the actual game code is flexible.
+</p>
+<p>
+    If the game is made on a single webpage, then all the code will be placed in one or
+    multiple classes, and if the code is spread out accross mutiple webpages, then it
+    will be placed on each page accordingly. The latter option might but a lot of
+    information in the session, but the goal is to only store as few as possible objects.
+</p>
+<p>
+    In the scenario that only one class is used, then every player would be needed to be
+    placed in their own "game" class and they would all be needed to refference the same
+    deck class, though that would be a problem. The game- and player-classes would be
+    created 'x' amount of times when the game starts and they would refference the same
+    deck-class from that point on.<br>
+    The game class would need to be able to aply and execute
+    all rules, as well as know if the player has lost or not. It would possibly also be
+    needed to show or hint to be in a passive state, depending on how the code is created.
+</p>
+<p>
+    If all the code would be placed on a single webpage, then it would get messy very easly.
+    There would be a lot of functions referencing eachother and every function would need to
+    refference the same variables over and over.The end product would not be flexible and
+    would, possibly, be very slow to load and run.
+</p>
+<p>
+    The scenario where every function would be dedicated to a unique page would take a long
+    time to load and run by design. A single action could move the user across multiple pages
+    and could possibly become limited at extended use and/or design.
+</p>
+<h2>
+    Conclution
+</h2>
+<p>
+    The goal is to use calsses in the game code. It will minimize variables and cross-referencing
+    and it will create a better enviorment for future changes and adjustments. It will also open
+    up a lot of options for the code. It will not restrict the code to be run on a website or
+    webpage. It will also assist the webbrowser when managing sessions and stored data.
+</p>
+<h2>
+    Classes
+</h2>
+<p>
+    Following are some hollow ideas for calsses
+</p>
+<h3>
+
+</h3>
+<div class="code">
+    <code>
+        class Card{<br>
+            protected $value;<br>
+            protected $pattern;<br>
+            public function __construct($val, $pat)<br>
+            {<br>
+                $this->value = $val;<br>
+                $this->pattern = $pat;<br>
+            }<br>
+            public function get_value(): string<br>
+            {<br>
+                return $this->value;<br>
+            }<br>
+            public function get_pattern(): string<br>
+            {<br>
+                return $this->pattern;<br>
+            }<br>
+        }
+    </code>
+</div>
+<h3>
+    Deck
+</h3>
+<div class="code">
+    <code>
+        class Deck{<br>
+            public $ordered = array();<br>
+            public $pile = array();<br>
+            public function __construct()<br>
+            {<br>
+                $this->insert();<br>
+                $this->shuffle();<br>
+            }<br>
+            protected function insert()<br>
+            {<br>
+                ...<br>
+            }<br>
+            public function shuffle()<br>
+            {<br>
+                ...<br>
+            }<br>
+            public function draw(): mixed<br>
+            {<br>
+                return array_pop($this->pile);<br>
+            }<br>
+        }
+    </code>
+</div>
+<h3>
+    Player
+</h3>
+<div class="code">
+    <code>
+        class Player{<br>
+            public $hand = array();<br>
+            private $status = -1;<br>
+            public function add_card($card)<br>
+            {<br>
+                array_push($this->hand, $card);<br>
+            }<br>
+            public function clear_hand()<br>
+            {<br>
+                $this->hand = array();<br>
+            }<br>
+            public function more_twentyone(){: boolean {<br>
+                ...<br>
+            }<br>
+        }
+    </code>
+</div>
+<p>
+    The more_twentyone function would check if the cards total value exceeds 21
+</p>
+<h3>
+    Dealer
+</h3>
+<div class="code">
+    <code>
+        class Dealer extends Player{<br>
+            public function is_sixteen(): boolean<br>
+            {<br>
+                ...<br>
+            }<br>
+        }
+    </code>
+</div>
+<p>
+    The is_sixteen function would check if the cards total value is equal or more than 16
+</p>
+
+{% endblock %}
