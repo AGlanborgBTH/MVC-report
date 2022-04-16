@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block header %}Game Intro{% endblock %}
+
+{% block nav %}game{% endblock %}
+
+{% block content %}
+
+<h2>
+    The game
+</h2>
+<p>
+    This is a game like no other! This is a game for grownups! This is a game for men and women alike, that wants to make money. This is BlackJack
+</p>
+<h2>
+    The Rules
+</h2>
+<p>
+    The rules are simple. Draw cards till you hit 21. Simple. But do not get more than 21, or you will loose. If you want to stop before hitting 21,
+    the dealer will then play, if the dealer gets more points than you and less than 21: the dealer than wins.
+</p>
+<p>
+    A more detailed breakdown of the game can be foud on the <a href="{{ app.request.getBaseURL() }}/game/card">card-/doc-page</a>, found above
+</p>
+
+{% endblock %}
