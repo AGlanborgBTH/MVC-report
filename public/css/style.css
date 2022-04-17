@@ -199,3 +199,48 @@ figcaption {
     background-color: rgb(255, 255, 255);
     padding: 10px;
 }
+
+.playerred,
+.playerblue,
+.playergreen,
+.playeryellow {
+    width: 150px;
+    height: 200px;
+    padding: 50px;
+    margin: 25px;
+    display: inline-block;
+}
+
+.playerred h2,
+.playerred>h3,
+.playerred>p,
+.playerblue h2,
+.playerblue>h3,
+.playerblue>p,
+.playergreen h2,
+.playergreen>h3,
+.playergreen>p,
+.playeryellow h2,
+.playeryellow>h3,
+.playeryellow>p {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.playerred {
+    background-color: rgba(200, 50, 50, 0.5);
+}
+
+.playerblue {
+    background-color: rgba(50, 50, 200, 0.5);
+}
+
+.playergreen {
+    background-color: rgba(50, 200, 50, 0.5);
+}
+
+.playeryellow {
+    background-color: rgba(200, 200, 50, 0.5);
+}

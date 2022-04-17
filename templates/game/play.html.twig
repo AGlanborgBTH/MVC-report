@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game | Blackjack {% endblock %}
+
+{% block header %}Play Blackjack{% endblock %}
+
+{% block nav %}game{% endblock %}
+
+{% block content %}
+
+{% set flash = app.flashes %}
+{% set colour = "red" %}
+{% set count = 1 %}
+
+{% if flash["game"] is defined %}
+    {% set game = flash["game"][0] %}
+    <div class="centered">
+        <h2>
+            Dealers Hand
+        </h2>
+        <p>
+            {{ game.dealer.hand[0].get_value() ~ game.dealer.hand[0].get_pattern() }}
+            **
+        </p>
+    </div>
+    <div class="centered">
+        {% for players in flash["game"][0].players %}
+            <div class="player{{colour}}">
+                <div class="centered">
+                    <h2>
+                        Player {{ count }}
+                    </h2>
+                </div>
+                <h3>
+                    Cards
+                </h3>
+                <p>
+                    {% for card in players.hand %}
+                        {{ card.get_value() ~ card.get_pattern() }}
+                    {% endfor %}
+                </p>
+            </div>
+            {% set count = count + 1 %}
+            {% if colour == "red" %}
+                {% set colour = "blue" %}
+            {% elseif colour == "blue" %}
+                {% set colour = "green" %}
+            {% elseif colour == "green" %}
+                {% set colour = "yellow" %}
+            {% else %}
+                {% set colour = "red" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <form method="post">
+        <input type="submit" name="clear" value="Clear Session">
+    </form>
+{% else %}
+    {% include './game/start.html.twig' %}
+{% endif %}
+
+{{ dump(flash) }}
+
+{% endblock %}

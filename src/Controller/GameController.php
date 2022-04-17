@@ -46,4 +46,48 @@ class GameController extends AbstractController
     {
         return $this->render('game/doc.html.twig');
     }
+
+    /**
+     * @Route(
+     *      "/game/play",
+     *      name="game-play-home",
+     *      methods={"GET","HEAD"}
+     * )
+     */
+    public function play_home(
+        SessionInterface $session
+    ): Response
+    {
+        if ($session->get("blackjack")) {
+            $this->addFlash("game", $session->get("blackjack"));
+        }
+
+        return $this->render('game/play.html.twig');
+    }
+
+    /**
+     * @Route(
+     *      "/game/play",
+     *      name="game-play-post",
+     *      methods={"POST"}
+     * )
+     */
+    public function play_post(
+        Request $request,
+        SessionInterface $session
+    ): Response
+    {
+        $start = $request->request->get('start');
+        $clear = $request->request->get('clear');
+
+        if ($start) {
+            $session->set("blackjack", new \App\Card\Game(4, new \App\Card\Deck));
+        }
+
+        if ($clear) {
+            $session->clear();
+        }
+
+        return $this->redirectToRoute('game-play-home');
+    }
 }
