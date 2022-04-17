@@ -32,7 +32,7 @@ class GameController extends AbstractController
      */
     public function card_home(): Response
     {
-        return $this->render('game/card.html.twig');
+        return $this->render('card/game.html.twig');
     }
 
     /**
@@ -44,6 +44,6 @@ class GameController extends AbstractController
      */
     public function doc_home(): Response
     {
-        return $this->render('game/card.html.twig');
+        return $this->render('game/doc.html.twig');
     }
 }
