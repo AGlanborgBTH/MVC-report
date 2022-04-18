@@ -11,53 +11,80 @@
 {% set flash = app.flashes %}
 {% set colour = "red" %}
 {% set count = 1 %}
+{% set playing = 0 %}
 
-{% if flash["game"] is defined %}
-    {% set game = flash["game"][0] %}
-    <div class="centered">
-        <h2>
-            Dealers Hand
-        </h2>
-        <p>
-            {{ game.dealer.hand[0].get_value() ~ game.dealer.hand[0].get_pattern() }}
-            **
-        </p>
-    </div>
-    <div class="centered">
-        {% for players in flash["game"][0].players %}
-            <div class="player{{colour}}">
-                <div class="centered">
+<form method="post">
+    {% if flash["game"] is defined %}
+        {% set game = flash["game"][0] %}
+        <div class="centered">
+            <h2>
+                Dealers Hand
+            </h2>
+            <p>
+                {{ game.dealer.hand[0].get_value() ~ game.dealer.hand[0].get_pattern() }}
+                **
+            </p>
+        </div>
+        <div class="center">
+            {% for player in flash["game"][0].players %}
+                <div class="player {{colour}} centered">
                     <h2>
                         Player {{ count }}
                     </h2>
+                    <h3>
+                        Cards
+                    </h3>
+                    <p>
+                        {% for card in player.hand %}
+                            {{ card.get_value() ~ card.get_pattern() }}
+                        {% endfor %}
+                    </p>
+                    <h3>
+                        Points
+                    </h3>
+                    <p>
+                        {{ player.get_points() }}
+                    </p>
+                    {% if player.get_state() == 1 and playing == 0 %}
+                        {% set playing = 1 %}
+                        <input type="submit" name="hit" value="Hit">
+                        <input type="submit" name="stand" value="Stand">
+                    {% elseif player.get_state() == 0 %}
+                        <h3>
+                            You lost!
+                        </h3>
+                    {% elseif player.get_state() == 3 %}
+                        <h3>
+                            You won!
+                        </h3>
+                    {% elseif player.get_state() == 4 %}
+                        <h3>
+                            You won! x2
+                        </h3>
+                    {% endif %}
                 </div>
-                <h3>
-                    Cards
-                </h3>
-                <p>
-                    {% for card in players.hand %}
-                        {{ card.get_value() ~ card.get_pattern() }}
-                    {% endfor %}
-                </p>
+                {% set count = count + 1 %}
+                {% if colour == "red" %}
+                    {% set colour = "blue" %}
+                {% elseif colour == "blue" %}
+                    {% set colour = "green" %}
+                {% elseif colour == "green" %}
+                    {% set colour = "yellow" %}
+                {% else %}
+                    {% set colour = "red" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% if playing == 0 %}
+            <div class="centered">
+                <input type="submit" name="continue" value="Continue">
             </div>
-            {% set count = count + 1 %}
-            {% if colour == "red" %}
-                {% set colour = "blue" %}
-            {% elseif colour == "blue" %}
-                {% set colour = "green" %}
-            {% elseif colour == "green" %}
-                {% set colour = "yellow" %}
-            {% else %}
-                {% set colour = "red" %}
-            {% endif %}
-        {% endfor %}
-    </div>
-    <form method="post">
+        {% endif %}
         <input type="submit" name="clear" value="Clear Session">
-    </form>
-{% else %}
-    {% include './game/start.html.twig' %}
-{% endif %}
+    {% else %}
+        {% include './game/start.html.twig' %}
+    {% endif %}
+</form>
 
 {{ dump(flash) }}
 
