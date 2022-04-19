@@ -13,22 +13,22 @@ class BJPlayer extends Player
         $this->points = 0;
     }
 
-    public function get_state()
+    public function get_state(): int
     {
         return $this->state;
     }
 
-    public function set_state($num)
+    public function set_state($num): void
     {
         $this->state = $num;
     }
 
-    public function get_points()
+    public function get_points(): int
     {
         return $this->points;
     }
 
-    public function set_points()
+    public function set_points(): void
     {
         $this->points = 0;
 

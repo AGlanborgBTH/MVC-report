@@ -19,7 +19,7 @@ class CardApiController extends AbstractController
     public function api_deck(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
         $diamonds = [];
         $clubs = [];
@@ -29,11 +29,11 @@ class CardApiController extends AbstractController
         foreach ($deck->ordered as $card) {
             if ($card->get_pattern() == "D") {
                 array_push($diamonds, $card->get_value() . $card->get_pattern());
-            } else if ($card->get_pattern() == "C") {
+            } elseif ($card->get_pattern() == "C") {
                 array_push($clubs, $card->get_value() . $card->get_pattern());
-            } else if ($card->get_pattern() == "H") {
+            } elseif ($card->get_pattern() == "H") {
                 array_push($hearts, $card->get_value() . $card->get_pattern());
-            } else if ($card->get_pattern() == "S") {
+            } elseif ($card->get_pattern() == "S") {
                 array_push($spades, $card->get_value() . $card->get_pattern());
             }
         }

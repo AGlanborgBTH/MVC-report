@@ -15,7 +15,7 @@ class BJCard extends Card
         $this->set_points();
     }
 
-    protected function set_points()
+    protected function set_points(): void
     {
         $value = $this->value;
 
@@ -28,12 +28,13 @@ class BJCard extends Card
         }
     }
 
-    public function get_points()
+    public function get_points(): int
     {
         return $this->points;
     }
 
-    public function reduce_a() {
+    public function reduce_a(): void
+    {
         if ($this->value == "A") {
             $this->points = 1;
         }

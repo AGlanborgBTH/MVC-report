@@ -56,8 +56,7 @@ class GameController extends AbstractController
      */
     public function play_home(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         if ($session->get("blackjack")) {
             $this->addFlash("game", $session->get("blackjack"));
         }
@@ -75,8 +74,7 @@ class GameController extends AbstractController
     public function play_post(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $start = $request->request->get('start');
         $clear = $request->request->get('clear');
         $hit = $request->request->get('hit');
@@ -85,7 +83,7 @@ class GameController extends AbstractController
 
         if ($start) {
             $amount = $request->request->get('amount');
-            $session->set("blackjack", new \App\Card\BJ((int) $amount, new \App\Card\BJDeck));
+            $session->set("blackjack", new \App\Card\BJ((int) $amount, new \App\Card\BJDeck()));
         } elseif ($clear) {
             $session->clear();
         } elseif ($hit) {

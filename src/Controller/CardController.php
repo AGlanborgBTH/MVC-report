@@ -53,7 +53,7 @@ class CardController extends AbstractController
     public function deck_home(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
         $diamonds = "";
         $clubs = "";
@@ -67,19 +67,19 @@ class CardController extends AbstractController
                 } else {
                     $diamonds = $diamonds . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "C") {
+            } elseif ($card->get_pattern() == "C") {
                 if ($clubs == "") {
                     $clubs = $clubs . $card->get_value() . $card->get_pattern();
                 } else {
                     $clubs = $clubs . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "H") {
+            } elseif ($card->get_pattern() == "H") {
                 if ($hearts == "") {
                     $hearts = $hearts . $card->get_value() . $card->get_pattern();
                 } else {
                     $hearts = $hearts . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "S") {
+            } elseif ($card->get_pattern() == "S") {
                 if ($spades == "") {
                     $spades = $spades . $card->get_value() . $card->get_pattern();
                 } else {
@@ -110,7 +110,7 @@ class CardController extends AbstractController
     public function deck_shuffle(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
         $deck->shuffle();
 
@@ -141,7 +141,7 @@ class CardController extends AbstractController
     public function deck_draw(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
         $card = $deck->draw();
 
@@ -169,12 +169,12 @@ class CardController extends AbstractController
         int $numDraw,
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
         if ($numDraw > 0) {
             for ($i = 0; $i < $numDraw; $i++) {
                 $card = $deck->draw();
-    
+
                 if (is_null($card)) {
                     $this->addFlash("card", "None");
                 } else {
@@ -204,7 +204,7 @@ class CardController extends AbstractController
         int $numCards,
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck") ?? new \App\Card\Deck;
+        $deck = $session->get("carddeck") ?? new \App\Card\Deck();
         if ($numPlayers > 0 and $numCards >= 0) {
             $size = count($deck->pile);
             $temp = 0;
@@ -212,14 +212,14 @@ class CardController extends AbstractController
             if ($numCards > $size) {
                 $temp = $size;
                 $all = floor($size / $numPlayers);
-            } else{
+            } else {
                 $temp = $numCards;
                 $all = floor($numCards / $numPlayers);
             }
             $count = $temp - $all * $numPlayers;
             if ($numCards >= $numPlayers) {
                 for ($x = 0; $x < $numPlayers; $x ++) {
-                    $person = new \App\Card\Player;
+                    $person = new \App\Card\Player();
                     if (count($deck->pile) > 0) {
                         for ($y = 0; $y < $all; $y ++) {
                             $person->add_card($deck->draw());
@@ -233,7 +233,7 @@ class CardController extends AbstractController
                 }
             } else {
                 for ($x = 0; $x < $numPlayers; $x ++) {
-                    $person = new \App\Card\Player;
+                    $person = new \App\Card\Player();
                     if ($count > 0 and count($deck->pile) > 0) {
                         $person->add_card($deck->draw());
                         $count --;
@@ -259,7 +259,7 @@ class CardController extends AbstractController
     public function deck_home_two(
         SessionInterface $session
     ): Response {
-        $deck = $session->get("carddeck2") ?? new \App\Card\DeckWith2Jokers;
+        $deck = $session->get("carddeck2") ?? new \App\Card\DeckWith2Jokers();
 
         $diamonds = "";
         $clubs = "";
@@ -274,19 +274,19 @@ class CardController extends AbstractController
                 } else {
                     $diamonds = $diamonds . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "C") {
+            } elseif ($card->get_pattern() == "C") {
                 if ($clubs == "") {
                     $clubs = $clubs . $card->get_value() . $card->get_pattern();
                 } else {
                     $clubs = $clubs . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "H") {
+            } elseif ($card->get_pattern() == "H") {
                 if ($hearts == "") {
                     $hearts = $hearts . $card->get_value() . $card->get_pattern();
                 } else {
                     $hearts = $hearts . " | " . $card->get_value() . $card->get_pattern();
                 }
-            } else if ($card->get_pattern() == "S") {
+            } elseif ($card->get_pattern() == "S") {
                 if ($spades == "") {
                     $spades = $spades . $card->get_value() . $card->get_pattern();
                 } else {

@@ -33,18 +33,18 @@ class BJ
         }
     }
 
-    public function dealer_draw()
+    public function dealer_draw(): void
     {
         $this->dealer->add_card($this->deck->draw());
     }
 
-    public function dealer_draw_two()
+    public function dealer_draw_two(): void
     {
         $this->dealer->add_card($this->deck->draw());
         $this->dealer->add_card($this->deck->draw());
     }
 
-    public function player_draw_two($num)
+    public function player_draw_two($num): void
     {
         $player = $this->players[$num];
         $player->add_card($this->deck->draw());
@@ -56,7 +56,7 @@ class BJ
         }
     }
 
-    public function hit()
+    public function hit(): void
     {
         foreach ($this->players as $player) {
             if ($player->get_state() == 0) {
@@ -73,7 +73,7 @@ class BJ
         }
     }
 
-    public function stand()
+    public function stand(): void
     {
         foreach ($this->players as $player) {
             if ($player->get_state() == 0) {
@@ -83,7 +83,7 @@ class BJ
         }
     }
 
-    public function continue()
+    public function continue(): void
     {
         $dealer = $this->dealer;
 
