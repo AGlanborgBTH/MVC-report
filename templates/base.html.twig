@@ -14,14 +14,14 @@
             {% include 'incl/nav/report.twig' %}
         {% endif %}
 
-        {% set _header = block('header') %}
-        {% if _header is not empty %}
             <header>
-                <h1 class="centered">
-                    {% block header %}{% endblock %}
+                <h1 class="centered empty">
+                    {% set _header = block('header') %}
+                    {% if _header is not empty %}
+                        {% block header %}{% endblock %}
+                    {% endif %}
                 </h1>
             </header>
-        {% endif %}
 
         <div class="maincontainer">
             <div class="container">
