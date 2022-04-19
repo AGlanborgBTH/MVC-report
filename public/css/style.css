@@ -36,6 +36,14 @@ h2 {
     margin-top: 0;
 }
 
+h3.empty {
+    height: 25px;
+}
+
+p.empty {
+    height: 20px;
+}
+
 .container {
     margin: 40px;
 }

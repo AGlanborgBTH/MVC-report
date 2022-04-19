@@ -5,18 +5,12 @@ namespace App\Card;
 class BJPlayer extends Player
 {
     protected $state;
-    // state 0 == lost
-    // state 1 == playing
-    // state 2 == hold
-    // state 3 == won
-    // state 4 == won x2
     protected $points;
 
     public function __construct()
     {
-        $this->state = 1;
+        $this->state = 0;
         $this->points = 0;
-        $this->set_points();
     }
 
     public function get_state()

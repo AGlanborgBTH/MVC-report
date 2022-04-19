@@ -81,15 +81,19 @@ class GameController extends AbstractController
         $clear = $request->request->get('clear');
         $hit = $request->request->get('hit');
         $stand = $request->request->get('stand');
+        $continue = $request->request->get('continue');
 
         if ($start) {
-            $session->set("blackjack", new \App\Card\BJ(4, new \App\Card\BJDeck));
+            $amount = $request->request->get('amount');
+            $session->set("blackjack", new \App\Card\BJ((int) $amount, new \App\Card\BJDeck));
         } elseif ($clear) {
             $session->clear();
         } elseif ($hit) {
             $session->get("blackjack")->hit();
         } elseif ($stand) {
             $session->get("blackjack")->stand();
+        } elseif ($continue) {
+            $session->get("blackjack")->continue();
         }
 
         return $this->redirectToRoute('game-play-home');

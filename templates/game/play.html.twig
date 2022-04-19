@@ -21,8 +21,24 @@
                 Dealers Hand
             </h2>
             <p>
-                {{ game.dealer.hand[0].get_value() ~ game.dealer.hand[0].get_pattern() }}
-                **
+                {% if not game.dealer.get_state() %}
+                    {{ game.dealer.hand[0].get_value() ~ game.dealer.hand[0].get_pattern() }}
+                    **
+                {% else %}
+                    {% for card in game.dealer.hand %}
+                        {{ card.get_value() ~ card.get_pattern() }}
+                    {% endfor %}
+                {% endif %}
+            </p>
+            <h3 class="empty">
+                {% if game.dealer.get_state() %}
+                    Points
+                {% endif %}
+            </h3>
+            <p class="empty">
+                {% if game.dealer.get_state() %}
+                    {{ game.dealer.get_points() }}
+                {% endif %}
             </p>
         </div>
         <div class="center">
@@ -45,21 +61,21 @@
                     <p>
                         {{ player.get_points() }}
                     </p>
-                    {% if player.get_state() == 1 and playing == 0 %}
+                    {% if player.get_state() == 0 and playing == 0 %}
                         {% set playing = 1 %}
                         <input type="submit" name="hit" value="Hit">
                         <input type="submit" name="stand" value="Stand">
-                    {% elseif player.get_state() == 0 %}
+                    {% elseif player.get_state() == 2 %}
                         <h3>
-                            You lost!
+                            You Lost
                         </h3>
                     {% elseif player.get_state() == 3 %}
                         <h3>
-                            You won!
+                            You Drew
                         </h3>
                     {% elseif player.get_state() == 4 %}
                         <h3>
-                            You won! x2
+                            You Won
                         </h3>
                     {% endif %}
                 </div>
@@ -75,17 +91,19 @@
                 {% endif %}
             {% endfor %}
         </div>
-        {% if playing == 0 %}
+        {% if playing == 0 and game.dealer.get_state() != 2 %}
             <div class="centered">
                 <input type="submit" name="continue" value="Continue">
             </div>
+        {% elseif playing == 0 and game.dealer.get_state() == 2 %}
+            <div class="centered">
+                <input type="submit" name="clear" value="Finnish">
+            </div>
         {% endif %}
-        <input type="submit" name="clear" value="Clear Session">
+        <input type="submit" name="clear" value="Scrap game">
     {% else %}
         {% include './game/start.html.twig' %}
     {% endif %}
 </form>
-
-{{ dump(flash) }}
 
 {% endblock %}

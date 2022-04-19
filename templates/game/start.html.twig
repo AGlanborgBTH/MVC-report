@@ -8,9 +8,13 @@
 <h3>
     Ready?
 </h3>
-<p>
-    If you are ready to play the game, then please press the button bellow
-</p>
 <form method="post">
-    <input type="submit" name="start" value="Start">
+    <p>
+        Please select how many players you wish to play as:
+    </p>
+    <input type="number" name="amount" min="1" max="4" value="1" />
+    <p>
+        If you are ready to play the game, then please press the button bellow
+    </p>
+    <input type="submit" name="start" value="Start" />
 </form>
