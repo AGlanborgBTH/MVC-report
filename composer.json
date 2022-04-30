@@ -107,6 +107,11 @@
             "@phpcpd",
             "@phpmd",
             "@phpstan"
+        ],
+        "phpdoc": "tools/phpdoc/phpdoc",
+        "phpunit": [
+            "@putenv XDEBUG_MODE=coverage",
+            "php bin/phpunit"
         ]
     },
     "conflict": {
