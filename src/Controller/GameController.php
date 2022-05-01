@@ -83,7 +83,7 @@ class GameController extends AbstractController
 
         if ($start) {
             $amount = $request->request->get('amount');
-            $session->set("blackjack", new \App\Card\BJ((int) $amount, new \App\Card\BJDeck()));
+            $session->set("blackjack", new \App\Card\BJ((int) $amount));
         } elseif ($clear) {
             $session->clear();
         } elseif ($hit) {

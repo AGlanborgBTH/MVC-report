@@ -14,7 +14,7 @@ class BJTest extends TestCase
      */
     public function testCreateBJ()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $this->assertInstanceOf("\App\Card\Bj", $bj);
     }
@@ -25,7 +25,7 @@ class BJTest extends TestCase
      */
     public function testBJProperties()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $this->assertIsObject($bj->dealer);
         $this->assertNotEmpty($bj->players);
@@ -38,14 +38,14 @@ class BJTest extends TestCase
      */
     public function testBJDealerDraw()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $initial = count($bj->dealer->hand);
 
         $bj->dealer_draw();
 
         $this->assertNotEmpty($bj->dealer->hand);
-        $this->assertEquals(count($bj->dealer->hand), $initial + 1);
+        $this->assertEquals($initial + 1, count($bj->dealer->hand));
     }
 
     /**
@@ -54,14 +54,14 @@ class BJTest extends TestCase
      */
     public function testBJDealerDrawTwo()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $initial = count($bj->dealer->hand);
 
         $bj->dealer_draw_two();
 
         $this->assertNotEmpty($bj->dealer->hand);
-        $this->assertEquals(count($bj->dealer->hand), $initial + 2);
+        $this->assertEquals($initial + 2, count($bj->dealer->hand));
     }
 
     /**
@@ -70,14 +70,14 @@ class BJTest extends TestCase
      */
     public function testBJPlayerDrawTwo()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $initial = count($bj->players[0]->hand);
 
         $bj->player_draw_two(0);
 
         $this->assertNotEmpty($bj->players[0]->hand);
-        $this->assertEquals(count($bj->players[0]->hand), $initial + 2);
+        $this->assertEquals($initial + 2, count($bj->players[0]->hand));
     }
 
     /**
@@ -86,13 +86,17 @@ class BJTest extends TestCase
      */
     public function testBJPlayerDrawTwoMax()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
+
+        $bj->players[0]->hand = array();
+        $bj->players[0]->set_state(0);
+        $bj->players[0]->set_points();
 
         $bj->deck->pile = array(new BJCard("A", "S"), new BJCard("K", "H"));
 
         $bj->player_draw_two(0);
 
-        $this->assertEquals($bj->players[0]->get_state(), 4);
+        $this->assertEquals(4,  $bj->players[0]->get_state());
     }
 
 
@@ -102,13 +106,15 @@ class BJTest extends TestCase
      */
     public function testBJHit()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
+
+        $bj->players[0]->set_state(0);
 
         $initial = count($bj->players[0]->hand);
 
         $bj->hit();
 
-        $this->assertEquals(count($bj->players[0]->hand), $initial + 1);
+        $this->assertEquals($initial + 1, count($bj->players[0]->hand));
     }
 
     /**
@@ -117,14 +123,15 @@ class BJTest extends TestCase
      */
     public function testBJHitGTMax()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
-        $bj->players[0]->hand = array(new BJCard(21, "S"));
+        $bj->deck->pile = array(new BJCard("K", "C"));
+        $bj->players[0]->hand = array(new BJCard("K", "S"), new BJCard("K", "H"));
         $bj->players[0]->set_state(0);
 
         $bj->hit();
 
-        $this->assertEquals($bj->players[0]->get_state(), 2);
+        $this->assertEquals(2, $bj->players[0]->get_state());
     }
 
     /**
@@ -143,8 +150,8 @@ class BJTest extends TestCase
 
         $bj->stand();
 
-        $this->assertEquals($bj->players[0]->get_state(), 1);
-        $this->assertEquals($bj->players[1]->get_state(), 0);
+        $this->assertEquals(1, $bj->players[0]->get_state());
+        $this->assertEquals(0, $bj->players[1]->get_state());
     }
 
     /**
@@ -153,14 +160,14 @@ class BJTest extends TestCase
      */
     public function testBJContinueDealerState()
     {
-        $bj = new BJ(1, new BJDeck());
+        $bj = new BJ(1);
 
         $bj->stand();
 
-        $this->assertEquals($bj->dealer->get_state(), 0);
+        $this->assertEquals(0, $bj->dealer->get_state());
 
         $bj->continue();
 
-        $this->assertEquals($bj->dealer->get_state(), 1);
+        $this->assertEquals(1, $bj->dealer->get_state());
     }
 }

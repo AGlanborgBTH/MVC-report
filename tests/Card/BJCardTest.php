@@ -27,9 +27,9 @@ class BJCardTest extends TestCase
     {
         $card = new BJCard("A", "S");
 
-        $this->assertEquals($card->get_points(), 11);
-        $this->assertEquals($card->get_value(), "A");
-        $this->assertEquals($card->get_pattern(), "S");
+        $this->assertEquals(11, $card->get_points());
+        $this->assertEquals("A", $card->get_value());
+        $this->assertEquals("S", $card->get_pattern());
     }
 
     /**
@@ -42,6 +42,6 @@ class BJCardTest extends TestCase
 
         $card->reduce_a();
 
-        $this->assertEquals($card->get_points(), 1);
+        $this->assertEquals(1, $card->get_points());
     }
 }

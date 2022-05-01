@@ -27,8 +27,8 @@ class BJPlayerTest extends TestCase
     {
         $player = new BJPlayer();
 
-        $this->assertEquals($player->get_state(), 0);
-        $this->assertEquals($player->get_points(), 0);
+        $this->assertEquals(0, $player->get_state());
+        $this->assertEquals(0, $player->get_points());
     }
 
     /**
@@ -41,7 +41,7 @@ class BJPlayerTest extends TestCase
 
         $player->set_state(10);
 
-        $this->assertEquals($player->get_state(), 10);
+        $this->assertEquals(10, $player->get_state());
     }
 
     /**
@@ -55,7 +55,7 @@ class BJPlayerTest extends TestCase
 
         $player->set_points();
 
-        $this->assertEquals($player->get_points(), 0);
+        $this->assertEquals(0, $player->get_points());
     }
 
     /**
@@ -72,7 +72,7 @@ class BJPlayerTest extends TestCase
 
         $player->set_points();
 
-        $this->assertNotEquals($player->get_points(), 0);
+        $this->assertNotEquals(0, $player->get_points());
     }
 
     /**
@@ -93,7 +93,7 @@ class BJPlayerTest extends TestCase
 
         $player->set_points();
 
-        $this->assertEquals($player->get_points(), 30);
+        $this->assertEquals(30, $player->get_points());
     }
 
     /**
@@ -114,7 +114,7 @@ class BJPlayerTest extends TestCase
 
         $player->set_points();
 
-        $this->assertEquals($player->get_points(), 16);
+        $this->assertEquals(16, $player->get_points());
     }
 
     /**
@@ -132,6 +132,6 @@ class BJPlayerTest extends TestCase
 
         $player->set_points();
 
-        $this->assertEquals($player->get_points(), 12);
+        $this->assertEquals(12, $player->get_points());
     }
 }

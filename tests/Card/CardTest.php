@@ -27,7 +27,7 @@ class CardTest extends TestCase
     {
         $deck = new Card("A", "S");
 
-        $this->assertEquals($deck->get_value(), "A");
-        $this->assertEquals($deck->get_pattern(), "S");
+        $this->assertEquals("A", $deck->get_value());
+        $this->assertEquals("S", $deck->get_pattern());
     }
 }
