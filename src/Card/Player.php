@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the Player class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -17,14 +17,14 @@ class Player
 {
     /**
      * Holding property for card-objects
-     * 
+     *
      * @var array
      */
     public $hand = array();
 
     /**
      * Adds App\Card\Card-object to $hand array-property
-     * 
+     *
      * @param object $card Card-object to be added to $hand
      */
     public function add_card(object $card): void

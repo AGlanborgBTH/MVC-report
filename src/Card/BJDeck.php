@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the BJDeck class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -18,7 +18,7 @@ class BJDeck extends Deck
 {
     /**
      * Constructing method for the class
-     * 
+     *
      * Using the bj_insert() method, creates a complete sorted deck ($ordered)
      * and then adds all objects to another array with the shuffle() method,
      * but out of order ($pile)
@@ -31,7 +31,7 @@ class BJDeck extends Deck
 
     /**
      * Method for adding a whole deck to the $orderd array-property
-     * 
+     *
      * Differense from App\Card\Deck is the use of App\Card\BJCard objects
      * instead of App\Card\Card objects
      */

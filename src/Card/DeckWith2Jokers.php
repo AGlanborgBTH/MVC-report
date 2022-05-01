@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the DeckWith2Jokers class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -18,11 +18,11 @@ class DeckWith2Jokers extends Deck
 {
     /**
      * Constructing method for the class
-     * 
+     *
      * Using the insert() method, creates a complete sorted deck ($ordered)
      * with two extra cards (jokers) and then adds all objects to another
      * array with the shuffle() method, but out of order ($pile)
-     * 
+     *
      * * "*" represents no value
      * * "J" represents Joker
      */

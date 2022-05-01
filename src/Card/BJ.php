@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the BJ class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -18,42 +18,42 @@ class BJ
 {
     /**
      * Holding property for BJPlayer object
-     * 
+     *
      * * state 0 == hidden second card
      * * state 1 == revealed second card and playing
      * * state 2 == finnished
-     * 
+     *
      * @var object
      */
     public object $dealer;
 
     /**
      * Holding property for BJPlayer objects
-     * 
+     *
      * * state 0 == playing
      * * state 1 == hold
      * * state 2 == lost
      * * state 3 == draw
      * * state 4 == won
-     * 
+     *
      * @var array
      */
     public $players = array();
 
     /**
      * Holding property for BJDeck object
-     * 
+     *
      * @var object
      */
     public object $deck;
 
     /**
      * Constructing method for the class
-     * 
+     *
      * Assigns the $dealer property with an BJPlayer object and the $deck property
      * with an BJDeck object. Then it adds as many BJPlayer objects to the $players
      * array-object as specified in the $num parameter
-     * 
+     *
      * @param int $num Amount of BJPlayer objects to add to $players array-property
      */
     public function __construct(int $num)
@@ -93,10 +93,10 @@ class BJ
     /**
      * Method for adding two BJCard-objects to the $players[$num] property
      * and updating state
-     * 
+     *
      * This is a method used when starting a BJ session, therefor it will
      * update the state of the player if total points equal 21
-     * 
+     *
      * @param int $num Select object in $players array-property
      */
     public function player_draw_two(int $num): void
@@ -115,9 +115,9 @@ class BJ
      * Method for adding a extra BJCard object to- and update state of- the
      * first BJPlayer object in the players array-property that has a state
      * of 0
-     * 
+     *
      * The state set is dependent on the rules of the BJ game
-     * 
+     *
      * This method follows the rules of BJ and sets the state depending on
      * that factor
      */
@@ -154,12 +154,12 @@ class BJ
 
     /**
      * Method for playing the dealer
-     * 
+     *
      * The dealers actions are automated and may be needed to be repeated
      * multiple times to complete all possible actions
-     * 
+     *
      * The actions done is dependent on the rules of the BJ game
-     * 
+     *
      * This method follows the rules of BJ and acts depending on that factor
      */
     public function continue(): void

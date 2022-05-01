@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the BJCard class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -19,16 +19,16 @@ class BJCard extends Card
 {
     /**
      * Value property for holding the point-value of the card object
-     * 
+     *
      * @var int
      */
     protected int $points;
 
     /**
      * Constructing method for the class
-     * 
+     *
      * Assigns the $value- and $pattern-property with the parameter-values given
-     * 
+     *
      * @param mixed     $val Parameter dictating the value of the card object
      * @param string    $pat Parameter dictating the pattern of the card object
      */
@@ -41,9 +41,9 @@ class BJCard extends Card
 
     /**
      * Set-method for changing the protected $points property
-     * 
+     *
      * The value of the points is dependent on the rules of the BJ game
-     * 
+     *
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */
@@ -70,9 +70,9 @@ class BJCard extends Card
 
     /**
      * Method for reducing the value of the card if it is an ace (valued "A")
-     * 
+     *
      * The value of the points is dependent on the rules of the BJ game
-     * 
+     *
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */

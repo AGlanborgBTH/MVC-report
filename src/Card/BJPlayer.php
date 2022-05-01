@@ -2,7 +2,7 @@
 
 /**
  * This file is a module containing the BJPlayer class
- * 
+ *
  * (c) Anton Glanborg <angb21@student.bth.se>
  */
 
@@ -17,21 +17,21 @@ class BJPlayer extends Player
 {
     /**
      * Value property for holding the current state of the player object
-     * 
+     *
      * @var int
      */
     protected int $state;
 
     /**
      * Value property for holding the current points of the player object
-     * 
+     *
      * @var int
      */
     protected int $points;
 
     /**
      * Constructing method for the class
-     * 
+     *
      * Sets the $state- and $points-properties to the default value of 0
      */
     public function __construct()
@@ -50,7 +50,7 @@ class BJPlayer extends Player
 
     /**
      * Set-method for changing the protected $state property
-     * 
+     *
      * @param int $num Parameter dictating the state of the player object
      */
     public function set_state(int $num): void
@@ -68,9 +68,9 @@ class BJPlayer extends Player
 
     /**
      * Set-method for changing the protected $points property
-     * 
+     *
      * The value of the points is dependent on the rules of the BJ game
-     * 
+     *
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */
