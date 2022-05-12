@@ -264,3 +264,67 @@ figcaption {
 .yellow {
     background-color: rgba(200, 200, 50, 0.5);
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.warningcontainer {
+    width: 40%;
+    height: 100%;
+}
+
+.columncenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.columneven {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.warning {
+    width: 250px;
+    height: 130px;
+    padding: 10px;
+    border: outset 5px rgb(100, 100, 100);
+}
+
+.warning h4,
+.warning p {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.characterimg {
+    width: 100px;
+    height: 100px;
+}
+
+.character {
+    height: 130px;
+}
+
+.outset {
+    outline: outset 5px rgb(100, 100, 100);
+}
+
+.nodecoration {
+    text-decoration: none;
+}
+
+.characterupdate {
+    line-height: 0;
+    font-size: 12px;
+    margin: 0;
+    display: inline-block;
+}

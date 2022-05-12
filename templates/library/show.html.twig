@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block header %}Library{% endblock %}
+
+{% block nav %}library{% endblock %}
+
+{% block content %}
+
+<h2>
+    Divinity: Original Sin 2
+</h2>
+
+{% if character is defined %}
+    <img src="../../img/divinity/{{character.img}}.png" alt="{{character.img}}" class="outset" style="height: 100px;">
+    <div class="columneven character">
+        <h3>
+            {{character.name}}
+        </h3>
+        <p>
+            {{character.gender}}
+            |
+            {{character.race}}
+        </p>
+    </div>
+{% else %}
+    <div class="blue">
+        <p>
+            An error has occured
+        </p>
+    </div>
+{% endif %}
+
+{% endblock %}

@@ -12,4 +12,48 @@
     Divinity: Original Sin 2
 </h2>
 
+{% if character is defined %}
+    {% for person in character %}
+        <div class="player">
+            <div class="centered">
+                <div class="maincontainer">
+                    <div class="characterimg">
+                        <img src="img/divinity/{{person.img}}.png" alt="{{person.img}}" class="outset" style="height: 100px;">
+                    </div>
+                </div>
+                <div class="columneven character">
+                    <h3>
+                        <a href="{{app.request.getBaseURL()}}/library/show/{{person.id}}" class="nodecoration">
+                            {{person.name}}
+                        </a>
+                    </h3>
+                    <p>
+                        {{person.gender}}
+                        |
+                        {{person.race}}
+                    </p>
+                </div>
+            </div>
+            <div class="row space-between">
+                <p class="characterupdate">
+                    <a href="{{app.request.getBaseURL()}}/library/update/{{person.id}}" class="nodecoration">
+                        update
+                    </a>
+                </p>
+                <p class="characterupdate">
+                    <a href="{{app.request.getBaseURL()}}/library/delete/{{person.id}}" class="nodecoration">
+                        delete
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="blue">
+        <p>
+            No characters are defined in the library
+        </p>
+    </div>
+{% endif %}
+
 {% endblock %}

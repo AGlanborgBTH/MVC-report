@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Update{% endblock %}
+
+{% block header %}Library | Update{% endblock %}
+
+{% block nav %}library{% endblock %}
+
+{% block content %}
+
+{% set flash = app.flashes %}
+
+<h2>
+    Divinity: Original Sin 2
+</h2>
+<h3>
+    Update Character
+</h3>
+
+<div class="row space-between">
+    <form method="post">
+        <label for="name">
+            Name
+        </label>
+        <input type="text" name="name" id="name" placeholder="Enter character name..." value="{{character.name}}" required/>
+        <label for="race">
+            Race
+        </label>
+        <input type="text" name="race" id="race" placeholder="Enter character race..." value="{{character.race}}" required/>
+        <label for="gender">
+            Gender
+        </label>
+        <input type="text" name="gender" id="gender" placeholder="Enter character gender..." value="{{character.gender}}" required/>
+
+        <label for="img">
+            Image
+        </label>
+        <input type="text" name="img" id="img" value="{{character.img}}" placeholder="Enter img directory name..."/>
+        <input type="submit" name="submit" value="Update character"/>
+    </form>
+    <div class="warningcontainer columncenter">
+        <div class="maincontainer">
+            <div class="warning">
+                <h4>
+                    Warning!
+                </h4>
+                <p>
+                    Image is only optional and only directories previously defined can be used
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
