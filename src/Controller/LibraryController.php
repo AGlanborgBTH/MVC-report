@@ -72,32 +72,7 @@ class LibraryController extends AbstractController
                 $character->setRace($race);
                 $character->setGender($gender);
 
-                if ($img) {
-                    $img = strtolower($img);
-                    $img = str_replace(" ", "_", $img);
-
-                    $possibleImg = [
-                        "fane",
-                        "ifan_ben-mezd",
-                        "lohse",
-                        "marcus_miles",
-                        "beast",
-                        "red_prince",
-                        "sebille"
-                    ];
-
-                    if (in_array($img, $possibleImg)) {
-                        if ($img == "beast") {
-                            $img = "marcus_miles";
-                        }
-
-                        $character->setImg($img);
-                    } else {
-                        $character->setImg("mask_of_the_shapeshifter");
-                    }
-                } else {
-                    $character->setImg("mask_of_the_shapeshifter");
-                }
+                $character = $this->img_setup($character, $img);
             }
             $entityManager->persist($character);
             $entityManager->flush();
@@ -171,32 +146,7 @@ class LibraryController extends AbstractController
                     $character->setRace($race);
                     $character->setGender($gender);
 
-                    if ($img) {
-                        $img = strtolower($img);
-                        $img = str_replace(" ", "_", $img);
-
-                        $possibleImg = [
-                            "fane",
-                            "ifan_ben-mezd",
-                            "lohse",
-                            "marcus_miles",
-                            "beast",
-                            "red_prince",
-                            "sebille"
-                        ];
-
-                        if (in_array($img, $possibleImg)) {
-                            if ($img == "beast") {
-                                $img = "marcus_miles";
-                            }
-
-                            $character->setImg($img);
-                        } else {
-                            $character->setImg("mask_of_the_shapeshifter");
-                        }
-                    } else {
-                        $character->setImg("mask_of_the_shapeshifter");
-                    }
+                    $character = $this->img_setup($character, $img);
                 }
 
                 $entityManager->flush();
@@ -249,5 +199,36 @@ class LibraryController extends AbstractController
         }
 
         return $this->redirectToRoute('library-home');
+    }
+
+    private function img_setup($character, $img) {
+        if ($img) {
+            $img = strtolower($img);
+            $img = str_replace(" ", "_", $img);
+
+            $possibleImg = [
+                "fane",
+                "ifan_ben-mezd",
+                "lohse",
+                "marcus_miles",
+                "beast",
+                "red_prince",
+                "sebille"
+            ];
+
+            if (in_array($img, $possibleImg)) {
+                if ($img == "beast") {
+                    $img = "marcus_miles";
+                }
+
+                $character->setImg($img);
+            } else {
+                $character->setImg("mask_of_the_shapeshifter");
+            }
+        } else {
+            $character->setImg("mask_of_the_shapeshifter");
+        }
+
+        return $character;
     }
 }

@@ -245,7 +245,7 @@ class CardController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
-    public function sort_deck($deck) {
+    private function sort_deck($deck) {
         $diamonds = "";
         $clubs = "";
         $hearts = "";
@@ -254,35 +254,15 @@ class CardController extends AbstractController
 
         foreach ($deck->ordered as $card) {
             if ($card->get_pattern() == "D") {
-                if ($diamonds == "") {
-                    $diamonds = $diamonds . $card->get_value() . $card->get_pattern();
-                } else {
-                    $diamonds = $diamonds . " | " . $card->get_value() . $card->get_pattern();
-                }
+                $diamonds = $diamonds . $card->get_value() . $card->get_pattern() . " | ";
             } elseif ($card->get_pattern() == "C") {
-                if ($clubs == "") {
-                    $clubs = $clubs . $card->get_value() . $card->get_pattern();
-                } else {
-                    $clubs = $clubs . " | " . $card->get_value() . $card->get_pattern();
-                }
+                $clubs = $clubs . $card->get_value() . $card->get_pattern() . " | ";
             } elseif ($card->get_pattern() == "H") {
-                if ($hearts == "") {
-                    $hearts = $hearts . $card->get_value() . $card->get_pattern();
-                } else {
-                    $hearts = $hearts . " | " . $card->get_value() . $card->get_pattern();
-                }
+                $hearts = $hearts . $card->get_value() . $card->get_pattern() . " | ";
             } elseif ($card->get_pattern() == "S") {
-                if ($spades == "") {
-                    $spades = $spades . $card->get_value() . $card->get_pattern();
-                } else {
-                    $spades = $spades . " | " . $card->get_value() . $card->get_pattern();
-                }
+                $spades = $spades . $card->get_value() . $card->get_pattern() . " | ";
             } else {
-                if ($remaining == "") {
-                    $remaining = $remaining . $card->get_value() . $card->get_pattern();
-                } else {
-                    $remaining = $remaining . " | " . $card->get_value() . $card->get_pattern();
-                }
+                $remaining = $remaining . $card->get_value() . $card->get_pattern() . " | ";
             }
         }
 
