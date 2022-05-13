@@ -55,38 +55,7 @@ class CardController extends AbstractController
     ): Response {
         $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
-        $diamonds = "";
-        $clubs = "";
-        $hearts = "";
-        $spades = "";
-
-        foreach ($deck->ordered as $card) {
-            if ($card->get_pattern() == "D") {
-                if ($diamonds == "") {
-                    $diamonds = $diamonds . $card->get_value() . $card->get_pattern();
-                } else {
-                    $diamonds = $diamonds . " | " . $card->get_value() . $card->get_pattern();
-                }
-            } elseif ($card->get_pattern() == "C") {
-                if ($clubs == "") {
-                    $clubs = $clubs . $card->get_value() . $card->get_pattern();
-                } else {
-                    $clubs = $clubs . " | " . $card->get_value() . $card->get_pattern();
-                }
-            } elseif ($card->get_pattern() == "H") {
-                if ($hearts == "") {
-                    $hearts = $hearts . $card->get_value() . $card->get_pattern();
-                } else {
-                    $hearts = $hearts . " | " . $card->get_value() . $card->get_pattern();
-                }
-            } elseif ($card->get_pattern() == "S") {
-                if ($spades == "") {
-                    $spades = $spades . $card->get_value() . $card->get_pattern();
-                } else {
-                    $spades = $spades . " | " . $card->get_value() . $card->get_pattern();
-                }
-            }
-        }
+        [$diamonds, $clubs, $hearts, $spades] = $this->sort_deck($deck);
 
         $data = [
            "diamonds" => $diamonds,
@@ -261,6 +230,22 @@ class CardController extends AbstractController
     ): Response {
         $deck = $session->get("carddeck2") ?? new \App\Card\DeckWith2Jokers();
 
+        [$diamonds, $clubs, $hearts, $spades, $remaining] = $this->sort_deck($deck);
+
+        $data = [
+            "diamonds" => $diamonds,
+            "clubs" => $clubs,
+            "hearts" => $hearts,
+            "spades" => $spades,
+            "remaining" => $remaining
+        ];
+
+        $session->set("carddeck2", $deck);
+
+        return $this->render('card/deck.html.twig', $data);
+    }
+
+    public function sort_deck($deck) {
         $diamonds = "";
         $clubs = "";
         $hearts = "";
@@ -301,16 +286,6 @@ class CardController extends AbstractController
             }
         }
 
-        $data = [
-            "diamonds" => $diamonds,
-            "clubs" => $clubs,
-            "hearts" => $hearts,
-            "spades" => $spades,
-            "remaining" => $remaining
-        ];
-
-        $session->set("carddeck2", $deck);
-
-        return $this->render('card/deck.html.twig', $data);
+        return [$diamonds, $clubs, $hearts, $spades, $remaining];
     }
 }
