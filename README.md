@@ -1,0 +1,3 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/build-status/main)

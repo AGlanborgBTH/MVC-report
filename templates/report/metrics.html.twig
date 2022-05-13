@@ -1,0 +1,213 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block header %}Report | Metrics{% endblock %}
+
+{% block content %}
+
+<h2>
+    Introduktion
+</h2>
+<p>
+    Det finns många saker i kodning som dikterar kvalitén. Några av de simplare och kanske mer användbara är de fyra C:na:
+</p>
+<ul>
+    <li>
+        Coverage
+    </li>
+    <li>
+        Complexity
+    </li>
+    <li>
+        Cohesion
+    </li>
+    <li>
+        Coupling
+    </li>
+</ul>
+<p>
+    De fyra C:na är inte "the one solution" till alla problem som kan uppstå under programmerings processen av ett projekt.
+    Det kan komma upp många andra problem, men de fyra C:na är en bra början.
+</p>
+<h3>
+    Coverage
+</h3>
+<p>
+    Coverage syftar på hur mycket en kod är täckt av tester. Kod har oftast ett eller flera scenarion inbyggda in i dem.
+    En vanlig metod för att retunera ett värde, t.ex.
+    <code>return $this->value;</code> (src/Card/Card.php)(App/Card/Card::get_value()),
+    bär ett scenario, det scenariot är: att metoden/funktionen blir kallad på. De scenariona, fast de är små och inte bär
+    mycket kod, bör bli testade för nutiden och framtiden, då det kan uppstå fel i eller utanför den metoden/funktionen.
+    Då bör ett test skrivas, som följande:
+    <code>$this->assertEquals("A", $deck->get_value());</code> (tests/Card/CardTest)(App/Card/CardTest::testCardProperties())
+</p>
+<p>
+    Coverage är för både simpla och complexa funktioner och metoder. Om en metod har flera scenarion, så bör de även bli
+    testade. Kod som har t.ex. if-satser bör ha tester för båda scenariona som de dikterar, och om det är en funktion eller
+    metod som använder try-satser så bör man även testa ett scenario den try-satsen triggas.
+</p>
+<p>
+    Coverage kan hjälpa upptäcka större och små fel med koden. Då det kan testa små saker som: om en metod eller funktion retunerar en
+    sträng eller heltal. De kan även testa större saker som innehållet i en array eller objekt.
+</p>
+<p>
+    Majoriteten av min kod i src/Card (App/Card) är helt täckt av tester och har ett perfekt coverage-score, men det finns en del av
+    min kod som inte täcks fullt av mina tester: src/Card/BJ, mer specifikt App/Card/BJ::continue(). MIn BJ klass har endast en 67.74%
+    coverage-score och det är endast för att jag inte har gjort tillräckligt många tester för min continue-metod. För att optimera min
+    kod och uppnå ett 100%-score i coverage, så skulle jag behöva bygga ett test för varje scenario, alltså varje if-, elseif-
+    och else-sats måste testas. Eftersom min klass inte är 100%-covered så bör jag inte fortsätta arbeta med den klassen för att
+    undvika fel. För att koden ska vara relevant att expandera så bör jag se till att klassen är helt testadoch säkerställd att om
+    något går fel eller ändras så vet jag det.
+</p>
+<h3>
+    Complexity
+</h3>
+<p>
+    Kod som är komplex kan vara svår att jobba med, för nytt folk och för folk som är bekanta med koden. Det är starkt rekommenderat
+    att man inte skapar kod som är komplex. Komplexiteten styr oftast hur 'lätt' ett projekt kan utväcklas.
+</p>
+<p>
+    Det som gör en kod "komplex" är hur många scenarios en funktion eller metod bär på, t.ex. om en klass bär på metoder som har många
+    if-satser så kommer den klassen att räknas som komplex. I ett scenario då man har en klass som kräver flera scenarios, så är det
+    rekommenderat att man delar upp klassen i flera mindre klasser. Det är inte fel att ha en huvud klass som används som en container
+    med alla andra andra klasser (en centrerad klass som man kan anropa för att nå alla andra klasser). Den perfekta koden är oftast
+    den koden som endast använder funktioner och metoder som endast gör en grej.
+</p>
+<p>
+    Efter att ha gjort några tester på min kod, så har jag kommit fram till att jag bör ändra på min App/Controller/CardController
+    (src/Controller/CardController) klass och min App/Card/BJ (src/Card/BJ) klass.
+</p>
+<p>
+    I min CardController-klass så har jag försökt att minimera kod som upprepas. Det finns två tillfällen i koden som kräver samma sak;
+    en soterad lek. De delar på en privat metod (::sort_deck($deck)). Igentligen så bör jag placera den metoden i sin egen fil,
+    eller placera den i en assisterande klass.
+</p>
+<p>
+    Min BJ-klass bör jag ändra mycket på. Eftersom min klass använder en metod för att göra flera saker så bör jag dela upp den metoden
+    i flera mindre metoder eller funktioner i andra moduler.
+</p>
+<h3>
+    Cohesion
+</h3>
+<p>
+    Cohesion är vad en klass' syfte är. Om en klass bär ett syfte och inte används för att göra många olika handligar som inte har någon
+    relation till varandra, så är det en choherant klass och värderas med en låg cohesion-score. Desto större siffra, assosierad med
+    klassen desto mer utspridd är den klassen.
+</p>
+<p>
+    Cohesion är bäst att använda i större projekt. I mindre projekt så spelar det oftast ingen större roll, men så fort projektet blir
+    stort nog att man letar klasser och metoder, så bör man programmera med cohesion i åtanke. Cohesion gör det lättare att återanvända
+    gammal kod, och det gör din kod lättare att läsas och förstås av andra.
+</p>
+<p>
+    Min App/Controller/ProductController (src/Controller/ProductController) bär ett relativt högt cohesion-score av 4. Det är min högst
+    graderade klass i mitt projekt för tillfället. Det är för att min ProductController-klass gör fler grejer än vad den "bör" göra.
+    Min ProductController-klass gör följande: leder användaren mellan sidor, öppnar och stänger databasen och den definerar variabler för
+    kasta in i databasen. Om jag skulle optimera min ProductController-klass så skulle jag dela upp varje del till andra metoder.
+    ProductController-klassen skulle endast leda användaren och sen anropa andra klasser som skapar variabler för databasen och andra
+    klasser som öppnar databasen och kastar in värdena.
+</p>
+<h3>
+    Coupling
+</h3>
+<p>
+    Coupling är då en klass antingen 'använder' eller 'används av' andra klasser. De delas upp i AC (Afferent coupling)(antalet klasser
+    som är beroende av klassen) och EC (Efferent coupling)(antalet klasser som klassen är beroende av).
+</p>
+<p>
+    Coupling, till skillnad från de andra tre C:na, är inte ett värde som antyder rum för förbättring. Det är endast ett värde som tyder
+    på hur stor klassen egentligen, kanske, är. Om en klass endast bär på två värden och två metoder så kan den framstå som liten, men
+    den klassen har ett högt AC värde så kan den vara av större användning än förväntat.
+</p>
+<p>
+    Coupling är mer trivialt, det har inget större värde. Det är mera av 'bra att veta' information.
+</p>
+<p>
+    I min kod har jag en klass som sticker ut: App/Card/Deck (src/Card/Deck). Min Deck-klass har en AC-score av 4, då fyra andra klasser
+    är beroende av den klassen.
+</p>
+<p>
+    När det kommer till EC så har många av mina klasser höga poäng. Min App/Controller/CardController och 'min'
+    App/Controller/DiceController är beroende av 8 andra klasser styck.
+</p>
+<h2>
+    Phpmetrics
+</h2>
+<p>
+    Phpmetrics' overview visade att nästan alla mina controllers var enorma i komplexitet. Den största var App/Controller/CardController,
+    med Complexity-värdet av 31 och låg Maintainability-värde av ~60%. Men utöver mina Controllers så var min kod bra, de hade låg
+    complexitet och hög 'Maintainability', förutom min App/Card/BJ klass. Den hade låg 'Maintainability' (~75%) och komplexitet av 19.
+    Jag testade en snabb lösning, mellan flera rapporter och lyckades ändrade komplexitet värdet från 20. För att göra mina klasser
+    bättre i komplexitet så skulle jag endast skapa några nya, assisterande, klasser i src/&lt;folder&gt;.
+</p>
+<p>
+    Utöver Complexity så visade Phpmetrics att mina klasser hadde rätt så bra Cohesion då ingen av <b>mina</b> klasser inte gick över 2.
+    Phpmetrics visade även mina Coupling poäng, och de var precis som förväntat.
+</p>
+<p>
+    Sammanfattat så var min fyra C-poäng ändå rätt ändå. Overview poängen som jag fick var välldigt bra, med en 'Average cyclomatic
+    complexity by class'-poäng av 5.54 och 'Average bugs by class'-poäng av 0.11. Men sen när jag kliver in i 'Size & Volume' så ser jag
+    en klass som sticker ut över alla andra: App/Controller/CardController. Den var enorm. Eftersom min CardController-klass är störst och
+    högst komplexitet så är det den första klassen jag skulle ändra på om jag skulle återbesöka detta projekt.
+</p>
+<h2>
+    Scrutinizer
+</h2>
+<p>
+    För detta kursmoment så vill jag bara anmärka att det var svårt att läsa och använda Scrutinizer.
+</p>
+<p>
+    Scrutinizer var rätt så tydlig när det kom till Coverage. Den visade det jag redan visste, vilket var att jag inte hade en enda klass,
+    utanför App/Card, testad. Den visade hur alla klasser var 100% täckta, utöver BJ-klassen. Det är jag medveten om och jag har valt att
+    inte göra flera tester för.
+</p>
+<p>
+    Efter att ha bläddrat lite i listan av klasser, så hittar jag samma sak som jag gjorde i Phpmetrics: App/Controller/CardController
+    sticker ut, med complexity av 33 (två högre än Phpmetrics), tillsammans med App/Card/BJ, som har complexity 27 (sju mer än Phpmetrics).
+</p>
+<p>
+    Cohesion och Coupling var inte synliga för mig i Scrutinizer, men det går att anta att mina klasser hade ungefär samma, om inte samma,
+    värden som de hade i Phpmetrics.
+</p>
+<p>
+    Eftersom Scrutinizer hade alla sina resultat formade välldigt centrerat, så är det lätt att se att jag har flera filer som jag bör
+    återbesöka om jag ska röra detta projekt igen:
+</p>
+<ul>
+    <li>
+        Jag bör höja min coverage på App/Card/BJ till 100% och även skapa tester för mina controllers.
+    </li>
+    <li>
+        Jag bör minimera och fixa komplexiteten i App/Controller/CardController och App/Card/BJ.
+    </li>
+</ul>
+<h2>
+    Förbättringar
+</h2>
+<p>
+    De Förbättringar jag tänker göra till min kod är:
+</p>
+<ul>
+    <li>
+        100%-coverage på App/Card/BJ
+    </li>
+    <li>
+        Minska volymn av App/Card/BJ
+    </li>
+    <li>
+        Minska värdet av komplexitet på App/Card/BJ
+    </li>
+</ul>
+<p>
+    Det känns som att min App/Card/BJ klass är den som drar ner alla mina värden. Alla andra App/Card klasser är nära 100% på allt, så
+    jag tror om jag optimerar min App/Card/BJ klass så kommer jag att höja kvalitén av mitt projekt mer än om jag skulle fixa min
+    App/Controller/CardController klass.
+</p>
+<p>
+    Om jag skulle välja att fixa min App/Controller/CardController klass så kommer det vara den ända App/Controller klass som har tester
+    och som har assisterande klasser. Kontinuliteten skulle brytas, till skillnad om jag gör mina App/Card/BJ ändringar, då skulle
+    kontinuliteten snarare lagas.
+</p>
+
+{% endblock %}
