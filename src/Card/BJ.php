@@ -10,6 +10,7 @@ namespace App\Card;
 
 use App\Card\BJPlayer;
 use App\Card\BJDeck;
+use App\Assisting\Dealer;
 
 /**
  * The BJ is an class made to hold playing Black Jack (BJ)
@@ -71,14 +72,6 @@ class BJ
             $num -= 1;
             $count += 1;
         }
-    }
-
-    /**
-     * Method for adding a BJCard-object to the $dealer property
-     */
-    public function dealer_draw(): void
-    {
-        $this->dealer->add_card($this->deck->draw());
     }
 
     /**
@@ -164,58 +157,12 @@ class BJ
      */
     public function continue(): void
     {
-        $dealer = $this->dealer;
-
-        if ($dealer->get_points() == 0) {
-            $dealer->set_points();
-            $dealer->set_state(1);
+        if ($this->dealer->get_points() == 0) {
+            $this->dealer->set_points();
+            $this->dealer->set_state(1);
         } else {
-            if ($dealer->get_points() >= 16 and $dealer->get_points() <= 21) {
-                $this->dealer_land();
-                $dealer->set_state(2);
-            } elseif ($dealer->get_points() > 21) {
-                $this->dealer_high();
-                $dealer->set_state(2);
-            } else {
-                $this->dealer_draw();
-                $dealer->set_points();
-            }
-        }
-    }
-
-    /**
-     * Method for when the dealer hits within the stopping range
-     *
-     * The function makes all playing players who tie the dealer set sate to "TIE"
-     *
-     * The function makes all playing players who exceed the dealer set sate to "WIN"
-     * 
-     * The function makes all playing players who looses to the dealer set sate to "LOOSE"
-     */
-    private function dealer_land() {
-        foreach ($this->players as $player) {
-            if ($player->get_state() == 1) {
-                if ($player->get_points() == $this->dealer->get_points()) {
-                    $player->set_state(3);
-                } elseif ($player->get_points() > $this->dealer->get_points()) {
-                    $player->set_state(4);
-                } else {
-                    $player->set_state(2);
-                }
-            }
-        }
-    }
-
-    /**
-     * Method for when the dealer hits beyond the stopping range
-     *
-     * The function makes all playing players who exceed the dealer set sate to "WIN"
-     */
-    private function dealer_high() {
-        foreach ($this->players as $player) {
-            if ($player->get_state() == 1) {
-                $player->set_state(4);
-            }
+            $dealer = new Dealer();
+            $dealer->continue($this->dealer, $this->players, $this->deck);
         }
     }
 }

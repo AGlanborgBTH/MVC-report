@@ -20,8 +20,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the object has the expected
-     * properties
+     * Construct object and verify that the object has the expected properties
      */
     public function testBJProperties()
     {
@@ -33,24 +32,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the dealer_draw method
-     * adds a single object to the dealer property's hand-property
-     */
-    public function testBJDealerDraw()
-    {
-        $bj = new BJ(1);
-
-        $initial = count($bj->dealer->hand);
-
-        $bj->dealer_draw();
-
-        $this->assertNotEmpty($bj->dealer->hand);
-        $this->assertEquals($initial + 1, count($bj->dealer->hand));
-    }
-
-    /**
-     * Construct object and verify that the dealer_draw_two method
-     * adds two objects to the dealer property's hand-property
+     * Construct object and verify that the dealer_draw_two method adds two objects to the dealer property's hand-property
      */
     public function testBJDealerDrawTwo()
     {
@@ -65,8 +47,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the player_draw_two method
-     * adds two objects to the player hand-property
+     * Construct object and verify that the player_draw_two method adds two objects to the player hand-property
      */
     public function testBJPlayerDrawTwo()
     {
@@ -81,8 +62,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the player_draw_two method
-     * adds two objects to the player hand-property
+     * Construct object and verify that the player_draw_two method changes state to 4 when max points is reached
      */
     public function testBJPlayerDrawTwoMax()
     {
@@ -101,8 +81,7 @@ class BJTest extends TestCase
 
 
     /**
-     * Construct object and verify that the hit method add an extra
-     * card object to the hand array-property to the player
+     * Construct object and verify that the hit method add an extra card object to the hand array-property to the player
      */
     public function testBJHit()
     {
@@ -118,8 +97,23 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the hit method add an extra
-     * card object to the hand array-property to the player
+     * Construct object and verify that the hit method changes state to 1 when max points is reached
+     */
+    public function testBJHitMax()
+    {
+        $bj = new BJ(1);
+
+        $bj->deck->pile = array(new BJCard("A", "S"));
+        $bj->players[0]->hand = array(new BJCard("K", "S"));
+        $bj->players[0]->set_state(0);
+
+        $bj->hit();
+
+        $this->assertEquals(1, $bj->players[0]->get_state());
+    }
+
+    /**
+     * Construct object and verify that the hit method changes state to 2 when more than max points is reached
      */
     public function testBJHitGTMax()
     {
@@ -135,8 +129,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the player_draw_two method
-     * adds two objects to the player hand-property
+     * Construct object and verify that the stand method changes the the first player state to 1 from 0
      */
     public function testBJStand()
     {
@@ -155,8 +148,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the player_draw_two method
-     * adds two objects to the player hand-property
+     * Construct object and verify that the Continue method changes the dealer state to 1 from 0 and that the method is able to act when continue is used for a second time
      */
     public function testBJContinueDealerState()
     {
@@ -169,5 +161,7 @@ class BJTest extends TestCase
         $bj->continue();
 
         $this->assertEquals(1, $bj->dealer->get_state());
+
+        $bj->continue();
     }
 }

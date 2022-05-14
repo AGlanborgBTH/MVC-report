@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Card</title>
+  <title>Dashboard for C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assisting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../_css/nv.d3.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">C:\Users\agebn\dbwebb-kurser\mvc\me\report\src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Card</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Assisting</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -155,7 +155,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,8], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -173,7 +173,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,27], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,5], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -223,7 +223,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,15,"<a href=\"BJ.php.html#18\">App\\Card\\BJ<\/a>"],[100,9,"<a href=\"BJCard.php.html#18\">App\\Card\\BJCard<\/a>"],[100,4,"<a href=\"BJDeck.php.html#17\">App\\Card\\BJDeck<\/a>"],[100,9,"<a href=\"BJPlayer.php.html#16\">App\\Card\\BJPlayer<\/a>"],[100,3,"<a href=\"Card.php.html#15\">App\\Card\\Card<\/a>"],[100,7,"<a href=\"Deck.php.html#17\">App\\Card\\Deck<\/a>"],[100,1,"<a href=\"DeckWith2Jokers.php.html#17\">App\\Card\\DeckWith2Jokers<\/a>"],[100,2,"<a href=\"Player.php.html#16\">App\\Card\\Player<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,13,"<a href=\"Dealer.php.html#14\">App\\Assisting\\Dealer<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -247,7 +247,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,2,"<a href=\"BJ.php.html#60\">App\\Card\\BJ::__construct<\/a>"],[100,1,"<a href=\"BJ.php.html#80\">App\\Card\\BJ::dealer_draw_two<\/a>"],[100,2,"<a href=\"BJ.php.html#95\">App\\Card\\BJ::player_draw_two<\/a>"],[100,5,"<a href=\"BJ.php.html#117\">App\\Card\\BJ::hit<\/a>"],[100,3,"<a href=\"BJ.php.html#138\">App\\Card\\BJ::stand<\/a>"],[100,2,"<a href=\"BJ.php.html#158\">App\\Card\\BJ::continue<\/a>"],[100,1,"<a href=\"BJCard.php.html#35\">App\\Card\\BJCard::__construct<\/a>"],[100,5,"<a href=\"BJCard.php.html#50\">App\\Card\\BJCard::set_points<\/a>"],[100,1,"<a href=\"BJCard.php.html#66\">App\\Card\\BJCard::get_points<\/a>"],[100,2,"<a href=\"BJCard.php.html#79\">App\\Card\\BJCard::reduce_a<\/a>"],[100,1,"<a href=\"BJDeck.php.html#26\">App\\Card\\BJDeck::__construct<\/a>"],[100,3,"<a href=\"BJDeck.php.html#38\">App\\Card\\BJDeck::bj_insert<\/a>"],[100,1,"<a href=\"BJPlayer.php.html#37\">App\\Card\\BJPlayer::__construct<\/a>"],[100,1,"<a href=\"BJPlayer.php.html#46\">App\\Card\\BJPlayer::get_state<\/a>"],[100,1,"<a href=\"BJPlayer.php.html#56\">App\\Card\\BJPlayer::set_state<\/a>"],[100,1,"<a href=\"BJPlayer.php.html#64\">App\\Card\\BJPlayer::get_points<\/a>"],[100,5,"<a href=\"BJPlayer.php.html#77\">App\\Card\\BJPlayer::set_points<\/a>"],[100,1,"<a href=\"Card.php.html#38\">App\\Card\\Card::__construct<\/a>"],[100,1,"<a href=\"Card.php.html#47\">App\\Card\\Card::get_value<\/a>"],[100,1,"<a href=\"Card.php.html#55\">App\\Card\\Card::get_pattern<\/a>"],[100,1,"<a href=\"Deck.php.html#40\">App\\Card\\Deck::__construct<\/a>"],[100,3,"<a href=\"Deck.php.html#49\">App\\Card\\Deck::insert<\/a>"],[100,2,"<a href=\"Deck.php.html#65\">App\\Card\\Deck::shuffle<\/a>"],[100,1,"<a href=\"Deck.php.html#80\">App\\Card\\Deck::draw<\/a>"],[100,1,"<a href=\"DeckWith2Jokers.php.html#29\">App\\Card\\DeckWith2Jokers::__construct<\/a>"],[100,1,"<a href=\"Player.php.html#30\">App\\Card\\Player::add_card<\/a>"],[100,1,"<a href=\"Player.php.html#38\">App\\Card\\Player::clear_hand<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,3,"<a href=\"Dealer.php.html#27\">App\\Assisting\\Dealer::continue<\/a>"],[100,3,"<a href=\"Dealer.php.html#48\">App\\Assisting\\Dealer::dealer_land<\/a>"],[100,3,"<a href=\"Dealer.php.html#70\">App\\Assisting\\Dealer::dealer_land_check<\/a>"],[100,3,"<a href=\"Dealer.php.html#88\">App\\Assisting\\Dealer::dealer_high<\/a>"],[100,1,"<a href=\"Dealer.php.html#104\">App\\Assisting\\Dealer::dealer_draw<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);
