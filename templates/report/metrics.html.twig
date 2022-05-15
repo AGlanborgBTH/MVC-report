@@ -185,6 +185,9 @@
 <h2>
     Förbättringar
 </h2>
+<h3>
+    Pre Implementation
+</h3>
 <p>
     De Förbättringar jag tänker göra till min kod är:
 </p>
@@ -193,10 +196,10 @@
         100%-coverage på App/Card/BJ
     </li>
     <li>
-        Minska volymn av App/Card/BJ
+        Minska värdet av komplexitet på App/Card/BJ
     </li>
     <li>
-        Minska värdet av komplexitet på App/Card/BJ
+        Höja maintainability av App/Card/BJ
     </li>
 </ul>
 <p>
@@ -208,6 +211,69 @@
     Om jag skulle välja att fixa min App/Controller/CardController klass så kommer det vara den ända App/Controller klass som har tester
     och som har assisterande klasser. Kontinuliteten skulle brytas, till skillnad om jag gör mina App/Card/BJ ändringar, då skulle
     kontinuliteten snarare lagas.
+</p>
+<h3>
+    Post Implementation
+</h3>
+<p>
+    Efter att ha ändrat i min kod, så har mina värden ändrats mycket.
+</p>
+<p>
+    Mitt mål var att ändra på App/Card/BJ så att den skull vara lättare att använda. Nu efter att jag har ändrat på koden så har BJ klassen
+    100% coverage, mindre volym och den är mindre komplex. Från att ha haft ~75% maintainability och 19 i komplexitet så blev den ~85%
+    maintainability och 10 i komplexitet. Dock var klassen uppdelad i två. Det som var App/Card/BJ har blivit App/Card/BJ och
+    App/Assisting/Dealer. Min nya Dealer klass har ungefär samma värden som min BJ klass (~90% maintainability och 9 komplexitet), förutom
+    volym, då BJ klassen är ca. hundra poäng högre.
+</p>
+<h4>
+    Coverage
+</h4>
+<ul>
+    <li>
+        67.74% -> 100%
+    </li>
+</ul>
+<h4>
+    Complexity
+</h4>
+<ul>
+    <li>
+        20 -> 19 -> 10
+    </li>
+</ul>
+<h4>
+    Maintainability
+</h4>
+<ul>
+    <li>
+        ~75% -> ~85%
+    </li>
+</ul>
+<h2>
+    Diskussion
+</h2>
+<p>
+    Detta med att jobba förebyggande kan vara svårt. Jag personligen tycker att det tar mycket energi att försöka hålla varje funktion
+    och metod till endast en handling. Det kan vara för att jag inte är van, men det känns som att det kan antingen göra ett projekt
+    eller förstöra det.
+</p>
+<p>
+    För att klara denna detta krusmoment så ändrade jag min App/Card/BJ klass och gjorde den beroende av App/Assisting/Dealer. Min Dealer
+    klass var mitt försök till 'en handling per metod'-kodning. Det blev inte bra. Jag känner att det måste finnas något sätt att skriva
+    min kod på som inte får det att se ut som en ihopkastad klass med lite till ingen konsistens.
+</p>
+<p>
+    Det finns många fördelar till att programmera med kodkvalitet i åtanke. Det hjälper programmerare att återanvända gammal kod och det
+    gör det lättare för folk att läsa och använda andras kod. Det tillåter även expandering och redigering av kod att bli mycket lättare.
+    För stora projekt är detta nästan ett måste. Om man ska ha kod som ska vara länge och som ska kontinueligt uppdateras, så bör detta
+    vara sättet man programmerar på. Men för mindre projekt, som en lite hemsida för en familje-resturang, så kan detta vara en stor
+    tid-slösare. I expemplet som nämndes så är det en famlj som hyr en person att skapa en hemsida. Hemsidor är dyra, och om en
+    person skulle ta betalt per timme för ett sånt projekt så skulle det kännas som stöld om man spenderar tid åt förebyggande
+    programmering. Det är nästan bättre i det scenariot att göra en ful lösning som funkar bra, än att skapa ett helt projekt.
+</p>
+<p>
+    Jag gillar förebyggande programmering, jag är dålig på det, men jag tror det är bra för alla projekt som ska publiceras fler än en
+    gång.
 </p>
 
 {% endblock %}

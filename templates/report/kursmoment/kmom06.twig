@@ -1,0 +1,49 @@
+<h3>
+	kmom06
+</h3>
+<p>
+	phpmetrics var den av de två testerna som vi körde, som jag gillade. Den var lätt att använda, resultaten var tydliga och det var lätt att hitta mellan
+    filerna och värdena. Jag kan se mig själv använda den igen. Men jag känner att det inte visade information på någon djup nivå. phpmetrics var mer som
+    en 'overview' av koden än något test flör djup analys.
+</p>
+<p>
+    Min favorit del av phpmetrics var hur koncentrerat all information var placerat: Graferna höll flera värden på samma gång (t.ex. Maintainability:
+    storlekt och färg), tabellerna var stora och tydliga, och 'object relations tab' var fin (svår att läsa, men fin). Det var svårt att hitta något fel
+    med phpmetrics.
+</p>
+<p>
+    Jag vet att phpmetrics endast ska ge information som andra kommer behöva, eller information som kan vara intressant att kunna, men jag vet inte vad
+    jag skulle göra med informationen från 'volym'. Om vi gemnför volym med informationen man får från complexity, violations och coupling 
+    så känner jag att volym inte bär så mycket viktighet. Volym är en av de statestikerna som jag inte förstår mig på. Enligt mig så är det ingen
+    skillnad mellan en klass med mycket volym och lite volym om de båda gör som de är menade att göra.
+</p>
+<p>
+    Den del av phpmetrics som jag fastnade för var: Maintainability. Bollarna visade så mycket information på ett sånt simpelt sätt.
+</p>
+<p>
+    Scrutinizer var en helt annan grej än phpmetrics var. Scrutinizer har känts som att det är något som kan ge välldigt dåliga intryck, genom att ge fel
+    information. Mina "badges" gav mig super dåliga beyg, men det var endast för att den läste av ALLT i min me/report mapp. Om jag inte visste vad
+    Scrutinizer var och hur det fungerade, så skulle direkt reagera negativt om jag såg betygen den gav projektet. Den gav mig 21% test-coverage och 6.15
+    i Scrutinizer-score. Build var markerat grönt, men det blev rött innan jag uppdaterade protfoliot.
+</p>
+<p>
+    Efter att jag har gjort mina ändringar så fick jag tre errors. Jag har inte lyckats få en ny analys, efter att jag gjorde mina ändraingar, från
+    Scrutinizer. Jag vet inte om jag har gjort något fel, men den ger mig något error från "install Source on Workers", så det bör inte vara fel på
+    min sida.
+</p>
+<p>
+    Scrutinizer var unikt. Tog lång tid att kasta ihop, och det gav vaga poäng i 'badges'. Dessutom var det svårt att naivgera. Om jag ville hitta en
+    specifik klass eller an grupp av klasser så blev jag tvungen att leta bland alla andra klasser som kom med ramverket. När jag väl hittade
+    klassen/klasserna så gav Scrutinizer mycket nyttig information och var super hjälpsamt. Dock var det inte någon ny information, allt Scrutinizer visa
+    var information som jag redan kunde samla från phpmetrics och phpunit. Om jag skulle fortsätta arbeta med detta projekt så skulle jag lämna Scrutinizer
+    bakom mig och fortsätta använda phpmetrics och phpunit istället.
+</p>
+<p>
+    Mina åsikter om kodkavlité är välldigt blandade. Det som syr viktigheten av kodkavlité är storleken av projektet och om det ska uppdateras i framtiden.
+    Jag känner att det finns tillfällen för- och inte för- kodkavlité. Jag tycker att det är ett måste för stora projekt som involverar flera personer, och
+    som ska fortsättas uppdateras i framtiden, men om jag ska göra en hemsida för min lokala firsör så bör jag inte ägna tid åt det och bara se till att det
+    fungerar som det ska.
+</p>
+<p>
+    TIL hur viktigt mindre metoder och funktioner är i projekt. Jag har vetat att det är målet, men att det är nästan en standard var inte vad jag förvänta mig.
+</p>
