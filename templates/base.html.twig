@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="sv">
 
-    {% if block('title') is defined %}
-        {% include 'incl/header.twig' with {'title': block('title')} %}
+    {% if block('title') is defined and block('style') is defined %}
+        {% include 'incl/header.twig' with {'title': block('title'), 'style': block('style')} %}
+    {% elseif block('title') is defined %}
+        {% include 'incl/header.twig' with {'title': block('title'), 'style': 'style'} %}
+    {% elseif block('style') is defined %}
+        {% include 'incl/header.twig' with {'title': 'New page', 'style': block('style')} %}
     {% else %}
-        {% include 'incl/header.twig' with {'title': 'New page'} %}
+        {% include 'incl/header.twig' with {'title': 'New page', 'style': 'style'} %}
     {% endif %}
 
     <body>
@@ -14,14 +18,13 @@
             {% include 'incl/nav/report.twig' %}
         {% endif %}
 
-            <header>
-                <h1 class="centered empty">
-                    {% set _header = block('header') %}
-                    {% if _header is not empty %}
+            {% if block('header') is defined %}
+                <header>
+                    <h1 class="centered empty">
                         {% block header %}{% endblock %}
-                    {% endif %}
-                </h1>
-            </header>
+                    </h1>
+                </header>
+            {% endif %}
 
         <div class="maincontainer">
             <div class="container">

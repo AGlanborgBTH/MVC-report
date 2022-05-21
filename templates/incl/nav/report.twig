@@ -1,9 +1,12 @@
+{% set baseURL = app.request.getBaseURL() %}
+
 <nav>
-    <a href="{{ app.request.getBaseURL() }}/">Home</a> |
-    <a href="{{ app.request.getBaseURL() }}/about">About</a> |
-    <a href="{{ app.request.getBaseURL() }}/report">Report</a> |
-    <a href="{{ app.request.getBaseURL() }}/metrics">Metrics</a> |
-    <a href="{{ app.request.getBaseURL() }}/card">kmom02</a> |
-    <a href="{{ app.request.getBaseURL() }}/game">kmom03</a> |
-    <a href="{{ app.request.getBaseURL() }}/library">kmom05</a>
+    <a href="{{ baseURL }}/">Home</a> |
+    <a href="{{ baseURL }}/about">About</a> |
+    <a href="{{ baseURL }}/report">Report</a> |
+    <a href="{{ baseURL }}/metrics">Metrics</a> |
+    <a href="{{ baseURL }}/card">kmom02</a> |
+    <a href="{{ baseURL }}/game">kmom03</a> |
+    <a href="{{ baseURL }}/library">kmom05</a> |
+    <a href="{{ baseURL }}/proj">Proj</a>
 </nav>

@@ -1,0 +1,27 @@
+{% extends "proj/index.html.twig" %}
+
+{% block title %}Poker Homepage{% endblock %}
+
+{% block nav %}proj{% endblock %}
+
+{% block style %}proj{% endblock %}
+
+{% block table %}
+
+<div class="homecenter">
+    <div class="homeline column spaceeven">
+        <div class="titleholder truecenter">
+            <h1>TEXAS HOLD'EM</h1>
+        </div>
+        <div class="titleholder truecenter">
+            <form method="post" class="column homebuttoncontainer">
+                <input class="pokerbutton" type="submit" name="game" value="Play">
+                <input class="pokerbutton" type="submit" name="Proj" value="Proj">
+                <input class="pokerbutton" type="submit" name="Proj" value="Proj">
+                <input class="pokerbutton" type="submit" name="about" value="About">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
