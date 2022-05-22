@@ -1,0 +1,39 @@
+{% extends "proj/index.html.twig" %}
+
+{% block title %}Poker Homepage{% endblock %}
+
+{% block nav %}proj{% endblock %}
+
+{% block style %}proj{% endblock %}
+
+{% block table %}
+
+<div class="fill column flexend">
+    <div class="fill centered truecenter">
+        <div class="selectuser">
+            <h1>
+                Select user
+            </h1>
+            <h3 class="balancetitle">
+                User balance: 
+            </h3>
+            <p class="balancetitle">
+                1000
+            </p>
+        </div>
+    </div>
+    <form method="post" class="userbuttoncontainer">
+        <div class="userbuttons">
+            <input type="submit" name="marie" value="Marie">
+            <input type="submit" name="hans" value="Hans">
+            <input type="submit" name="grettle" value="Grettle">
+            <input type="submit" name="sten" value="Sten">
+            <input type="submit" name="guest" value="Guest">
+        </div>
+        <div class="truecenter">
+            <input type="submit" name="back" value="Back">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

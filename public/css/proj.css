@@ -73,6 +73,10 @@ input[type="submit"]:active {
     justify-content: space-between;
 }
 
+.flexend {
+    justify-content: flex-end;
+}
+
 .homeline,
 .centered {
     text-align: center;
@@ -89,6 +93,7 @@ input[type="submit"]:active {
 .maincontainer,
 .table,
 .homecenter,
+.userbuttons,
 .truecenter {
     display: flex;
     flex-direction: row;
@@ -104,6 +109,11 @@ input[type="submit"]:active {
 .card,
 .fill {
     width: 100%;
+    height: 100%;
+}
+
+.handcontainer,
+.selectuser {
     height: 100%;
 }
 
@@ -157,10 +167,6 @@ input[type="submit"]:active {
     color: rgb(100, 50, 150)
 }
 
-.handcontainer {
-    height: 100%;
-}
-
 .gamemenucontainer {
     display: flex;
     flex-direction: row;
@@ -190,6 +196,7 @@ input[type="submit"]:active {
     justify-content: center;
     text-align: center;
     font-size: 25px;
+    user-select: none;
 }
 
 .cardback {
@@ -210,6 +217,33 @@ input[type="submit"]:active {
 
 .black {
     color: rgb(0, 0, 0);
+}
+
+.playas {
+    height: 100px;
+}
+
+.playas h2,
+.playas p {
+    margin: 0;
+}
+
+.userbuttoncontainer {
+    width: 100%;
+    height: 70%;
+    margin-bottom: 5px;
+}
+
+.userbuttons {
+    height: 75%;
+}
+
+.balancetitle {
+    margin: 0;
+}
+
+.selectuser {
+    padding-top: 50px;
 }
 
 @font-face {

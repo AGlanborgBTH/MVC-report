@@ -34,11 +34,14 @@ class ProjController extends AbstractController
     {
         $about = $request->request->get('about');
         $game = $request->request->get('game');
+        $user = $request->request->get('user');
 
         if ($about) {
             return $this->redirectToRoute('proj-about-home');
         } elseif ($game) {
             return $this->redirectToRoute('proj-game-home');
+        } elseif ($user) {
+            return $this->redirectToRoute('proj-user-home');
         }
     }
 
@@ -64,5 +67,35 @@ class ProjController extends AbstractController
     public function game(): Response
     {
         return $this->render('proj/game/game.html.twig');
+    }
+
+    /**
+     * @Route(
+     *      "/proj/user",
+     *      name="proj-user-home",
+     *      methods={"GET","HEAD"}
+     * )
+     */
+    public function user(): Response
+    {
+        return $this->render('proj/user/user.html.twig');
+    }
+
+    /**
+     * @Route(
+     *      "/proj/user",
+     *      name="proj-user-post",
+     *      methods={"POST"}
+     * )
+     */
+    public function user_post(
+        Request $request
+    ): Response
+    {
+        $back = $request->request->get('back');
+
+        if ($back) {
+            return $this->redirectToRoute('proj-home');
+        }
     }
 }
