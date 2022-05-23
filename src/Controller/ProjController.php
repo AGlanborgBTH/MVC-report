@@ -32,16 +32,10 @@ class ProjController extends AbstractController
         Request $request
     ): Response
     {
-        $about = $request->request->get('about');
-        $game = $request->request->get('game');
-        $user = $request->request->get('user');
+        $logout = $request->request->get('logout');
 
-        if ($about) {
-            return $this->redirectToRoute('proj-about-home');
-        } elseif ($game) {
-            return $this->redirectToRoute('proj-game-home');
-        } elseif ($user) {
-            return $this->redirectToRoute('proj-user-home');
+        if ($logout) {
+            return $this->redirectToRoute('proj-home');
         }
     }
 
@@ -71,31 +65,25 @@ class ProjController extends AbstractController
 
     /**
      * @Route(
-     *      "/proj/user",
-     *      name="proj-user-home",
+     *      "/proj/login",
+     *      name="proj-login-home",
      *      methods={"GET","HEAD"}
      * )
      */
-    public function user(): Response
+    public function login(): Response
     {
-        return $this->render('proj/user/user.html.twig');
+        return $this->render('proj/user/login.html.twig');
     }
 
     /**
      * @Route(
-     *      "/proj/user",
-     *      name="proj-user-post",
-     *      methods={"POST"}
+     *      "/proj/register",
+     *      name="proj-register-home",
+     *      methods={"GET","HEAD"}
      * )
      */
-    public function user_post(
-        Request $request
-    ): Response
+    public function register(): Response
     {
-        $back = $request->request->get('back');
-
-        if ($back) {
-            return $this->redirectToRoute('proj-home');
-        }
+        return $this->render('proj/user/register.html.twig');
     }
 }

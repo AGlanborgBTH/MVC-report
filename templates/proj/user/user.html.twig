@@ -1,7 +1,5 @@
 {% extends "proj/index.html.twig" %}
 
-{% block title %}Poker Homepage{% endblock %}
-
 {% block nav %}proj{% endblock %}
 
 {% block style %}proj{% endblock %}
@@ -12,26 +10,37 @@
     <div class="fill centered truecenter">
         <div class="selectuser">
             <h1>
-                Select user
+                {{ block('tab') }}
             </h1>
-            <h3 class="balancetitle">
-                User balance: 
-            </h3>
-            <p class="balancetitle">
-                1000
-            </p>
         </div>
     </div>
-    <form method="post" class="userbuttoncontainer">
-        <div class="userbuttons">
-            <input type="submit" name="marie" value="Marie">
-            <input type="submit" name="hans" value="Hans">
-            <input type="submit" name="grettle" value="Grettle">
-            <input type="submit" name="sten" value="Sten">
-            <input type="submit" name="guest" value="Guest">
-        </div>
-        <div class="truecenter">
-            <input type="submit" name="back" value="Back">
+    <form method="post" class="userbuttoncontainer truecenter">
+        <div class="loginconatiner">
+            <div class="center fill">
+                <div class="centered inline">
+                    <label for="account_name">
+                        Account name
+                    </label>
+                    <br>
+                    <input type="text" name="account_name" id="account_name" placeholder="Enter name...">
+                </div>
+                <div class="centered inline">
+                    <label for="password">
+                        Password
+                    </label>
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Enter password...">
+                </div>
+            </div>
+            {{ block('input') }}
+            <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/{{ block('link') }}">
+                <button type="button">{{ block('linktab') }}?</button>
+            </a>
+            <div class="relative">
+                <a class="absolute obbutton" href="{% set baseURL = app.request.getBaseURL() %}/proj">
+                    <button type="button">Back</button>
+                </a>
+            </div>
         </div>
     </form>
 </div>
