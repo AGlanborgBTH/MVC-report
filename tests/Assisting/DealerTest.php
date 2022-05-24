@@ -8,9 +8,9 @@ use App\Card\BJCard;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for class BJ
+ * Test cases for class BJ and Dealer
  */
-class BJTest extends TestCase
+class DealerTest extends TestCase
 {
     /**
      * Construct object and verify that the object is created

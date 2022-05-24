@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ProjController extends AbstractController
 {
@@ -58,9 +59,58 @@ class ProjController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function game(): Response
+    public function game(
+        SessionInterface $session
+    ): Response
     {
-        return $this->render('proj/game/game.html.twig');
+        if (!$session->get("poker")) {
+            $session->set("poker", new \App\Poker\Poker());
+        }
+
+        $data = ["game" => $session->get("poker")];
+
+        return $this->render('proj/game/game.html.twig', $data);
+    }
+
+    /**
+     *@Route(
+     *      "/proj/game",
+     *      name="proj-game-post",
+     *      methods={"POST"}
+     * )
+     */
+    public function game_post(
+        SessionInterface $session,
+        Request $request
+    ): Response
+    {
+        $bet = $request->request->get('commit_bet');
+        $fold = $request->request->get('fold');
+        $again = $request->request->get('again');
+        $call = $request->request->get('call');
+        $continue = $request->request->get('continue');
+        $back = $request->request->get('back');
+        $poker = $session->get("poker");
+
+        if ($bet) {
+            $poker->recieve_bet($request->request->get('bet'));
+            $poker->flop();
+        } elseif ($fold) {
+            $poker->fold();
+        } elseif ($again) {
+            $poker->reset();
+        } elseif ($call) {
+            $poker->call();
+            $poker->rank_player();
+        } elseif ($continue) {
+            $poker->rank_dealer();
+            $poker->compare_ranks();
+        } elseif ($back) {
+            $poker->reset();
+            return $this->redirectToRoute('proj-home');
+        }
+
+        return $this->redirectToRoute('proj-game-home');
     }
 
     /**

@@ -4,11 +4,53 @@
 
 <div class="table">
     <div class="center">
-        <div class="cardbox"></div>
-        <div class="cardbox"></div>
-        <div class="cardbox"></div>
-        <div class="cardbox"></div>
-        <div class="cardbox"></div>
+        {% if game is defined and game.phase > 0 %}
+                <div class="cardbox">
+                    {% if game.phase > 2 %}
+                        {% include "proj/game/card.html.twig" with {
+                            "color": game.table.hand[4].get_color(),
+                            "pattern": game.table.hand[4].get_pattern(),
+                            "value": game.table.hand[4].get_value()
+                        } %}
+                    {% endif %}
+                </div>
+                <div class="cardbox">
+                    {% if game.phase > 2 %}
+                        {% include "proj/game/card.html.twig" with {
+                            "color": game.table.hand[3].get_color(),
+                            "pattern": game.table.hand[3].get_pattern(),
+                            "value": game.table.hand[3].get_value()
+                        } %}
+                    {% endif %}
+                </div>
+                <div class="cardbox">
+                    {% include "proj/game/card.html.twig" with {
+                        "color": game.table.hand[2].get_color(),
+                        "pattern": game.table.hand[2].get_pattern(),
+                        "value": game.table.hand[2].get_value()
+                    } %}
+                </div>
+                <div class="cardbox">
+                    {% include "proj/game/card.html.twig" with {
+                        "color": game.table.hand[1].get_color(),
+                        "pattern": game.table.hand[1].get_pattern(),
+                        "value": game.table.hand[1].get_value()
+                    } %}
+                </div>
+                <div class="cardbox">
+                    {% include "proj/game/card.html.twig" with {
+                        "color": game.table.hand[0].get_color(),
+                        "pattern": game.table.hand[0].get_pattern(),
+                        "value": game.table.hand[0].get_value()
+                    } %}
+                </div>
+        {% else %}
+            <div class="cardbox"></div>
+            <div class="cardbox"></div>
+            <div class="cardbox"></div>
+            <div class="cardbox"></div>
+            <div class="cardbox"></div>
+        {% endif %}
     </div>
 </div>
 <div class="content">

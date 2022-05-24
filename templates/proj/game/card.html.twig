@@ -1,0 +1,16 @@
+<div class="card {{ color }}">
+    <p>
+        {% if pattern == "D" %}
+            &#x2666;
+        {% elseif pattern == "C" %}
+            &#x2663;
+        {% elseif pattern == "H" %}
+            &#x2665;
+        {% else %}
+            &#x2660;
+        {% endif %}
+    </p>
+    <p>
+        {{ value }}
+    </p>
+</div>

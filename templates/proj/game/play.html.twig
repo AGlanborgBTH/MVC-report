@@ -1,33 +1,44 @@
 <div class="homecenter">
 	<div class="handcontainer">
 		<div class="hand">
-			<div class="cardbox">
-				<div class="cardback"></div>
-			</div>
-			<div class="cardbox">
-				<div class="cardback"></div>
-			</div>
+			{% if game.phase > 3 %}
+				<div class="cardbox">
+					{% include "proj/game/card.html.twig" with {
+						"color": game.dealer.hand[0].get_color(),
+						"pattern": game.dealer.hand[0].get_pattern(),
+						"value": game.dealer.hand[0].get_value()
+					} %}
+				</div>
+				<div class="cardbox">
+					{% include "proj/game/card.html.twig" with {
+						"color": game.dealer.hand[1].get_color(),
+						"pattern": game.dealer.hand[1].get_pattern(),
+						"value": game.dealer.hand[1].get_value()
+					} %}
+				</div>
+			{% else %}
+				<div class="cardbox">
+					<div class="cardback"></div>
+				</div>
+				<div class="cardbox">
+					<div class="cardback"></div>
+				</div>
+			{%  endif %}
 		</div>
 		<div class="hand">
 			<div class="cardbox">
-				<div class="card black">
-					<p>
-						&#x2660;
-					</p>
-					<p>
-						A
-					</p>
-				</div>
+				{% include "proj/game/card.html.twig" with {
+					"color": game.player.hand[0].get_color(),
+					"pattern": game.player.hand[0].get_pattern(),
+					"value": game.player.hand[0].get_value()
+				} %}
 			</div>
 			<div class="cardbox">
-				<div class="card red">
-					<p>
-						&#x2665;
-					</p>
-					<p>
-						A
-					</p>
-				</div>
+				{% include "proj/game/card.html.twig" with {
+					"color": game.player.hand[1].get_color(),
+					"pattern": game.player.hand[1].get_pattern(),
+					"value": game.player.hand[1].get_value()
+				} %}
 			</div>
 		</div>
 	</div>

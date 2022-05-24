@@ -1,0 +1,27 @@
+<form method="post" class="gamemenu">
+	<h1 style="margin-bottom: 50px;">
+		Game Finished
+	</h1>
+        {% if game.phase == 4 %}
+            <h2>
+                You lost
+            </h2>
+            <p>
+                -{{ game.bet }}
+            </p>
+        {% elseif game.phase == 5 %}
+            <h2>
+                Draw
+            </h2>
+        {% else %}
+            <h2>
+                You Won
+            </h2>
+            <p>
+                {{ game.bet }}
+            </p>
+        {% endif %}
+    <input class="longbutton" type="submit" name="again" value="Play Again">
+    <br>
+	<input class="longbutton" type="submit" name="back" value="Back">
+</form>

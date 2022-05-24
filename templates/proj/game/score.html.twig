@@ -3,17 +3,26 @@
 		Score
 	</h2>
 	<div style="margin-bottom: 35px;">
-		<p>
+		<h3>
 			Current bet:
-		</p>
+		</h3>
 		<p>
-			0
+			{{ game.bet }}
 		</p>
 	</div>
-	<p>
-		Total bet if call:
-	</p>
-	<p>
-		0
-	</p>
+	{% if game.phase == 1 %}
+		<p>
+			Total bet if call:
+		</p>
+		<p>
+			{{ game.bet * 2 }}
+		</p>
+	{% elseif game.phase == 3 %}
+		<h3>
+			You have:
+		</h3>
+		<p>
+			{{ game.player.hand_rank[1] }}
+		</p>
+	{% endif %}
 </div>

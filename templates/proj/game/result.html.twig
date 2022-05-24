@@ -1,0 +1,19 @@
+<div method="post" class="gamescore">
+    <h2 style="margin: 35px;">
+        Score
+    </h2>
+        <h4>
+            You have:
+        </h4>
+        <p>
+            {{ game.player.hand_rank[1] }}
+        </p>
+        {% if game.phase > 3 %}
+            <h4>
+                Dealer has:
+            </h4>
+            <p>
+                {{ game.dealer.hand_rank[1] }}
+            </p>
+        {% endif %}
+</div>

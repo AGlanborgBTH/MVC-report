@@ -9,16 +9,30 @@
 {% block table %}
 
 <div class="gamemenucontainer">
-    <div
-        class="fill">
-        {# {% include "proj/game/bet.html.twig" %} #}
-        {% include "proj/game/flop.html.twig" %}
+    <div class="fill">
+        {% if game.phase == 0 %}
+            {% include "proj/game/bet.html.twig" %}
+        {% elseif game.phase == 1 %}
+            {% include "proj/game/flop.html.twig" %}
+        {% elseif game.phase == 2 %}
+            {% include "proj/game/fold.html.twig" %}
+        {% elseif game.phase == 3 %}
+            {% include "proj/game/continue.html.twig" %}
+        {% elseif game.phase > 3 %}
+            {% include "proj/game/finale.html.twig" %}
+        {% endif %}
     </div>
     <div class="fill">
-        {% include "proj/game/score.html.twig" %}
+        {% if game.phase == 1 %}
+            {% include "proj/game/score.html.twig" %}
+        {% elseif game.phase >= 3 %}
+            {% include "proj/game/result.html.twig" %}
+        {% endif %}
     </div>
 </div>
 
-{% include "proj/game/play.html.twig" %}
+{% if game.phase != 0 %}
+    {% include "proj/game/play.html.twig" %}
+{% endif %}
 
 {% endblock %}
