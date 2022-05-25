@@ -12,6 +12,8 @@ class Matching
 {
     public bool $bool;
 
+    public int $value;
+
     public function __construct()
     {
         $this->bool = false;
@@ -19,24 +21,25 @@ class Matching
 
     public function assert($stack, $num): bool
     {
-        foreach($stack as $card) {
-            $this->adduce($card, $stack, $num);
-        }
+        $this->adduce($stack, $num);
 
         return $this->bool;
     }
 
-    protected function adduce($card, $stack, $num) {
-        $final = 0;
+    protected function adduce($stack, $num) {
+        foreach($stack as $prime) {
+            $final = 0;
 
-        foreach($stack as $stack_card) {
-            if ($stack_card->get_points() == $card->get_points()) {
-                $final += 1;
+            foreach($stack as $second) {
+                if ($prime->get_points() == $second->get_points()) {
+                    $final += 1;
+                }
             }
-        }
 
-        if ($final == $num) {
-            $this->bool = true;
+            if ($final == $num) {
+                $this->bool = true;
+                $this->value = $prime->get_points();
+            }
         }
     }
 }

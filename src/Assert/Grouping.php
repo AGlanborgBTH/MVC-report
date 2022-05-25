@@ -12,6 +12,8 @@ class Grouping
 {
     public bool $bool;
 
+    public array $value;
+
     public function __construct()
     {
         $this->bool = false;
@@ -19,24 +21,28 @@ class Grouping
 
     public function assert($stack, $num): bool
     {
-        foreach($stack as $card) {
-            $this->adduce($card, $stack, $num);
-        }
+        $this->adduce($stack, $num);
 
         return $this->bool;
     }
 
-    protected function adduce($card, $stack, $num) {
-        $final = 0;
+    protected function adduce($stack, $num) {
+        foreach($stack as $prime) {
+            $final = 0;
+            $arr = [];
 
-        foreach($stack as $stack_card) {
-            if ($stack_card->get_pattern() == $card->get_pattern()) {
-                $final += 1;
+            foreach($stack as $second) {
+                if ($prime->get_pattern() == $second->get_pattern()) {
+                    $final += 1;
+                    array_push($arr, $second);
+                }
             }
-        }
 
-        if ($final == $num) {
-            $this->bool = true;
+            if ($final >= $num) {
+                $this->bool = true;
+                $this->value = $arr;
+                break;
+            }
         }
     }
 }

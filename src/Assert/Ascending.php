@@ -12,6 +12,8 @@ class Ascending
 {
     public bool $bool;
 
+    public array $value = array();
+
     public function __construct()
     {
         $this->bool = false;
@@ -19,30 +21,43 @@ class Ascending
 
     public function assert($stack, $num): bool
     {
-        $this->adduce($stack, $num);
+        foreach($stack as $prime) {
+            $this->adduce($prime, $stack, $num);
+        }
 
         return $this->bool;
     }
 
-    protected function adduce($stack, $num) {
-        foreach($stack as $prime) {
-            $count = $num;
-            $final = 0;
+    protected function adduce($prime, $stack, $num) {
+        $count = $num;
+        $final = 0;
 
-            while ($count != 0) {
-                foreach($stack as $second) {
-                    if ($prime->get_points() == $second->get_points() + $count) {
-                        $final += 1;
-                        break;
-                    }
-                }
-                $count -= 1;
+        while ($count != 0) {
+            if ($prime->get_points() + $count == 14) {
+                $final += $this->identify(1, $stack);
+            } else {
+                $final += $this->identify($prime->get_points() + $count, $stack);
             }
+            $count -= 1;
+        }
 
-            if ($final == $num) {
-                $this->bool = true;
+        if ($final == $num) {
+            $this->bool = true;
+            array_push($this->value, $prime);
+        }
+    }
+
+    protected function identify($value, $stack): int
+    {
+        $final = 0;
+
+        foreach($stack as $second) {
+            if ($second->get_points() == $value) {
+                $final += 1;
                 break;
             }
         }
+
+        return $final;
     }
 }

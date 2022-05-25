@@ -28,10 +28,7 @@ class PokerHandRank
 
     public object $pair;
 
-    public object $high_card;
-
-    public function __construct($hand, $table)
-    {
+    public function initialize($hand, $table) {
         $stack = $this->make_pile($hand, $table);
         $this->royal_flush = new \App\Rank\Royal_flush($stack);
         $this->straight_flush = new \App\Rank\Straight_flush($stack);
@@ -42,7 +39,6 @@ class PokerHandRank
         $this->three = new \App\Rank\Three($stack);
         $this->two_pair = new \App\Rank\Two_pair($stack);
         $this->pair = new \App\Rank\Pair($stack);
-        $this->high_card = new \App\Rank\High_card($stack);
     }
 
     public function make_pile($hand, $table) {

@@ -12,7 +12,9 @@ class Set
 {
     public bool $bool;
 
-    public array $values = array();
+    public array $value = array();
+
+    public array $points = array();
 
     public function __construct()
     {
@@ -21,43 +23,40 @@ class Set
 
     public function assert($stack, $large, $small): bool
     {
-        foreach($stack as $card) {
-            array_push($this->values, $card->get_points());
-        }
-
-        $this->adduce($large, $small);
+        $this->adduce($stack, $large, $small);
 
         return $this->bool;
     }
 
-    protected function adduce($large, $small) {
-        $prime = $this->identify($large);
+    protected function adduce($stack, $large, $small) {
+        $prime = $this->identify($stack, $large);
 
         if ($prime[0]) {
-            $second = $this->identify($small, $prime[1]);
+            $second = $this->identify($stack, $small, $prime[1]);
 
             if ($second[0]) {
                 $this->bool = true;
+                $this->value = [$prime[1], $second[1]];
             }
         }
     }
 
-    protected function identify(int $num, int $large = null) {
+    protected function identify(array $stack, int $num, int $large = null) {
         $is_value = null;
         $is_true = false;
 
-        foreach($this->values as $prime) {
+        foreach($stack as $prime) {
             $count = 0;
 
-            foreach($this->values as $second) {
-                if ($prime == $second and $prime != $large) {
+            foreach($stack as $second) {
+                if ($prime->get_points() == $second->get_points() and $prime->get_points() != $large) {
                     $count += 1;
                 }
             }
 
             if ($count == $num) {
                 $is_true = true;
-                $is_value = $prime;
+                $is_value = $prime->get_points();
                 break;
             }
         }
