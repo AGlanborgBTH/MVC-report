@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * GroupingTest is an method for testing the App\Assert\Grouping class
+ */
 class GroupingTest extends TestCase
 {
+    /**
+     * method for testing if Grouping creates without fail and assigns bool value to property
+     */
     public function testCreateGrouping()
     {
         $grouping = new Grouping();
@@ -16,6 +22,9 @@ class GroupingTest extends TestCase
         $this->assertFalse($grouping->bool);
     }
 
+    /**
+     * method for testing if the method assert returns true with right/working values
+     */
     public function testGroupingAssertTrue()
     {
         $grouping = new Grouping();
@@ -33,6 +42,9 @@ class GroupingTest extends TestCase
         $this->assertEquals($grouping->value, $stack);
     }
 
+    /**
+     * method for testing if the method assert returns false with wrong/failing values
+     */
     public function testGroupingAssertFalse()
     {
         $grouping = new Grouping();

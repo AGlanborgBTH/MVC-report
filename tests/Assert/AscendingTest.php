@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * AscendingTest is an method for testing the App\Assert\Ascending class
+ */
 class AscendingTest extends TestCase
 {
+    /**
+     * method for testing if Ascending creates without fail and assigns bool value to property
+     */
     public function testCreateAscending()
     {
         $ascending = new Ascending();
@@ -16,6 +22,9 @@ class AscendingTest extends TestCase
         $this->assertFalse($ascending->bool);
     }
 
+    /**
+     * method for testing if the method assert returns true with high values
+     */
     public function testAscendingAssertTrueHigh()
     {
         $ascending = new Ascending();
@@ -34,6 +43,9 @@ class AscendingTest extends TestCase
         $this->assertEquals($prime->get_points(), $ascending->value[0]);
     }
 
+    /**
+     * method for testing if the method assert returns true with low values
+     */
     public function testAscendingAssertTrueLow()
     {
         $ascending = new Ascending();
@@ -51,6 +63,9 @@ class AscendingTest extends TestCase
         $this->assertEquals(1, $ascending->value[0]);
     }
 
+    /**
+     * method for testing if the method assert returns false with wrong/failing values
+     */
     public function testAscendingAssertFalse()
     {
         $ascending = new Ascending();

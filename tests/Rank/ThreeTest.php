@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * ThreeTest is an class for testing the App\Rank\Three class
+ */
 class ThreeTest extends TestCase
 {
+    /**
+     * method for testing if Three creates without fail
+     */
     public function testCreateThree()
     {
         $three = new Three([]);
@@ -15,6 +21,9 @@ class ThreeTest extends TestCase
         $this->assertInstanceOf("\App\Rank\Three", $three);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testThreeAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class ThreeTest extends TestCase
         $this->assertTrue($three->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testThreeAssertFalse()
     {
         $stack = [

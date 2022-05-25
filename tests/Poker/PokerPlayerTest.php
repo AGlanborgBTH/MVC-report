@@ -7,8 +7,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * PokerPlayerTest is an class for testing the App\Poker\PokerPlayer class
+ */
 class PokerPlayerTest extends TestCase
 {
+    /**
+     * method for testing if PokerPlayer creates without fail
+     */
     public function testCreatePokerPlayer()
     {
         $poker = new PokerPlayer;
@@ -16,6 +22,9 @@ class PokerPlayerTest extends TestCase
         $this->assertInstanceOf("\App\Poker\PokerPlayer", $poker);
     }
 
+    /**
+     * method for testing that the hand property is empty when created
+     */
     public function testPokerPlayerEmpty()
     {
         $poker = new PokerPlayer;
@@ -23,6 +32,9 @@ class PokerPlayerTest extends TestCase
         $this->assertEmpty($poker->hand);
     }
 
+    /**
+     * method for testing that the hand property conatins cards when created
+     */
     public function testPokerPlayerFull()
     {
         $card = new PokerCard("A", "S");
@@ -32,6 +44,9 @@ class PokerPlayerTest extends TestCase
         $this->assertContains($card, $poker->hand);
     }
 
+    /**
+     * method for testing that the hand property gains an card when useing add_card method
+     */
     public function testPokerPlayerAddCard()
     {
         $card = new PokerCard("A", "S");
@@ -43,6 +58,9 @@ class PokerPlayerTest extends TestCase
         $this->assertContains($card, $poker->hand);
     }
 
+    /**
+     * method for testing that the hand property becomes empty when using the remove_cards method
+     */
     public function testPokerPlayerRemoveCards()
     {
         $card = new PokerCard("A", "S");

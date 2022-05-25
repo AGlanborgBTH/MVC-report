@@ -7,8 +7,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * PokerTest is an class for testing the App\Poker\Poker class
+ */
 class PokerTest extends TestCase
 {
+    /**
+     * method for testing if Poker creates without fail
+     */
     public function testCreatePoker()
     {
         $poker = new Poker;
@@ -16,6 +22,9 @@ class PokerTest extends TestCase
         $this->assertInstanceOf("\App\Poker\Poker", $poker);
     }
 
+    /**
+     * method for testing that the bet- and phase-property updates when using the recieve_bet method
+     */
     public function testPokerRecieveBet()
     {
         $poker = new Poker;
@@ -26,6 +35,9 @@ class PokerTest extends TestCase
         $this->assertEquals($poker->phase, 1);
     }
 
+    /**
+     * method for testing that the player>-hand-, dealer->hand- and table->hand-property updates when using the flop method
+     */
     public function testPokerFlop()
     {
         $poker = new Poker;
@@ -41,6 +53,9 @@ class PokerTest extends TestCase
         $this->assertNotEmpty($poker->table->hand);
     }
 
+    /**
+     * method for testing that the phase property updates when using the fold method
+     */
     public function testPokerFold()
     {
         $poker = new Poker;
@@ -50,6 +65,9 @@ class PokerTest extends TestCase
         $this->assertEquals($poker->phase, 2);
     }
 
+    /**
+     * method for testing that the table->hand property updates when using the call method
+     */
     public function testPokercall()
     {
         $poker = new Poker;
@@ -66,6 +84,9 @@ class PokerTest extends TestCase
         $this->assertEquals($poker->bet, $bet * 2);
     }
 
+    /**
+     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compare_ranks method with greater/loosing values/cards
+     */
     public function testPokerComapreRanksWin()
     {
         $poker = new Poker;
@@ -99,6 +120,9 @@ class PokerTest extends TestCase
         $this->assertEquals($poker->phase, 6);
     }
 
+    /**
+     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compare_ranks method with greater/winning values/cards
+     */
     public function testPokerComapreRanksLoose()
     {
         $poker = new Poker;

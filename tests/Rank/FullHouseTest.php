@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * FullHouseTest is an class for testing the App\Rank\FullHouse class
+ */
 class FullHouseTest extends TestCase
 {
+    /**
+     * method for testing if FullHouse creates without fail
+     */
     public function testCreateFullHouse()
     {
         $Full = new FullHouse([]);
@@ -15,6 +21,9 @@ class FullHouseTest extends TestCase
         $this->assertInstanceOf("\App\Rank\FullHouse", $Full);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testFullHouseAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class FullHouseTest extends TestCase
         $this->assertTrue($Full->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testFullHouseAssertFalse()
     {
         $stack = [

@@ -7,8 +7,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * PokerHandRankTest is an class for testing the App\Poker\PokerHandRank class
+ */
 class PokerHandRankTest extends TestCase
 {
+    /**
+     * method for testing if PokerHandRank creates without fail
+     */
     public function testCreatePokerHandRank()
     {
         $poker = new PokerHandRank;
@@ -16,6 +22,9 @@ class PokerHandRankTest extends TestCase
         $this->assertInstanceOf("\App\Poker\PokerHandRank", $poker);
     }
 
+    /**
+     * method for testing if class can detect a Royal Flush
+     */
     public function testPokerHandRankRoyalFlush()
     {
         $poker = new PokerHandRank;
@@ -38,6 +47,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [10, "Royal Flush"]);
     }
 
+    /**
+     * method for testing if class can detect a Straight Flush
+     */
     public function testPokerHandRankStraightFlush()
     {
         $poker = new PokerHandRank;
@@ -60,7 +72,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [9, "Straight Flush"]);
     }
 
-
+    /**
+     * method for testing if class can detect a Four of a kind
+     */
     public function testPokerHandRankFourOfAKind()
     {
         $poker = new PokerHandRank;
@@ -83,6 +97,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [8, "Four of a Kind"]);
     }
 
+    /**
+     * method for testing if class can detect a Full House
+     */
     public function testPokerHandRankFullHouse()
     {
         $poker = new PokerHandRank;
@@ -105,6 +122,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [7, "Full House"]);
     }
 
+    /**
+     * method for testing if class can detect a Flush
+     */
     public function testPokerHandRankFlush()
     {
         $poker = new PokerHandRank;
@@ -127,6 +147,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [6, "Flush"]);
     }
 
+    /**
+     * method for testing if class can detect a Straight
+     */
     public function testPokerHandRankStraight()
     {
         $poker = new PokerHandRank;
@@ -149,6 +172,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [5, "Straight"]);
     }
 
+    /**
+     * method for testing if class can detect a Three of a kind
+     */
     public function testPokerHandRankThreeOfAKind()
     {
         $poker = new PokerHandRank;
@@ -171,6 +197,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [4, "Three of a Kind"]);
     }
 
+    /**
+     * method for testing if class can detect a Two Pair
+     */
     public function testPokerHandRankTwoPair()
     {
         $poker = new PokerHandRank;
@@ -193,6 +222,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [3, "Two Pair"]);
     }
 
+    /**
+     * method for testing if class can detect a Pair
+     */
     public function testPokerHandRankPair()
     {
         $poker = new PokerHandRank;
@@ -215,6 +247,9 @@ class PokerHandRankTest extends TestCase
         $this->assertEquals($poker->result(), [2, "Pair"]);
     }
 
+    /**
+     * method for testing if class can detect a High Card
+     */
     public function testPokerHandRankHighCard()
     {
         $poker = new PokerHandRank;

@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * TwoPairTest is an class for testing the App\Rank\TwoPair class
+ */
 class TwoPairTest extends TestCase
 {
+    /**
+     * method for testing if TwoPair creates without fail
+     */
     public function testCreateTwoPair()
     {
         $Two = new TwoPair([]);
@@ -15,6 +21,9 @@ class TwoPairTest extends TestCase
         $this->assertInstanceOf("\App\Rank\TwoPair", $Two);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testTwoPairAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class TwoPairTest extends TestCase
         $this->assertTrue($Two->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testTwoPairAssertFalse()
     {
         $stack = [

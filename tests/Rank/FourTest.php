@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * FourTest is an class for testing the App\Rank\Four class
+ */
 class FourTest extends TestCase
 {
+    /**
+     * method for testing if Four creates without fail
+     */
     public function testCreateFour()
     {
         $four = new Four([]);
@@ -15,6 +21,9 @@ class FourTest extends TestCase
         $this->assertInstanceOf("\App\Rank\Four", $four);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testFourAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class FourTest extends TestCase
         $this->assertTrue($four->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testFourAssertFalse()
     {
         $stack = [

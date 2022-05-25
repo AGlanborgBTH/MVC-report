@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * RoyalFlushTest is an class for testing the App\Rank\RoyalFlush class
+ */
 class RoyalFlushTest extends TestCase
 {
+    /**
+     * method for testing if RoyalFlush creates without fail
+     */
     public function testCreateRoyalFlush()
     {
         $Royal = new RoyalFlush([]);
@@ -15,6 +21,9 @@ class RoyalFlushTest extends TestCase
         $this->assertInstanceOf("\App\Rank\RoyalFlush", $Royal);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testRoyalFlushAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class RoyalFlushTest extends TestCase
         $this->assertTrue($Royal->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testRoyalFlushAssertFalseGrouping()
     {
         $stack = [

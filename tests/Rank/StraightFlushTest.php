@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * StraightFlushTest is an class for testing the App\Rank\StraightFlush class
+ */
 class StraightFlushTest extends TestCase
 {
+    /**
+     * method for testing if StraightFlush creates without fail
+     */
     public function testCreateStraightFlush()
     {
         $straight = new StraightFlush([]);
@@ -15,6 +21,9 @@ class StraightFlushTest extends TestCase
         $this->assertInstanceOf("\App\Rank\StraightFlush", $straight);
     }
 
+    /**
+     * method for testing if the method result returns true with right/working values
+     */
     public function testStraightFlushAssertTrue()
     {
         $stack = [
@@ -30,6 +39,9 @@ class StraightFlushTest extends TestCase
         $this->assertTrue($straight->result($stack));
     }
 
+    /**
+     * method for testing if the method result returns false with wrong/failing values
+     */
     public function testStraightFlushAssertFalseGrouping()
     {
         $stack = [

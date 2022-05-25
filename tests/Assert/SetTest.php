@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * SetTest is an method for testing the App\Assert\Set class
+ */
 class SetTest extends TestCase
 {
+    /**
+     * method for testing if Set creates without fail and assigns bool value to property
+     */
     public function testCreateSet()
     {
         $set = new Set();
@@ -16,6 +22,9 @@ class SetTest extends TestCase
         $this->assertFalse($set->bool);
     }
 
+    /**
+     * method for testing if the method assert returns true with right/working values
+     */
     public function testSetAssertTrue()
     {
         $set = new Set();
@@ -33,6 +42,9 @@ class SetTest extends TestCase
         $this->assertEquals($set->value, [1, 2]);
     }
 
+    /**
+     * method for testing if the method assert returns false with wrong/failing values
+     */
     public function testSetAssertFalse()
     {
         $set = new Set();

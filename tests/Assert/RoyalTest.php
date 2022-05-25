@@ -6,8 +6,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * RoyalTest is an method for testing the App\Assert\Royal class
+ */
 class RoyalTest extends TestCase
 {
+    /**
+     * method for testing if Royal creates without fail and assigns bool value to property
+     */
     public function testCreateRoyal()
     {
         $royal = new Royal();
@@ -16,6 +22,9 @@ class RoyalTest extends TestCase
         $this->assertFalse($royal->bool);
     }
 
+    /**
+     * method for testing if the method assert returns true with right/working values
+     */
     public function testRoyalAssertTrue()
     {
         $royal = new Royal();
@@ -32,6 +41,9 @@ class RoyalTest extends TestCase
         $this->assertTrue($royal->bool);
     }
 
+    /**
+     * method for testing if the method assert returns false with wrong/failing values
+     */
     public function testRoyalAssertFalse()
     {
         $royal = new Royal();

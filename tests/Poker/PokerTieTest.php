@@ -8,8 +8,14 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * PokerTieTest is an class for testing the App\Poker\PokerTie class
+ */
 class PokerTieTest extends TestCase
 {
+    /**
+     * method for testing if PokerTie creates without fail
+     */
     public function testCreatePokerTie()
     {
         $poker = new PokerTie;
@@ -17,6 +23,9 @@ class PokerTieTest extends TestCase
         $this->assertInstanceOf("\App\Poker\PokerTie", $poker);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two royal flush
+     */
     public function testPokerTieRoyalFlush()
     {
         $poker = new Poker;
@@ -48,6 +57,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two straight flush
+     */
     public function testPokerTieStraightFlush()
     {
         $poker = new Poker;
@@ -79,6 +91,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two 'four of a kind'
+     */
     public function testPokerTieFourOfAKind()
     {
         $poker = new Poker;
@@ -108,6 +123,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two full house
+     */
     public function testPokerTieFullHouse()
     {
         $poker = new Poker;
@@ -137,6 +155,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two flush
+     */
     public function testPokerTieFlush()
     {
         $poker = new Poker;
@@ -166,6 +187,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two straight
+     */
     public function testPokerTieStraight()
     {
         $poker = new Poker;
@@ -195,6 +219,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two 'three of a kind'
+     */
     public function testPokerTieThree()
     {
         $poker = new Poker;
@@ -224,6 +251,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two royal hands
+     */
     public function testPokerTieTwoPair()
     {
         $poker = new Poker;
@@ -253,6 +283,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two pair
+     */
     public function testPokerTiePair()
     {
         $poker = new Poker;
@@ -282,6 +315,9 @@ class PokerTieTest extends TestCase
         $this->assertEquals($poker->phase, 5);
     }
 
+    /**
+     * method for testing that the App\Poker\PokerTie method can return draw when containing two high cards
+     */
     public function testPokerTieHighCard()
     {
         $poker = new Poker;
