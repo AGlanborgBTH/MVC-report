@@ -41,17 +41,6 @@ class PokerTest extends TestCase
         $this->assertNotEmpty($poker->table->hand);
     }
 
-    public function testPokerRiver()
-    {
-        $poker = new Poker;
-
-        $this->assertEmpty($poker->table->hand);
-
-        $poker->river();
-
-        $this->assertNotEmpty($poker->table->hand);
-    }
-
     public function testPokerFold()
     {
         $poker = new Poker;

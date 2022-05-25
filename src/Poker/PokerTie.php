@@ -8,24 +8,72 @@
 
 namespace App\Poker;
 
+/**
+ * PokerTie is an class made for disputing the conflict of two similarly ranked hands in the App\Poker\Poker class/game
+ */
 class PokerTie
 {
+    /**
+     * $ascending is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $ascending;
 
+    /**
+     * $set is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $set;
 
+    /**
+     * $grouping is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $grouping;
 
+    /**
+     * $high is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $high;
 
+    /**
+     * $four is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $four;
-    
+
+    /**
+     * $three is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $three;
 
+    /**
+     * $two is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $two;
 
+    /**
+     * $pair is an property containing an object for asserting wish of the arrays contain the highest ranked App\Poker\PokerCard objects
+     *
+     * @var object
+     */
     public object $pair;
 
+    /**
+     * Constructing method for the class
+     *
+     * Method for assigning all properties the right class/object
+     */
     public function __construct()
     {
         $this->ascending = new \App\Stalemate\Ascending;
@@ -38,7 +86,20 @@ class PokerTie
         $this->pair = new \App\Stalemate\Pair;
     }
 
-    public function result($player, $dealer, $player_hand, $dealer_hand, $table_hand): int
+    /**
+     * Method for returning the result of assessing all hand rankings and hand content
+     * 
+     * @param object $player App\Poker\PokerHandRank that defines the content of $player_hand
+     * 
+     * @param object $dealer App\Poker\PokerHandRank that defines the content of $dealer_hand
+     * 
+     * @param array $player_hand the first of the arrays of App\Poker\PokerCard objects to be compared
+     * 
+     * @param array $dealer_hand the second of the arrays App\Poker\PokerCard objects to be compared
+     * 
+     * @param array $table_hand an array containing App\Poker\PokerCard objects; shared among $player and $dealer
+     */
+    public function result(object $player, object $dealer, array $player_hand, array $dealer_hand, array $table_hand): int
     {
         if ($player->royal_flush->result() and $dealer->royal_flush->result()) {
             return 5;

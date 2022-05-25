@@ -11,14 +11,28 @@ namespace App\Poker;
 use App\Poker\PokerCard;
 use App\Card\Deck;
 
+/**
+ * PokerDeck is an class made for playing virtual Poker as a part of the App\Poker\Poker class
+ */
 class PokerDeck extends Deck
 {
+
+    /**
+     * Constructing method for the class
+     *
+     * The method uses other methods to create a poker deck and to then shuffle it
+     */
     public function __construct()
     {
         $this->distribute_patterns();
         $this->shuffle();
     }
 
+    /**
+     * Main method for creating a poker deck
+     * 
+     * The method loops through an array of patterns and runs $this->distribute_values for every pattern, creating an complete deck
+     */
     protected function distribute_patterns(): void
     {
         $patterns = array("D", "C", "H", "S");
@@ -28,6 +42,11 @@ class PokerDeck extends Deck
         }
     }
 
+    /**
+     * Assisting method for creating a poker deck
+     * 
+     * The method loops through an array of values to create and compelete deck of card objects, with $this->distribute_patterns
+     */
     protected function distribute_values($pattern): void
     {
         $values = array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");

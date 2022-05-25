@@ -11,7 +11,7 @@ use PhpParser\Node\Scalar;
  *
  * This evaluator is able to evaluate all constant expressions (as defined by PHP), which can be
  * evaluated without further context. If a subexpression is not of this type, a user-provided
- * fallback evaluator is invoked. To support all constant expressions that are also supported by
+ * $fallback evaluator is invoked. To support all constant expressions that are also supported by
  * PHP (and not already handled by this class), the fallback evaluator must be able to handle the
  * following node types:
  *

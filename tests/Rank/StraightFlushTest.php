@@ -6,13 +6,13 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
-class Straight_flushTest extends TestCase
+class StraightFlushTest extends TestCase
 {
     public function testCreateStraightFlush()
     {
-        $straight = new Straight_flush([]);
+        $straight = new StraightFlush([]);
 
-        $this->assertInstanceOf("\App\Rank\Straight_flush", $straight);
+        $this->assertInstanceOf("\App\Rank\StraightFlush", $straight);
     }
 
     public function testStraightFlushAssertTrue()
@@ -25,7 +25,7 @@ class Straight_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $straight = new Straight_flush($stack);
+        $straight = new StraightFlush($stack);
 
         $this->assertTrue($straight->result($stack));
     }
@@ -40,7 +40,7 @@ class Straight_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $straight = new Straight_flush($stack);
+        $straight = new StraightFlush($stack);
 
         $this->assertFalse($straight->result($stack));
     }
@@ -55,7 +55,7 @@ class Straight_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $straight = new Straight_flush($stack);
+        $straight = new StraightFlush($stack);
 
         $this->assertFalse($straight->result($stack));
     }

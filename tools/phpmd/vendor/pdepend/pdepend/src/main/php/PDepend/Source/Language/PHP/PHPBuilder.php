@@ -2222,7 +2222,7 @@ class PHPBuilder implements Builder
     /**
      * This method tries to find a trait instance matching for the given
      * qualified name in all scopes already processed. It will return the best
-     * matching instance or <b>null</b> if no match exists.
+     * $matching instance or <b>null</b> if no match exists.
      *
      * @param string $qualifiedName
      *
@@ -2298,7 +2298,7 @@ class PHPBuilder implements Builder
     /**
      * This method tries to find an interface instance matching for the given
      * qualified name in all scopes already processed. It will return the best
-     * matching instance or <b>null</b> if no match exists.
+     * $matching instance or <b>null</b> if no match exists.
      *
      * @param string $qualifiedName
      *
@@ -2371,7 +2371,7 @@ class PHPBuilder implements Builder
     /**
      * This method tries to find a class instance matching for the given
      * qualified name in all scopes already processed. It will return the best
-     * matching instance or <b>null</b> if no match exists.
+     * $matching instance or <b>null</b> if no match exists.
      *
      * @param string $qualifiedName
      *

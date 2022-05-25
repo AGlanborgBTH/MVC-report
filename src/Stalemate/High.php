@@ -8,9 +8,19 @@
 
 namespace App\Stalemate;
 
+/**
+ * High is an class made for asserting wish of two arrays of App\Poker\PokerCard objects contain the highest valued cards
+ */
 class High
 {
-    public function result($player, $dealer): int
+    /**
+     * Method for returning the result; wich of the arrays of App\Poker\PokerCard objects contain the highest valued cards
+     * 
+     * @param array $player the first of the arrays containing App\Poker\PokerCard objects to be compared
+     * 
+     * @param array $dealer the second of the arrays containing App\Poker\PokerCard objects to be compared
+     */
+    public function result(array $player, array $dealer): int
     {
         $player_high = 0;
 

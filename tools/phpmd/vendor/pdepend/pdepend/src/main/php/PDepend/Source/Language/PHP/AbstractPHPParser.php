@@ -7692,7 +7692,7 @@ abstract class AbstractPHPParser
 
     /**
      * Extracts non scalar types from a field doc comment and creates a
-     * matching type instance.
+     * $matching type instance.
      *
      * @return ASTClassOrInterfaceReference|null
      *

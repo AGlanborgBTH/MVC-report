@@ -6,13 +6,13 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
-class Full_houseTest extends TestCase
+class FullHouseTest extends TestCase
 {
     public function testCreateFullHouse()
     {
-        $Full = new Full_house([]);
+        $Full = new FullHouse([]);
 
-        $this->assertInstanceOf("\App\Rank\Full_house", $Full);
+        $this->assertInstanceOf("\App\Rank\FullHouse", $Full);
     }
 
     public function testFullHouseAssertTrue()
@@ -25,7 +25,7 @@ class Full_houseTest extends TestCase
             new PokerCard(13, "H")
         ];
 
-        $Full = new Full_house($stack);
+        $Full = new FullHouse($stack);
 
         $this->assertTrue($Full->result($stack));
     }
@@ -40,7 +40,7 @@ class Full_houseTest extends TestCase
             new PokerCard(13, "S")
         ];
 
-        $Full = new Full_house($stack);
+        $Full = new FullHouse($stack);
 
         $this->assertFalse($Full->result($stack));
     }

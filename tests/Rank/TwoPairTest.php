@@ -6,13 +6,13 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
-class Two_pairTest extends TestCase
+class TwoPairTest extends TestCase
 {
     public function testCreateTwoPair()
     {
-        $Two = new Two_pair([]);
+        $Two = new TwoPair([]);
 
-        $this->assertInstanceOf("\App\Rank\Two_pair", $Two);
+        $this->assertInstanceOf("\App\Rank\TwoPair", $Two);
     }
 
     public function testTwoPairAssertTrue()
@@ -25,7 +25,7 @@ class Two_pairTest extends TestCase
             new PokerCard(13, "S")
         ];
 
-        $Two = new Two_pair($stack);
+        $Two = new TwoPair($stack);
 
         $this->assertTrue($Two->result($stack));
     }
@@ -40,7 +40,7 @@ class Two_pairTest extends TestCase
             new PokerCard(13, "S")
         ];
 
-        $Two = new Two_pair($stack);
+        $Two = new TwoPair($stack);
 
         $this->assertFalse($Two->result($stack));
     }

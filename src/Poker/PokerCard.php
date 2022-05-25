@@ -11,23 +11,44 @@ namespace App\Poker;
 use App\Card\Card;
 
 /**
- * The BJCard is an extendtion of the App\Card\Card class
- * that contains extra methods and properties, specificly
- * for Black Jack (BJ) games
+ * PokerCard is an class made for playing virtual Poker as a part of the App\Poker\Poker class
  */
 class PokerCard extends Card
 {
+    /**
+     * The $points property represents the amount of points the card object is worth in the Poker game
+     *
+     * @var int
+     */
     protected int $points;
 
+    /**
+     * The $color property represents the color of the card object
+     *
+     * @var string
+     */
     protected string $color;
 
+    /**
+     * Constructing method for the class
+     *
+     * The method uses other methods to define value, points, pattern and color
+     * 
+     * @param mixed $value is the value dictating the value and points of the card
+     * 
+     * @param string $value is the value dictating the pattern and color of the card
+     */
     public function __construct(mixed $value, string $pattern)
     {
         $this->define_value($value);
         $this->define_pattern($pattern);
     }
 
-    protected function define_pattern($pattern) {
+    /**
+     * Method for defining/assigning pattern- and color-value to each respective property
+     */
+    protected function define_pattern(string $pattern): void
+    {
         $this->pattern = $pattern;
 
         if ($pattern == "D" or $pattern == "H") {
@@ -37,7 +58,11 @@ class PokerCard extends Card
         }
     }
 
-    protected function define_value($value) {
+    /**
+     * Method for defining/assigning value- and points-value to each respective property
+     */
+    protected function define_value(mixed $value): void
+    {
         $this->value = $value;
 
         if (is_string($value)) {
@@ -47,7 +72,11 @@ class PokerCard extends Card
         }
     }
 
-    protected function define_points($value) {
+    /**
+     * Method is for defining points if an string value was entered in the _constructing method
+     */
+    protected function define_points(string $value): void
+    {
         if ($value == "A") {
             $this->points = 14;
         } elseif ($value == "K") {
@@ -59,11 +88,17 @@ class PokerCard extends Card
         }
     }
 
+    /**
+     * Get-method for returning the protected $color property
+     */
     public function get_color(): string
     {
         return $this->color;
     }
 
+    /**
+     * Get-method for returning the protected $points property
+     */
     public function get_points(): int
     {
         return $this->points;

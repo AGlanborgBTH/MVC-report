@@ -6,13 +6,13 @@ use App\Poker\PokerCard;
 
 use PHPUnit\Framework\TestCase;
 
-class Royal_flushTest extends TestCase
+class RoyalFlushTest extends TestCase
 {
     public function testCreateRoyalFlush()
     {
-        $Royal = new Royal_flush([]);
+        $Royal = new RoyalFlush([]);
 
-        $this->assertInstanceOf("\App\Rank\Royal_flush", $Royal);
+        $this->assertInstanceOf("\App\Rank\RoyalFlush", $Royal);
     }
 
     public function testRoyalFlushAssertTrue()
@@ -25,7 +25,7 @@ class Royal_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $Royal = new Royal_flush($stack);
+        $Royal = new RoyalFlush($stack);
 
         $this->assertTrue($Royal->result($stack));
     }
@@ -40,7 +40,7 @@ class Royal_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $Royal = new Royal_flush($stack);
+        $Royal = new RoyalFlush($stack);
 
         $this->assertFalse($Royal->result($stack));
     }
@@ -55,7 +55,7 @@ class Royal_flushTest extends TestCase
             new PokerCard("K", "S")
         ];
 
-        $Royal = new Royal_flush($stack);
+        $Royal = new RoyalFlush($stack);
 
         $this->assertFalse($Royal->result($stack));
     }
