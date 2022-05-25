@@ -22,12 +22,12 @@ class Four
 
     public function result($player, $dealer, $player_hand, $dealer_hand, $table_hand): int
     {
-        $asc = $this->matching->result($player, $dealer);
+        $matching = $this->matching->result($player, $dealer);
 
-        if ($asc == 5) {
+        if ($matching == 5) {
             return $this->fallback->result($player_hand, $dealer_hand, $table_hand, $player->matching->value, 1);
         } else {
-            return $asc;
+            return $matching;
         }
     }
 }

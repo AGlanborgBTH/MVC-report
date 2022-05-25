@@ -14,8 +14,6 @@ class Set
 
     public array $value = array();
 
-    public array $points = array();
-
     public function __construct()
     {
         $this->bool = false;

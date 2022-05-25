@@ -19,14 +19,15 @@ class Grouping
         $this->bool = false;
     }
 
-    public function assert($stack, $num): bool
+    public function assert(array $stack, int $num): bool
     {
         $this->adduce($stack, $num);
 
         return $this->bool;
     }
 
-    protected function adduce($stack, $num) {
+    protected function adduce(array $stack, int $num): void
+    {
         foreach($stack as $prime) {
             $final = 0;
             $arr = [];

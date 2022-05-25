@@ -24,10 +24,10 @@ class PokerCard extends Card
     public function __construct(mixed $value, string $pattern)
     {
         $this->define_value($value);
-        $this->define_patter($pattern);
+        $this->define_pattern($pattern);
     }
 
-    protected function define_patter($pattern) {
+    protected function define_pattern($pattern) {
         $this->pattern = $pattern;
 
         if ($pattern == "D" or $pattern == "H") {
@@ -49,7 +49,7 @@ class PokerCard extends Card
 
     protected function define_points($value) {
         if ($value == "A") {
-            $this->points = 1;
+            $this->points = 14;
         } elseif ($value == "K") {
             $this->points = 13;
         } elseif ($value == "Q") {

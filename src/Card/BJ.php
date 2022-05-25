@@ -13,7 +13,7 @@ use App\Card\BJDeck;
 use App\Assisting\Dealer;
 
 /**
- * The BJ is an class made to hold playing Black Jack (BJ)
+ * BJ is an class made to hold playing Black Jack (BJ)
  */
 class BJ
 {

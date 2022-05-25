@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652561890">
-  <project timestamp="1652561890">
+<coverage generated="1653504454">
+  <project timestamp="1653504454">
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assert\Ascending.php">
+      <class name="App\Assert\Ascending" namespace="global">
+        <metrics complexity="10" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="24" coveredelements="24"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="33"/>
+      <line num="21" type="stmt" count="33"/>
+      <line num="24" type="method" name="assert" visibility="public" complexity="3" crap="3" count="32"/>
+      <line num="26" type="stmt" count="32"/>
+      <line num="27" type="stmt" count="30"/>
+      <line num="28" type="stmt" count="21"/>
+      <line num="30" type="stmt" count="30"/>
+      <line num="33" type="stmt" count="32"/>
+      <line num="36" type="method" name="adduce" visibility="protected" complexity="3" crap="3" count="30"/>
+      <line num="37" type="stmt" count="30"/>
+      <line num="38" type="stmt" count="30"/>
+      <line num="40" type="stmt" count="30"/>
+      <line num="41" type="stmt" count="30"/>
+      <line num="42" type="stmt" count="30"/>
+      <line num="45" type="stmt" count="30"/>
+      <line num="46" type="stmt" count="13"/>
+      <line num="47" type="stmt" count="13"/>
+      <line num="51" type="method" name="identify" visibility="protected" complexity="3" crap="3" count="30"/>
+      <line num="53" type="stmt" count="30"/>
+      <line num="55" type="stmt" count="30"/>
+      <line num="56" type="stmt" count="30"/>
+      <line num="57" type="stmt" count="30"/>
+      <line num="58" type="stmt" count="30"/>
+      <line num="62" type="stmt" count="30"/>
+      <metrics loc="64" ncloc="59" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="24" coveredelements="24"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assert\Grouping.php">
+      <class name="App\Assert\Grouping" namespace="global">
+        <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="17" coveredelements="17"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="36"/>
+      <line num="19" type="stmt" count="36"/>
+      <line num="22" type="method" name="assert" visibility="public" complexity="1" crap="1" count="35"/>
+      <line num="24" type="stmt" count="35"/>
+      <line num="26" type="stmt" count="35"/>
+      <line num="29" type="method" name="adduce" visibility="protected" complexity="5" crap="5" count="35"/>
+      <line num="31" type="stmt" count="35"/>
+      <line num="32" type="stmt" count="32"/>
+      <line num="33" type="stmt" count="32"/>
+      <line num="35" type="stmt" count="32"/>
+      <line num="36" type="stmt" count="32"/>
+      <line num="37" type="stmt" count="32"/>
+      <line num="38" type="stmt" count="32"/>
+      <line num="42" type="stmt" count="32"/>
+      <line num="43" type="stmt" count="14"/>
+      <line num="44" type="stmt" count="14"/>
+      <line num="45" type="stmt" count="14"/>
+      <metrics loc="49" ncloc="44" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="17" coveredelements="17"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assert\Matching.php">
+      <class name="App\Assert\Matching" namespace="global">
+        <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="34"/>
+      <line num="19" type="stmt" count="34"/>
+      <line num="22" type="method" name="assert" visibility="public" complexity="1" crap="1" count="33"/>
+      <line num="24" type="stmt" count="33"/>
+      <line num="26" type="stmt" count="33"/>
+      <line num="29" type="method" name="adduce" visibility="protected" complexity="5" crap="5" count="33"/>
+      <line num="30" type="stmt" count="33"/>
+      <line num="31" type="stmt" count="30"/>
+      <line num="33" type="stmt" count="30"/>
+      <line num="34" type="stmt" count="30"/>
+      <line num="35" type="stmt" count="30"/>
+      <line num="39" type="stmt" count="30"/>
+      <line num="40" type="stmt" count="21"/>
+      <line num="41" type="stmt" count="21"/>
+      <metrics loc="45" ncloc="40" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assert\Royal.php">
+      <class name="App\Assert\Royal" namespace="global">
+        <metrics complexity="7" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="29"/>
+      <line num="17" type="stmt" count="29"/>
+      <line num="20" type="method" name="assert" visibility="public" complexity="1" crap="1" count="28"/>
+      <line num="22" type="stmt" count="28"/>
+      <line num="24" type="stmt" count="28"/>
+      <line num="27" type="method" name="adduce" visibility="protected" complexity="5" crap="5" count="28"/>
+      <line num="28" type="stmt" count="28"/>
+      <line num="30" type="stmt" count="28"/>
+      <line num="31" type="stmt" count="27"/>
+      <line num="32" type="stmt" count="27"/>
+      <line num="33" type="stmt" count="27"/>
+      <line num="38" type="stmt" count="28"/>
+      <line num="39" type="stmt" count="5"/>
+      <metrics loc="42" ncloc="37" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assert\Set.php">
+      <class name="App\Assert\Set" namespace="global">
+        <metrics complexity="11" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="25" coveredelements="25"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="31"/>
+      <line num="19" type="stmt" count="31"/>
+      <line num="22" type="method" name="assert" visibility="public" complexity="1" crap="1" count="30"/>
+      <line num="24" type="stmt" count="30"/>
+      <line num="26" type="stmt" count="30"/>
+      <line num="29" type="method" name="adduce" visibility="protected" complexity="3" crap="3" count="30"/>
+      <line num="30" type="stmt" count="30"/>
+      <line num="32" type="stmt" count="30"/>
+      <line num="33" type="stmt" count="19"/>
+      <line num="35" type="stmt" count="19"/>
+      <line num="36" type="stmt" count="8"/>
+      <line num="37" type="stmt" count="8"/>
+      <line num="42" type="method" name="identify" visibility="protected" complexity="6" crap="6" count="30"/>
+      <line num="43" type="stmt" count="30"/>
+      <line num="44" type="stmt" count="30"/>
+      <line num="46" type="stmt" count="30"/>
+      <line num="47" type="stmt" count="28"/>
+      <line num="49" type="stmt" count="28"/>
+      <line num="50" type="stmt" count="28"/>
+      <line num="51" type="stmt" count="28"/>
+      <line num="55" type="stmt" count="28"/>
+      <line num="56" type="stmt" count="19"/>
+      <line num="57" type="stmt" count="19"/>
+      <line num="58" type="stmt" count="19"/>
+      <line num="62" type="stmt" count="30"/>
+      <metrics loc="64" ncloc="59" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="25" coveredelements="25"/>
+    </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Assisting\Dealer.php">
       <class name="App\Assisting\Dealer" namespace="global">
         <metrics complexity="13" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="25" coveredelements="25"/>
@@ -10,26 +133,26 @@
       <line num="30" type="stmt" count="1"/>
       <line num="31" type="stmt" count="1"/>
       <line num="32" type="stmt" count="3"/>
-      <line num="33" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
-      <line num="36" type="stmt" count="2"/>
-      <line num="37" type="stmt" count="2"/>
-      <line num="48" type="method" name="dealer_land" visibility="private" complexity="3" crap="3" count="1"/>
-      <line num="50" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="1"/>
-      <line num="70" type="method" name="dealer_land_check" visibility="private" complexity="3" crap="3" count="1"/>
-      <line num="72" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="48" type="method" name="dealer_land" visibility="private" complexity="3" crap="3" count="2"/>
+      <line num="50" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="2"/>
+      <line num="70" type="method" name="dealer_land_check" visibility="private" complexity="3" crap="3" count="2"/>
+      <line num="72" type="stmt" count="2"/>
       <line num="73" type="stmt" count="1"/>
-      <line num="74" type="stmt" count="1"/>
+      <line num="74" type="stmt" count="2"/>
       <line num="75" type="stmt" count="1"/>
-      <line num="77" type="stmt" count="1"/>
+      <line num="77" type="stmt" count="2"/>
       <line num="88" type="method" name="dealer_high" visibility="private" complexity="3" crap="3" count="1"/>
       <line num="90" type="stmt" count="1"/>
       <line num="91" type="stmt" count="1"/>
       <line num="92" type="stmt" count="1"/>
-      <line num="104" type="method" name="dealer_draw" visibility="private" complexity="1" crap="1" count="2"/>
-      <line num="106" type="stmt" count="2"/>
+      <line num="104" type="method" name="dealer_draw" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="106" type="stmt" count="1"/>
       <metrics loc="108" ncloc="55" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="25" coveredelements="25"/>
     </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Card\BJ.php">
@@ -62,8 +185,8 @@
       <line num="121" type="stmt" count="3"/>
       <line num="122" type="stmt" count="3"/>
       <line num="124" type="stmt" count="3"/>
-      <line num="125" type="stmt" count="1"/>
-      <line num="126" type="stmt" count="2"/>
+      <line num="125" type="stmt" count="2"/>
+      <line num="126" type="stmt" count="1"/>
       <line num="127" type="stmt" count="1"/>
       <line num="129" type="stmt" count="3"/>
       <line num="138" type="method" name="stand" visibility="public" complexity="3" crap="3" count="4"/>
@@ -134,8 +257,8 @@
       <line num="81" type="stmt" count="18"/>
       <line num="82" type="stmt" count="17"/>
       <line num="85" type="stmt" count="18"/>
-      <line num="86" type="stmt" count="7"/>
-      <line num="87" type="stmt" count="7"/>
+      <line num="86" type="stmt" count="8"/>
+      <line num="87" type="stmt" count="8"/>
       <line num="88" type="stmt" count="3"/>
       <line num="89" type="stmt" count="3"/>
       <line num="90" type="stmt" count="3"/>
@@ -148,10 +271,10 @@
       <line num="38" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="10"/>
       <line num="40" type="stmt" count="10"/>
       <line num="41" type="stmt" count="10"/>
-      <line num="47" type="method" name="get_value" visibility="public" complexity="1" crap="1" count="19"/>
-      <line num="49" type="stmt" count="19"/>
-      <line num="55" type="method" name="get_pattern" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="57" type="stmt" count="2"/>
+      <line num="47" type="method" name="get_value" visibility="public" complexity="1" crap="1" count="48"/>
+      <line num="49" type="stmt" count="48"/>
+      <line num="55" type="method" name="get_pattern" visibility="public" complexity="1" crap="1" count="36"/>
+      <line num="57" type="stmt" count="36"/>
       <metrics loc="60" ncloc="27" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Card\Deck.php">
@@ -167,14 +290,14 @@
       <line num="54" type="stmt" count="8"/>
       <line num="55" type="stmt" count="8"/>
       <line num="56" type="stmt" count="8"/>
-      <line num="65" type="method" name="shuffle" visibility="public" complexity="2" crap="2" count="24"/>
-      <line num="67" type="stmt" count="24"/>
-      <line num="68" type="stmt" count="24"/>
-      <line num="70" type="stmt" count="24"/>
-      <line num="71" type="stmt" count="24"/>
-      <line num="72" type="stmt" count="24"/>
-      <line num="80" type="method" name="draw" visibility="public" complexity="1" crap="1" count="17"/>
-      <line num="82" type="stmt" count="17"/>
+      <line num="65" type="method" name="shuffle" visibility="public" complexity="2" crap="2" count="44"/>
+      <line num="67" type="stmt" count="44"/>
+      <line num="68" type="stmt" count="44"/>
+      <line num="70" type="stmt" count="44"/>
+      <line num="71" type="stmt" count="44"/>
+      <line num="72" type="stmt" count="44"/>
+      <line num="80" type="method" name="draw" visibility="public" complexity="1" crap="1" count="20"/>
+      <line num="82" type="stmt" count="20"/>
       <metrics loc="85" ncloc="48" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
     </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Card\DeckWith2Jokers.php">
@@ -593,6 +716,54 @@
       <line num="108" type="stmt" count="0"/>
       <metrics loc="111" ncloc="96" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="0" elements="36" coveredelements="0"/>
     </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Controller\ProjController.php">
+      <class name="App\Controller\ProjController" namespace="global">
+        <metrics complexity="15" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="42" coveredelements="0"/>
+      </class>
+      <line num="20" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <line num="32" type="method" name="home_post" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="50" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="62" type="method" name="game" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="66" type="stmt" count="0"/>
+      <line num="67" type="stmt" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="72" type="stmt" count="0"/>
+      <line num="82" type="method" name="game_post" visibility="public" complexity="7" crap="56" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="93" type="stmt" count="0"/>
+      <line num="95" type="stmt" count="0"/>
+      <line num="96" type="stmt" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="98" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <line num="104" type="stmt" count="0"/>
+      <line num="105" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="107" type="stmt" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <line num="109" type="stmt" count="0"/>
+      <line num="110" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="123" type="method" name="login" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="125" type="stmt" count="0"/>
+      <line num="135" type="method" name="register" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="137" type="stmt" count="0"/>
+      <metrics loc="139" ncloc="90" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="35" coveredstatements="0" elements="42" coveredelements="0"/>
+    </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Controller\ReportController.php">
       <class name="App\Controller\ReportController" namespace="global">
         <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="8" coveredelements="0"/>
@@ -609,16 +780,16 @@
     </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Dice\Dice.php">
       <class name="App\Dice\Dice" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="7" coveredelements="4"/>
+        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="7" coveredelements="0"/>
       </class>
-      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="11" type="stmt" count="1"/>
+      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="11" type="stmt" count="0"/>
       <line num="14" type="method" name="roll" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="16" type="stmt" count="0"/>
       <line num="17" type="stmt" count="0"/>
-      <line num="20" type="method" name="getAsString" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="22" type="stmt" count="1"/>
-      <metrics loc="25" ncloc="25" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="2" elements="7" coveredelements="4"/>
+      <line num="20" type="method" name="getAsString" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="22" type="stmt" count="0"/>
+      <metrics loc="25" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="7" coveredelements="0"/>
     </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Dice\DiceGraphic.php">
       <class name="App\Dice\DiceGraphic" namespace="global">
@@ -676,6 +847,66 @@
       <line num="78" type="stmt" count="0"/>
       <metrics loc="81" ncloc="81" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="22" coveredelements="0"/>
     </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Entity\History.php">
+      <class name="App\Entity\History" namespace="global">
+        <metrics complexity="5" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
+      </class>
+      <line num="22" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="27" type="method" name="getLoginId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="32" type="method" name="setLoginId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="39" type="method" name="getActs" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="44" type="method" name="setActs" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <metrics loc="51" ncloc="51" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Entity\Logins.php">
+      <class name="App\Entity\Logins" namespace="global">
+        <metrics complexity="16" methods="13" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="36" coveredelements="0"/>
+      </class>
+      <line num="33" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="38" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="43" type="method" name="getUserName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="48" type="method" name="setUserName" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="55" type="method" name="getPassword" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="60" type="method" name="setPassword" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="64" type="stmt" count="0"/>
+      <line num="67" type="method" name="getMoney" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="69" type="stmt" count="0"/>
+      <line num="72" type="method" name="setMoney" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="74" type="stmt" count="0"/>
+      <line num="76" type="stmt" count="0"/>
+      <line num="79" type="method" name="isAdmin" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="84" type="method" name="setAdmin" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="94" type="method" name="getHistories" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="96" type="stmt" count="0"/>
+      <line num="99" type="method" name="addHistory" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="103" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="0"/>
+      <line num="109" type="method" name="removeHistory" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="111" type="stmt" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="114" type="stmt" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <metrics loc="121" ncloc="117" classes="1" methods="13" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="36" coveredelements="0"/>
+    </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Entity\Product.php">
       <class name="App\Entity\Product" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
@@ -700,8 +931,358 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\Poker.php">
+      <class name="App\Poker\Poker" namespace="global">
+        <metrics complexity="12" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="47" coveredelements="47"/>
+      </class>
+      <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="18"/>
+      <line num="43" type="stmt" count="18"/>
+      <line num="46" type="method" name="reset" visibility="public" complexity="1" crap="1" count="18"/>
+      <line num="48" type="stmt" count="18"/>
+      <line num="49" type="stmt" count="18"/>
+      <line num="50" type="stmt" count="18"/>
+      <line num="51" type="stmt" count="18"/>
+      <line num="52" type="stmt" count="18"/>
+      <line num="53" type="stmt" count="18"/>
+      <line num="54" type="stmt" count="18"/>
+      <line num="57" type="method" name="recieve_bet" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="59" type="stmt" count="2"/>
+      <line num="60" type="stmt" count="2"/>
+      <line num="63" type="method" name="flop" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="70" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="72" type="stmt" count="1"/>
+      <line num="75" type="method" name="river" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="77" type="stmt" count="1"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="1"/>
+      <line num="80" type="stmt" count="1"/>
+      <line num="83" type="method" name="fold" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="85" type="stmt" count="1"/>
+      <line num="88" type="method" name="call" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="90" type="stmt" count="1"/>
+      <line num="91" type="stmt" count="1"/>
+      <line num="92" type="stmt" count="1"/>
+      <line num="93" type="stmt" count="1"/>
+      <line num="96" type="method" name="rank_player" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="98" type="stmt" count="12"/>
+      <line num="99" type="stmt" count="12"/>
+      <line num="102" type="method" name="rank_dealer" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="104" type="stmt" count="12"/>
+      <line num="105" type="stmt" count="12"/>
+      <line num="108" type="method" name="compare_ranks" visibility="public" complexity="3" crap="3" count="12"/>
+      <line num="110" type="stmt" count="12"/>
+      <line num="111" type="stmt" count="1"/>
+      <line num="112" type="stmt" count="11"/>
+      <line num="113" type="stmt" count="10"/>
+      <line num="114" type="stmt" count="10"/>
+      <line num="116" type="stmt" count="1"/>
+      <metrics loc="119" ncloc="105" classes="1" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="47" coveredelements="47"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\PokerCard.php">
+      <class name="App\Poker\PokerCard" namespace="global">
+        <metrics complexity="12" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="25" coveredelements="25"/>
+      </class>
+      <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="67"/>
+      <line num="26" type="stmt" count="67"/>
+      <line num="27" type="stmt" count="67"/>
+      <line num="30" type="method" name="define_pattern" visibility="protected" complexity="3" crap="3" count="67"/>
+      <line num="31" type="stmt" count="67"/>
+      <line num="33" type="stmt" count="67"/>
+      <line num="34" type="stmt" count="45"/>
+      <line num="36" type="stmt" count="66"/>
+      <line num="40" type="method" name="define_value" visibility="protected" complexity="2" crap="2" count="67"/>
+      <line num="41" type="stmt" count="67"/>
+      <line num="43" type="stmt" count="67"/>
+      <line num="44" type="stmt" count="51"/>
+      <line num="46" type="stmt" count="62"/>
+      <line num="50" type="method" name="define_points" visibility="protected" complexity="4" crap="4" count="51"/>
+      <line num="51" type="stmt" count="51"/>
+      <line num="52" type="stmt" count="51"/>
+      <line num="53" type="stmt" count="40"/>
+      <line num="54" type="stmt" count="40"/>
+      <line num="55" type="stmt" count="40"/>
+      <line num="56" type="stmt" count="38"/>
+      <line num="58" type="stmt" count="39"/>
+      <line num="62" type="method" name="get_color" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="64" type="stmt" count="2"/>
+      <line num="67" type="method" name="get_points" visibility="public" complexity="1" crap="1" count="46"/>
+      <line num="69" type="stmt" count="46"/>
+      <metrics loc="71" ncloc="61" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="25" coveredelements="25"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\PokerDeck.php">
+      <class name="App\Poker\PokerDeck" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
+      </class>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="20"/>
+      <line num="18" type="stmt" count="20"/>
+      <line num="19" type="stmt" count="20"/>
+      <line num="22" type="method" name="distribute_patterns" visibility="protected" complexity="2" crap="2" count="20"/>
+      <line num="24" type="stmt" count="20"/>
+      <line num="26" type="stmt" count="20"/>
+      <line num="27" type="stmt" count="20"/>
+      <line num="31" type="method" name="distribute_values" visibility="protected" complexity="2" crap="2" count="20"/>
+      <line num="33" type="stmt" count="20"/>
+      <line num="35" type="stmt" count="20"/>
+      <line num="36" type="stmt" count="20"/>
+      <metrics loc="39" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="11" coveredelements="11"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\PokerHandRank.php">
+      <class name="App\Poker\PokerHandRank" namespace="global">
+        <metrics complexity="13" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="36" coveredelements="36"/>
+      </class>
+      <line num="31" type="method" name="initialize" visibility="public" complexity="1" crap="1" count="22"/>
+      <line num="32" type="stmt" count="22"/>
+      <line num="33" type="stmt" count="22"/>
+      <line num="34" type="stmt" count="22"/>
+      <line num="35" type="stmt" count="22"/>
+      <line num="36" type="stmt" count="22"/>
+      <line num="37" type="stmt" count="22"/>
+      <line num="38" type="stmt" count="22"/>
+      <line num="39" type="stmt" count="22"/>
+      <line num="40" type="stmt" count="22"/>
+      <line num="41" type="stmt" count="22"/>
+      <line num="44" type="method" name="make_pile" visibility="protected" complexity="2" crap="2" count="22"/>
+      <line num="45" type="stmt" count="22"/>
+      <line num="47" type="stmt" count="22"/>
+      <line num="48" type="stmt" count="22"/>
+      <line num="51" type="stmt" count="22"/>
+      <line num="54" type="method" name="result" visibility="public" complexity="10" crap="10" count="22"/>
+      <line num="56" type="stmt" count="22"/>
+      <line num="57" type="stmt" count="2"/>
+      <line num="58" type="stmt" count="20"/>
+      <line num="59" type="stmt" count="4"/>
+      <line num="60" type="stmt" count="18"/>
+      <line num="61" type="stmt" count="2"/>
+      <line num="62" type="stmt" count="16"/>
+      <line num="63" type="stmt" count="2"/>
+      <line num="64" type="stmt" count="14"/>
+      <line num="65" type="stmt" count="4"/>
+      <line num="66" type="stmt" count="10"/>
+      <line num="67" type="stmt" count="2"/>
+      <line num="68" type="stmt" count="8"/>
+      <line num="69" type="stmt" count="2"/>
+      <line num="70" type="stmt" count="6"/>
+      <line num="71" type="stmt" count="2"/>
+      <line num="72" type="stmt" count="4"/>
+      <line num="73" type="stmt" count="2"/>
+      <line num="75" type="stmt" count="2"/>
+      <metrics loc="78" ncloc="73" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="36" coveredelements="36"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\PokerPlayer.php">
+      <class name="App\Poker\PokerPlayer" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="23"/>
+      <line num="19" type="stmt" count="23"/>
+      <line num="20" type="stmt" count="2"/>
+      <line num="24" type="method" name="add_card" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="26" type="stmt" count="4"/>
+      <line num="29" type="method" name="remove_cards" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Poker\PokerTie.php">
+      <class name="App\Poker\PokerTie" namespace="global">
+        <metrics complexity="20" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="29" coveredelements="29"/>
+      </class>
+      <line num="29" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="31" type="stmt" count="11"/>
+      <line num="32" type="stmt" count="11"/>
+      <line num="33" type="stmt" count="11"/>
+      <line num="34" type="stmt" count="11"/>
+      <line num="35" type="stmt" count="11"/>
+      <line num="36" type="stmt" count="11"/>
+      <line num="37" type="stmt" count="11"/>
+      <line num="38" type="stmt" count="11"/>
+      <line num="41" type="method" name="result" visibility="public" complexity="19" crap="19" count="10"/>
+      <line num="43" type="stmt" count="10"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="9"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="8"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="7"/>
+      <line num="53" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="6"/>
+      <line num="56" type="stmt" count="1"/>
+      <line num="58" type="stmt" count="5"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="4"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="3"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="67" type="stmt" count="2"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <metrics loc="74" ncloc="69" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="29" coveredelements="29"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Flush.php">
+      <class name="App\Rank\Flush" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="16"/>
+      <line num="24" type="stmt" count="16"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="29" type="stmt" count="11"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Four.php">
+      <class name="App\Rank\Four" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="20"/>
+      <line num="24" type="stmt" count="20"/>
+      <line num="26" type="stmt" count="3"/>
+      <line num="29" type="stmt" count="17"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Full_house.php">
+      <class name="App\Rank\Full_house" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="18"/>
+      <line num="24" type="stmt" count="18"/>
+      <line num="26" type="stmt" count="3"/>
+      <line num="29" type="stmt" count="15"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Pair.php">
+      <class name="App\Rank\Pair" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="6"/>
+      <line num="24" type="stmt" count="6"/>
+      <line num="26" type="stmt" count="3"/>
+      <line num="29" type="stmt" count="3"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Royal_flush.php">
+      <class name="App\Rank\Royal_flush" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="26"/>
+      <line num="19" type="stmt" count="26"/>
+      <line num="20" type="stmt" count="26"/>
+      <line num="21" type="stmt" count="26"/>
+      <line num="24" type="method" name="assert_validity" visibility="protected" complexity="1" crap="1" count="26"/>
+      <line num="26" type="stmt" count="26"/>
+      <line num="27" type="stmt" count="26"/>
+      <line num="30" type="method" name="result" visibility="public" complexity="3" crap="3" count="25"/>
+      <line num="33" type="stmt" count="25"/>
+      <line num="34" type="stmt" count="25"/>
+      <line num="36" type="stmt" count="3"/>
+      <line num="39" type="stmt" count="22"/>
+      <metrics loc="41" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Straight.php">
+      <class name="App\Rank\Straight" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="19" type="stmt" count="25"/>
+      <line num="20" type="stmt" count="25"/>
+      <line num="23" type="method" name="result" visibility="public" complexity="2" crap="2" count="12"/>
+      <line num="26" type="stmt" count="12"/>
+      <line num="28" type="stmt" count="3"/>
+      <line num="31" type="stmt" count="9"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Straight_flush.php">
+      <class name="App\Rank\Straight_flush" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="26"/>
+      <line num="19" type="stmt" count="26"/>
+      <line num="20" type="stmt" count="26"/>
+      <line num="21" type="stmt" count="26"/>
+      <line num="24" type="method" name="assert_validity" visibility="protected" complexity="1" crap="1" count="26"/>
+      <line num="26" type="stmt" count="26"/>
+      <line num="27" type="stmt" count="26"/>
+      <line num="30" type="method" name="result" visibility="public" complexity="3" crap="3" count="23"/>
+      <line num="33" type="stmt" count="23"/>
+      <line num="34" type="stmt" count="23"/>
+      <line num="36" type="stmt" count="5"/>
+      <line num="39" type="stmt" count="20"/>
+      <metrics loc="41" ncloc="36" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Three.php">
+      <class name="App\Rank\Three" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="10"/>
+      <line num="24" type="stmt" count="10"/>
+      <line num="26" type="stmt" count="3"/>
+      <line num="29" type="stmt" count="7"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Rank\Two_pair.php">
+      <class name="App\Rank\Two_pair" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="25"/>
+      <line num="17" type="stmt" count="25"/>
+      <line num="18" type="stmt" count="25"/>
+      <line num="21" type="method" name="result" visibility="public" complexity="2" crap="2" count="8"/>
+      <line num="24" type="stmt" count="8"/>
+      <line num="26" type="stmt" count="3"/>
+      <line num="29" type="stmt" count="5"/>
+      <metrics loc="31" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+    </file>
     <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Repository\CharacterRepository.php">
       <class name="App\Repository\CharacterRepository" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="24" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="33" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Repository\HistoryRepository.php">
+      <class name="App\Repository\HistoryRepository" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="24" type="method" name="add" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="33" type="method" name="remove" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Repository\LoginsRepository.php">
+      <class name="App\Repository\LoginsRepository" namespace="global">
         <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
       <line num="19" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
@@ -732,6 +1313,181 @@
       <line num="46" type="stmt" count="0"/>
       <metrics loc="75" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="25" loc="2181" ncloc="1521" classes="24" methods="106" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="475" coveredstatements="113" elements="581" coveredelements="147"/>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Ascending.php">
+      <class name="App\Stalemate\Ascending" namespace="global">
+        <metrics complexity="7" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="14" coveredelements="11"/>
+      </class>
+      <line num="13" type="method" name="result" visibility="public" complexity="7" crap="7.18" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="0"/>
+      <metrics loc="39" ncloc="34" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="14" coveredelements="11"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Fallback.php">
+      <class name="App\Stalemate\Fallback" namespace="global">
+        <metrics complexity="17" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="24" elements="31" coveredelements="24"/>
+      </class>
+      <line num="13" type="method" name="result" visibility="public" complexity="4" crap="4.07" count="5"/>
+      <line num="15" type="stmt" count="5"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="18" type="stmt" count="3"/>
+      <line num="21" type="stmt" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="5"/>
+      <line num="32" type="stmt" count="5"/>
+      <line num="35" type="stmt" count="5"/>
+      <line num="38" type="method" name="find" visibility="protected" complexity="13" crap="13.93" count="5"/>
+      <line num="40" type="stmt" count="5"/>
+      <line num="42" type="stmt" count="5"/>
+      <line num="43" type="stmt" count="5"/>
+      <line num="44" type="stmt" count="4"/>
+      <line num="48" type="stmt" count="5"/>
+      <line num="49" type="stmt" count="5"/>
+      <line num="50" type="stmt" count="4"/>
+      <line num="51" type="stmt" count="4"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="5"/>
+      <line num="59" type="stmt" count="4"/>
+      <line num="60" type="stmt" count="3"/>
+      <line num="64" type="stmt" count="5"/>
+      <line num="65" type="stmt" count="0"/>
+      <line num="66" type="stmt" count="5"/>
+      <line num="67" type="stmt" count="5"/>
+      <line num="69" type="stmt" count="0"/>
+      <metrics loc="72" ncloc="67" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="24" elements="31" coveredelements="24"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Four.php">
+      <class name="App\Stalemate\Four" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="19" type="stmt" count="11"/>
+      <line num="20" type="stmt" count="11"/>
+      <line num="23" type="method" name="result" visibility="public" complexity="2" crap="2.06" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Grouping.php">
+      <class name="App\Stalemate\Grouping" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+      </class>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="17" type="stmt" count="11"/>
+      <line num="20" type="method" name="result" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <metrics loc="24" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\High.php">
+      <class name="App\Stalemate\High" namespace="global">
+        <metrics complexity="7" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="14" coveredelements="11"/>
+      </class>
+      <line num="13" type="method" name="result" visibility="public" complexity="7" crap="7.18" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="0"/>
+      <metrics loc="39" ncloc="34" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="14" coveredelements="11"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Matching.php">
+      <class name="App\Stalemate\Matching" namespace="global">
+        <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
+      </class>
+      <line num="13" type="method" name="result" visibility="public" complexity="3" crap="3.58" count="3"/>
+      <line num="15" type="stmt" count="3"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="3"/>
+      <line num="18" type="stmt" count="3"/>
+      <line num="20" type="stmt" count="0"/>
+      <metrics loc="23" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Pair.php">
+      <class name="App\Stalemate\Pair" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="19" type="stmt" count="11"/>
+      <line num="20" type="stmt" count="11"/>
+      <line num="23" type="method" name="result" visibility="public" complexity="2" crap="2.06" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Set.php">
+      <class name="App\Stalemate\Set" namespace="global">
+        <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="6" elements="14" coveredelements="6"/>
+      </class>
+      <line num="13" type="method" name="result" visibility="public" complexity="4" crap="6.00" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="24" type="method" name="identify" visibility="public" complexity="4" crap="6.00" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <metrics loc="34" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="6" elements="14" coveredelements="6"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Three.php">
+      <class name="App\Stalemate\Three" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="19" type="stmt" count="11"/>
+      <line num="20" type="stmt" count="11"/>
+      <line num="23" type="method" name="result" visibility="public" complexity="2" crap="2.06" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+    </file>
+    <file name="C:\Users\agebn\dbwebb-kurser\mvc\me\report\src\Stalemate\Two.php">
+      <class name="App\Stalemate\Two" namespace="global">
+        <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="11"/>
+      <line num="19" type="stmt" count="11"/>
+      <line num="20" type="stmt" count="11"/>
+      <line num="23" type="method" name="result" visibility="public" complexity="2" crap="2.06" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="8" coveredelements="6"/>
+    </file>
+    <metrics files="60" loc="3968" ncloc="3029" classes="59" methods="218" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="909" coveredstatements="445" elements="1127" coveredelements="547"/>
   </project>
 </coverage>

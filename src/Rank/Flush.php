@@ -12,7 +12,7 @@ class Flush
 {
     public object $grouping;
 
-    public function __construct($cards)
+    public function __construct(array $cards)
     {
         $this->grouping = new \App\Assert\Grouping();
         $this->grouping->assert($cards, 5);

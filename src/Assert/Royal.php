@@ -25,11 +25,11 @@ class Royal
     }
 
     protected function adduce($stack) {
-        $royal = [1, 10, 11, 12, 13];
+        $royal = ["A", 10, "J", "Q", "K"];
 
         foreach ($stack as $card) {
             foreach ($royal as $roy) {
-                if ($card->get_points() == $roy) {
+                if ($card->get_value() == $roy) {
                     $royal = array_diff($royal, [$roy]);
                 }
             }

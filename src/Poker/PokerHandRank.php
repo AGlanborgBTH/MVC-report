@@ -41,7 +41,7 @@ class PokerHandRank
         $this->pair = new \App\Rank\Pair($stack);
     }
 
-    public function make_pile($hand, $table) {
+    protected function make_pile($hand, $table) {
         $final = $hand;
 
         foreach($table as $card) {

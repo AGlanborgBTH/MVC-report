@@ -40,27 +40,23 @@ class Fallback
         $final = [0, "table"];
 
         foreach($player as $card) {
-            if (!in_array(14, $arr) and $card->get_points() == 1) {
-                $final = [14, "player"];
-            } elseif (!in_array($card->get_points(), $arr) and $card->get_points() > $final[0]) {
+            if (!in_array($card->get_points(), $arr) and $card->get_points() > $final[0]) {
                 $final = [$card->get_points(), "player"];
             }
         }
 
         foreach($dealer as $card) {
-            if (!in_array(14, $arr) and $card->get_points() == 1) {
-                if ($final = [14, "player"]) {
-                    $final = [14, "table"];
+            if (!in_array($card->get_points(), $arr) and $card->get_points() >= $final[0]) {
+                if ($card->get_points() == $final[0]) {
+                    $final = [$card->get_points(), "table"];
                 } else {
-                    $final = [14, "dealer"];
+                    $final = [$card->get_points(), "dealer"];
                 }
-            } elseif (!in_array($card->get_points(), $arr) != $arr and $card->get_points() > $final[0]) {
-                $final = [$card->get_points(), "dealer"];
             }
         }
 
         foreach($table as $card) {
-            if (!in_array($card->get_points(), $arr) != $arr and $card->get_points() > $final[0]) {
+            if (!in_array($card->get_points(), $arr) and $card->get_points() > $final[0]) {
                 $final = [$card->get_points(), "table"];
             }
         }
