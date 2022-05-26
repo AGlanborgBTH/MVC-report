@@ -1,0 +1,127 @@
+<h3>
+	kmom10/Proj
+</h3>
+<h4>
+    Krav 1, 2, 3
+</h4>
+<p>
+	De första kraven för detta slut-projekt var många. Det främsta och första projektet som jag valde att arbeta med var att få spelet att fungera.
+    Där efter kom Projektets kod struktur och snygg het och sen till sissta var det dokummentation och validering.
+</p>
+<h5>
+    Spelet
+</h5>
+<p>
+    När jag först började med spelet så hade jag målet att göra allt så tydligt att vem som helst ska kunna läsa min kod och förstå vad som är vad och
+    varför allt ligger där det ligger. Jag valde först att göra alla sidor för hemsidan och sedan där efter programmera fram varje sida för sig. Upplägget
+    för sidorna är tydliga och lätta att förstå/använda och de följer att annat (konstant) tema (från reset av hemsidan).
+</p>
+<p>
+    Här näst var koden för poker spelet. Det blev mycket mer kod än vad som var förväntat, men det fungerar som det ska. Alla mina klasser är uppdelade i
+    grupper och alla klasser och metoder har endast ett syfte.
+</p>
+<h5>
+    Kod-strukteren
+</h5>
+<p>
+    Som nämnt tidigare, så har alla klasser och metoder endast ett syfte och används för endast en grej var. Det är för att minska komplexiteten och för
+    att försöka behålla 'maintainability'-värdet så högt som möjligt.
+</p>
+<p>
+    Det finns någon enstaka klass som används för flera saker och borde kunna göras mindre. Det har gjort att det finns några som har lite högre komplexitet
+    eller lägre maintainability, men den normala klassen har låg komplexitet och hög maintainability.
+</p>
+<p>
+    Målet med detta var att jag ville göra så att koden lätt går att ändra på. Om jag upptäcker något fel så ville jag bygga min kod på ett sätt som tillåter
+    mig att snabbt och enkelt kolla genom de filer jag har skapat och sen ändra snabbt och enkelt på den kod som är fel. Under tiden som jag arbeta med detta
+    projekt så blev jag lättad av att det var något jag hade i åtanke under detta projekt och utnytja mitt val av kod-design så ofta jag kunde.
+</p>
+<h5>
+    Validering
+</h5>
+<p>
+    Jag upptäckte under detta slutprojekt att jag hade blandat ihop många principer som man skulle göra i php med principer som man ska följa i js och/eller python.
+    Så när jag sen kom till att validera min kod så blev det mycket att ändra på, men resultatet visar sig ha blivit bra. Jag har följt alla validatorer
+    och även använt phpmc på nivå 5. Det är inte en hög nivå, men för den skala av projekt som jag har arbetat med så är det en rimilig nivå att arbeta på.
+</p>
+<p>
+    Jag har haft problem med att använda scrutinizer under kursens gång, och den sluta inte fippla under detta projekt heller. Jag är osäker om den har lyckats
+    köra min kod, men phpmetrics och phpdoc har samlat den information som scrutinizer annars hade gätt.
+</p>
+<p>
+    phpmetrics och phpdoc tyder på att min kod är nästan optimal och jag känner mig nöjd med de värden phpmetrics ger.
+</p>
+<h4>
+    Krav 5
+</h4>
+<p>
+    Jag har gjort inloggning, utloggning och registrering för detta projekt. Man kan skapa flera profiler och spela med dem tills de får slut på pengar.
+    Jag har även implementerat en admin (användarnamn: admin och läsenord: admin) som kan se alla handlingar som alla användare gör på hemsidan.
+    Admin kan se när någon bet:ar, fold:ar, förlorar, vinner och när det blir oavgjort. Admin har även tillgång att nollställa databsen, då de rensar
+    alla användare och handlingar, och återskapar admin profilen och doe kontot (användarnamn: doe och läsenord: doe).
+</p>
+<p>
+    Man kan inte gå in på någon profil-sida för tillfället. Det var den enda grejen för detta krav som jag inte lyckades uppfylla. Om jag hade haft en
+    dag extra med detta proejkt så skulle jag ha hunnit och göra den sidan, men som det är just nu så har jag inte hunnit.
+</p>
+<h4>
+    Krav 6
+</h4>
+<p>
+    För detta krav så valde jag att gör en association/relation mellan användar profiler och deras handlingar på servern. Databasen samlar all information
+    om alla handlingar som användare gör under en "History" table. History länkar direkt till användarens id och används aktivt, på en sida som endast admin
+    kan se, genom att nämna profilens namn i varje log.
+</p>
+<p>
+    Kopplingen mellan de två tables är en one-to-many/many-to-one, då ett konto kan ha flera rader assosierad med det i history table.
+</p>
+<p>
+    History är extremt simpel och betsår av 3 columner: history_id, user_id och atcs. Syftet med denna table är inte att visa upp hur en optimal table ser ut,
+    utan snarare är endast bevis av koncept och är något för admin att göra.
+</p>
+<h4>
+    Mina tankar
+</h4>
+<p>
+    Detta prjekt blev inte klart. Jag har inte tid att göra klart hela projektet i tid. Men jag uppnådde nästan allt jag vill hinna med.
+</p>
+<p>
+    Eftersom jag inte hade lika mycket tid som jag hade velat med detta projekt (hamnade efter i kurserna), så hann jag inte få hela min 'me' mapp att bli under 10 i komplexitet.
+    Mitt mål med projektet var att vara under 10 i komplexitet (vilket jag nästan klara) så jag blev lite besviken när jag inte hann ändra alla filer i och utanför projektet.
+</p>
+<p>
+    För detta projekt så hade jag även önskat att jag hann fixa buggar som finns i spelet. För tillfället finns det (de buggar som jag vet om:)
+    att om man har en flush, men en flush som inte är straight, men man har en straight också så räknas det som en straight flush,
+    och straight verkar inte fungera som jag hade tänkt. Om man har 4 på raken så räknas det som en straight, men i testerna så
+    ger den endast rätt på 5 på raken (som det ska). Jag vet inte hur det har hänt, men jag skulle ha viljat fixa det innan jag publisera detta
+    projekt.
+</p>
+<p>
+    Jag såg att jag har välldigt många fel om jag höjre kraven på phpmc, jag hade velat fixa de rimliga kraven om jag hade mera tid.
+</p>
+<p>
+    Detta projekt hade kunnat bli större och bättre på många sätt. Det betyder inte att det är dåligt, det betyder bara att jag inte hann optimera och fixa detaljer som jag hade önskat.
+    Det finns massor av små saker som jag hade vetat ändra, som t.ex. fixa och sortera Stalemate mappen: göra klasserna tydligare och dela upp dem bättre. Jag hade även velat
+    uppfylla alla krav för krav 5, med det så hade jag även fixat små saker mellan sidorna; som att se till så att endast folk som är inloggade som en admin kan ta sig in i history.
+    Men alla dessa saker blir för mycket för mig att fixa på den tid jag har kvar.
+</p>
+<p>
+    Jag är nöjd med detta projekt, men det tog sjukt lång tid att göra (40~50 timmar).
+</p>
+<h4>
+    MVC
+</h4>
+<p>
+    Denna kurs har varit unik, med det att den har varit super varierande i tank. Under kursmoment 2 känndes det som att jag kanske skulle hinna bli klar med kursen tills hösten, och
+    sen under kursmoment 5 känns det inte ens som att det var en uppgift. Denna kurs känndes alldrig som att den var svår dock, den känndes endast som att den var lång.
+</p>
+<p>
+    För att göra denna kurs bättre så skulle jag ha flyttat kursmoment 4 till 3 och jag skulle ha gjort kursmoment 1 lite större, så att man kan lära sig symfony lite bättre.
+</p>
+<p>
+    I början av kursen hade jag välldigt svårt att lista ut om min klasser gjorde rätt och jag hade jätte svårt att hitta fel. Jag kännde mig även vilsen under tiden som
+    jag leta information om symfony (jag hitta ingen och valde bara att testa mig fram tills jag förstod).
+</p>
+<p>
+    Denna kurs var inte super, men jag har studerat värre kurser än så länge. 5/10
+</p>

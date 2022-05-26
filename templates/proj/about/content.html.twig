@@ -2,6 +2,25 @@
 
 {% block table %}
 
+<h2 class="centered">
+    Options
+</h2>
+<a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/proj/reset">
+    <button class="longbutton" type="button">Reset content</button>
+</a>
+<a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/../docs/api">
+    <button class="longbutton" type="button">To phpdoc</button>
+</a>
+<a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/../docs/metrics">
+    <button class="longbutton" type="button">To phpmetrics</button>
+</a>
+<a style="margin: 10px;" href="https://github.com/AGlanborgBTH/MVC-report.git">
+    <button class="longbutton" type="button">To github</button>
+</a>
+<a style="margin: 10px;" href="https://scrutinizer-ci.com/g/AGlanborgBTH/MVC-report/">
+    <button class="longbutton" type="button">To scrutinizer</button>
+</a>
+<hr>
 <h1>
     About
 </h1>
@@ -78,37 +97,6 @@
     Eftersom ingen klass är särskilt komplex, alla klasser och metoder har en kommentar som förklarar innehållet, inga regler
     satta av validators bryts och klasserna är sorterade i grupper, så tycker jag att koden är snyggt gjort och kan räknas som
     snygg
-</p>
-<h2>
-    Mina åsikter
-</h2>
-<p>
-    Detta prjekt blev inte klart. Jag har inte tid att göra klart hela projektet i tid. Men jag uppnådde nästan allt jag vill hinna med.
-</p>
-<p>
-    Projektet består för tillfället av alla de krav som tillhör krav 1, 2, 3 och även halva krav 5 och krav 6. Jag hade önskat
-    att jag hann med och skiva för krav 4, men jag hinner inte vid det här laget.
-</p>
-<p>
-    Det jag saknar för krav 5 är en egen profil sida för användare och en profil bild, samt några av de uppgifter en administratör
-    kan åtkomma. Detta är inte för att jag inte kan eller saknar förmågan, det är endast för att jag inte har haft tid. Om man
-    inspekterar min kod för databasen och hur jag har gjort med inloggning, utloggning, registrering och hur pengarna ändras i
-    databasen, så ser man att jag har gjort de krav men på andra sätt. Om jag hade en dag till så skulle jag ha hunnit bli klar med
-    detta krav och kanske även krav 4.
-</p>
-<p>
-    Jag hade velat göra så att alla klasser i hela min 'me' mapp blev under 10 i komplexitet, men det hinner jag tyvärr inte.
-</p>
-<p>
-    I en perfekt värld så skulle jag ha fixat de buggar som finns i spelet. För tillfället finns det (de buggar som jag vet om:)
-    att om man har en flush, men en flush som inte är straight, men man har en straight också så räknas det som en royal flush
-    och straight verkar inte fungera som jag hade tänkt. Om man har 4 på raken så räknas det som en straigt, men i testerna så
-    ger den endast rätt på 5 på raken. Jag vet inte hur det har hänt, men jag skulle ha viljat fixa det innan jag publisera detta
-    projekt
-</p>
-<p>
-    Jag såg att jag har välldigt många fel om jag höjre kraven på phpmc, men jag känner att kraven satta av phpmc 5 var rätt så
-    passande och känndes relativt tydliga och bra att följa.
 </p>
 
 {% endblock %}

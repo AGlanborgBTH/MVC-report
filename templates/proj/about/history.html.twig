@@ -2,6 +2,13 @@
 
 {% block table %}
 
+<h2 class="centered">
+    Options
+</h2>
+<a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/proj/reset">
+    <button class="longbutton" type="button">Reset content</button>
+</a>
+<hr>
 {% for person in history %}
     <p>
         {{ person.getActs() }}
