@@ -28,9 +28,9 @@ class Set
             return 6;
         } elseif ($player->set->value[0] == $dealer->set->value[0]) {
             return $this->identify($player, $dealer);
-        } elseif ($player->set->value[0] < $dealer->set->value[0]) {
-            return 4;
         }
+
+        return 4;
     }
 
     public function identify($player, $dealer): int
@@ -39,8 +39,8 @@ class Set
             return 6;
         } elseif ($player->set->value[1] == $dealer->set->value[1]) {
             return 5;
-        } elseif ($player->set->value[1] < $dealer->set->value[1]) {
-            return 4;
         }
+
+        return 4;
     }
 }

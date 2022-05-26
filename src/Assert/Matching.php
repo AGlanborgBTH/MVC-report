@@ -23,7 +23,7 @@ class Matching
     /**
      * The $value property holds the value of the objects who are matching
      *
-     * @var array
+     * @var int
      */
     public int $value;
 

@@ -33,7 +33,7 @@ class Two
      */
     public function __construct()
     {
-        $this->set = new set();
+        $this->set = new Set();
         $this->fallback = new Fallback();
     }
 
@@ -56,8 +56,8 @@ class Two
 
         if ($asc == 5) {
             return $this->fallback->result($player_hand, $dealer_hand, $table_hand, $player->set->value, 1);
-        } else {
-            return $asc;
         }
+
+        return $asc;
     }
 }

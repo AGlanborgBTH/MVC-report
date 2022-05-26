@@ -61,8 +61,9 @@ class ProjController extends AbstractController
 
         if ($logout) {
             $session->clear();
-            return $this->redirectToRoute('proj-home');
         }
+
+        return $this->redirectToRoute('proj-home');
     }
 
     /**

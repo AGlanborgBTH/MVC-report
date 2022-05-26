@@ -65,7 +65,7 @@ class LibraryController extends AbstractController
             $character = new Character();
 
             if ($name and $race and $gender) {
-                strtolower($img);
+                $img = strtolower($img);
                 str_replace(" ", "_", $img);
 
                 $character->setName($name);
