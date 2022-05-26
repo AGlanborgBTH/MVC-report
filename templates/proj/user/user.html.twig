@@ -36,11 +36,11 @@
                 </div>
             </div>
             {{ block('input') }}
-            <a style="margin: 10px;" href="{% app.request.getBaseURL() %}/proj/{{ block('link') }}">
+            <a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/proj/{{ block('link') }}">
                 <button type="button">{{ block('linktab') }}?</button>
             </a>
             <div class="relative">
-                <a class="absolute obbutton" href="{% app.request.getBaseURL() %}/proj">
+                <a class="absolute obbutton" href="{{ app.request.getBaseURL() }}/proj">
                     <button type="button">Back</button>
                 </a>
             </div>

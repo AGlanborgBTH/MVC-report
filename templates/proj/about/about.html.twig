@@ -12,10 +12,10 @@
     <h2 class="centered">
         Options
     </h2>
-    <a style="margin: 10px;" href="{% app.request.getBaseURL() %}/proj/reset">
+    <a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/proj/reset">
         <button class="longbutton" type="button">Reset content</button>
     </a>
-    <a style="margin: 10px;" href="{% app.request.getBaseURL() %}/../docs/api">
+    <a style="margin: 10px;" href="{{ app.request.getBaseURL() }}/../docs/api">
         <button class="longbutton" type="button">To phpdoc</button>
     </a>
     <hr>
