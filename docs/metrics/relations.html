@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-05-14 20:59:46        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-05-26 18:32:11        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none"/>
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/>
                         </svg>
-                        Violations (7)
+                        Violations (13)
                     </a>
                 </li>
                                     <li>
@@ -252,6 +252,31 @@
 
 
     var relations = [
+    {
+        "name": "\\App\\Assert\\Ascending",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Assert\\Grouping",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Assert\\Matching",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Assert\\Royal",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Assert\\Set",
+        "size": 3000,
+        "relations": []
+    },
     {
         "name": "\\App\\Assisting\\Dealer",
         "size": 3000,
@@ -467,6 +492,61 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Repository\\LoginsRepository",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Poker\\Poker",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\History",
+            "\\App\\Entity\\Logins",
+            "\\App\\Repository\\HistoryRepository"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\LoginsRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Logins"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\Poker",
+        "size": 3000,
+        "relations": [
+            "\\App\\Poker\\PokerPlayer",
+            "\\App\\Poker\\PokerDeck",
+            "\\App\\Poker\\PokerHandRank",
+            "\\App\\Poker\\PokerTie"
+        ]
+    },
+    {
+        "name": "\\App\\Entity\\History",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Logins",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Repository\\HistoryRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\History"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\ReportController",
         "size": 3000,
         "relations": [
@@ -474,6 +554,16 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\Routing\\Annotation\\Route"
         ]
+    },
+    {
+        "name": "\\Doctrine\\Common\\Collections\\ArrayCollection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Doctrine\\Common\\Collections\\Collection",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Kernel",
@@ -488,7 +578,187 @@
         "relations": []
     },
     {
+        "name": "\\App\\Poker\\PokerPlayer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Poker\\PokerDeck",
+        "size": 3000,
+        "relations": [
+            "\\App\\Card\\Deck",
+            "\\App\\Poker\\PokerCard"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\PokerHandRank",
+        "size": 3000,
+        "relations": [
+            "\\App\\Rank\\RoyalFlush",
+            "\\App\\Rank\\StraightFlush",
+            "\\App\\Rank\\Four",
+            "\\App\\Rank\\FullHouse",
+            "\\App\\Rank\\Flush",
+            "\\App\\Rank\\Straight",
+            "\\App\\Rank\\Three",
+            "\\App\\Rank\\TwoPair",
+            "\\App\\Rank\\Pair"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\PokerTie",
+        "size": 3000,
+        "relations": [
+            "\\App\\Poker\\PokerHigh",
+            "\\App\\Poker\\PokerLow"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\PokerCard",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Rank\\RoyalFlush",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Grouping",
+            "\\App\\Assert\\Royal"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\StraightFlush",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Ascending",
+            "\\App\\Assert\\Grouping"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\Four",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Matching"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\FullHouse",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Set"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\Flush",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Grouping"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\Straight",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Ascending"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\Three",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Matching"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\TwoPair",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Set"
+        ]
+    },
+    {
+        "name": "\\App\\Rank\\Pair",
+        "size": 3000,
+        "relations": [
+            "\\App\\Assert\\Matching"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\PokerHigh",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Ascending",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Set",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Grouping",
+        "size": 3000,
+        "relations": [
+            "\\App\\Stalemate\\Fallback"
+        ]
+    },
+    {
+        "name": "\\App\\Stalemate\\Four",
+        "size": 3000,
+        "relations": [
+            "\\App\\Stalemate\\Matching",
+            "\\App\\Stalemate\\Fallback"
+        ]
+    },
+    {
+        "name": "\\App\\Poker\\PokerLow",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\High",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Three",
+        "size": 3000,
+        "relations": [
+            "\\App\\Stalemate\\Matching",
+            "\\App\\Stalemate\\Fallback"
+        ]
+    },
+    {
+        "name": "\\App\\Stalemate\\Two",
+        "size": 3000,
+        "relations": [
+            "\\App\\Stalemate\\Set",
+            "\\App\\Stalemate\\Fallback"
+        ]
+    },
+    {
+        "name": "\\App\\Stalemate\\Pair",
+        "size": 3000,
+        "relations": [
+            "\\App\\Stalemate\\Matching",
+            "\\App\\Stalemate\\Fallback"
+        ]
+    },
+    {
         "name": "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Fallback",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Stalemate\\Matching",
         "size": 3000,
         "relations": []
     }
