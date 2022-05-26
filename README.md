@@ -8,6 +8,8 @@ These files are med for me to learn and practise; using object oriented programm
 
 The content of this projekt are a few webpages compiled with symfony. Each page is different and is suppose to be built up with different techinques and practrises.
 
+The project is only used as a display of understanding the course material and is not meant to become anything big or anything for the public
+
 Content contained are:
 
   A report page with information regarding me and reports on each section of the course
@@ -19,5 +21,3 @@ Content contained are:
   A library page, containing pictures and information regarding characters. This page was made to display how an database can be implemented into the work
   
   A proj page, containing the final project of the course. This page was made for displaying the techinques and methods used troughout the course
-  
-The project is only used as a display of understanding the course material and is not meant to become anything big or anything for the public
