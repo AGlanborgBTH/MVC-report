@@ -1,0 +1,12 @@
+{% extends "proj/about/about.html.twig" %}
+
+{% block table %}
+
+{% for person in history %}
+    <p>
+        {{ person.getActs() }}
+    </p>
+    <hr>
+{% endfor %}
+
+{% endblock %}

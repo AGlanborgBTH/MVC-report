@@ -7,7 +7,11 @@
 			How much do you want to wager?
 		</label>
 		<br>
-		<input type="number" name="bet" id="bet" value="25" min="25" step="25">
+		{% if account >= 25 %}
+			<input type="number" name="bet" id="bet" value="25" min="25" max="{{ account / 2 }}" step="25">
+		{% else %}
+			<input type="number" id="bet" disabled>
+		{% endif %}
 	</div>
 	<input type="submit" name="commit_bet" value="Play">
 </form>

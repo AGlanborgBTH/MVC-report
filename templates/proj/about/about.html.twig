@@ -9,6 +9,13 @@
 {% block content %}
 
 <div class="aboutcontainer">
+    <h2 class="centered">
+        Options
+    </h2>
+    <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/reset">
+        <button class="longbutton" type="button">Reset content</button>
+    </a>
+    <hr>
     {% block table %}{% endblock %}
 </div>
 

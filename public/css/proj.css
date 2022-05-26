@@ -43,7 +43,8 @@ button {
 
 input[type="text"],
 input[type="password"],
-input.longbutton {
+input.longbutton,
+button.longbutton {
     width: 200px;
 }
 
@@ -271,6 +272,10 @@ a>button {
 .obbutton {
     bottom: -75px;
     left: -50px;
+}
+
+.titleholder h2 {
+    margin: 0;
 }
 
 @font-face {

@@ -15,25 +15,35 @@
                 <h1>
                     TEXAS HOLD'EM
                 </h1>
+                {% if account is defined %}
+                    <h2>
+                        Current user:
+                    </h2>
+                    {{ account }}
+                {% endif %}
             </div>
         </div>
         <div class="titleholder truecenter">
             <form method="post" class="column homebuttoncontainer">
-                <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/game">
-                    <button type="button">Play</button>
-                </a>
-                <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/login">
-                    <button type="button">Login</button>
-                </a>
-
-                {# <input type="submit" name="logout" value="Logout"> #}
-
-                <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/register">
-                    <button type="button">Register</button>
-                </a>
-                {# <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/history">
-                    <button type="button">History</button>
-                </a> #}
+                {% if account is defined %}
+                    <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/game">
+                        <button type="button">Play</button>
+                    </a>
+                    <input type="submit" name="logout" value="Logout">
+                {% else %}
+                    <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/login">
+                        <button type="button">Login</button>
+                    </a>
+                    
+                    <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/register">
+                        <button type="button">Register</button>
+                    </a>
+                {% endif %}
+                {% if admin is defined %}
+                    <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/history">
+                        <button type="button">History</button>
+                    </a>
+                {% endif %}
                 <a style="margin: 10px;" href="{% set baseURL = app.request.getBaseURL() %}/proj/about">
                     <button type="button">About</button>
                 </a>

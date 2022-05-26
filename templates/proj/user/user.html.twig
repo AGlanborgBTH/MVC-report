@@ -12,6 +12,9 @@
             <h1>
                 {{ block('tab') }}
             </h1>
+            {% if fail is defined %}
+                {{ fail }}
+            {% endif %}
         </div>
     </div>
     <form method="post" class="userbuttoncontainer truecenter">
@@ -22,14 +25,14 @@
                         Account name
                     </label>
                     <br>
-                    <input type="text" name="account_name" id="account_name" placeholder="Enter name...">
+                    <input type="text" name="account_name" id="account_name" placeholder="Enter name..." maxlength="50">
                 </div>
                 <div class="centered inline">
                     <label for="password">
                         Password
                     </label>
                     <br>
-                    <input type="password" name="password" id="password" placeholder="Enter password...">
+                    <input type="password" name="password" id="password" placeholder="Enter password..." maxlength="50">
                 </div>
             </div>
             {{ block('input') }}
