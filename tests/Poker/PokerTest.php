@@ -23,13 +23,13 @@ class PokerTest extends TestCase
     }
 
     /**
-     * method for testing that the bet- and phase-property updates when using the recieve_bet method
+     * method for testing that the bet- and phase-property updates when using the recieveBet method
      */
     public function testPokerRecieveBet()
     {
         $poker = new Poker;
 
-        $poker->recieve_bet(300);
+        $poker->recieveBet(300);
 
         $this->assertEquals($poker->bet, 300);
         $this->assertEquals($poker->phase, 1);
@@ -76,7 +76,7 @@ class PokerTest extends TestCase
 
         $this->assertEmpty($poker->table->hand);
 
-        $poker->recieve_bet($bet);
+        $poker->recieveBet($bet);
         $poker->call();
 
         $this->assertNotEmpty($poker->table->hand);
@@ -85,7 +85,7 @@ class PokerTest extends TestCase
     }
 
     /**
-     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compare_ranks method with greater/loosing values/cards
+     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compareRanks method with greater/loosing values/cards
      */
     public function testPokerComapreRanksWin()
     {
@@ -111,9 +111,9 @@ class PokerTest extends TestCase
             new PokerCard(1, "C")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertNotEmpty($poker->player_hand_rank);
         $this->assertNotEmpty($poker->dealer_hand_rank);
@@ -121,7 +121,7 @@ class PokerTest extends TestCase
     }
 
     /**
-     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compare_ranks method with greater/winning values/cards
+     * method for testing that the player_hand_rank-, dealer_hand_rank- and phase property updates when using the compareRanks method with greater/winning values/cards
      */
     public function testPokerComapreRanksLoose()
     {
@@ -147,9 +147,9 @@ class PokerTest extends TestCase
             new PokerCard(1, "C")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertNotEmpty($poker->player_hand_rank);
         $this->assertNotEmpty($poker->dealer_hand_rank);

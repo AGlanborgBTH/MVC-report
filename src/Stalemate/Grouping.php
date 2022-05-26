@@ -20,19 +20,19 @@ class Grouping
 
     /**
      * Constructing method for the class
-     * 
+     *
      * Assigns the $this->fallback value of the class with an App\Stalemate\Fallback object
      */
     public function __construct()
     {
-        $this->fallback = new Fallback;
+        $this->fallback = new Fallback();
     }
 
     /**
      * Method for returning the result; wich of the App\Assert\Grouping objects contain the highest value
-     * 
+     *
      * @param object $player the first of two App\Poker\PokerHandRank objects to be compared
-     * 
+     *
      * @param object $dealer the second of two App\Poker\PokerHandRank objects to be compared
      */
     public function result(object $player, object $dealer): int

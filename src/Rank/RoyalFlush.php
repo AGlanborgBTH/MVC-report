@@ -9,12 +9,14 @@
 namespace App\Rank;
 
 /**
- * RoyalFlush is an class made asserting if an array of App\Poker\PokerCard consist of the highest valued cards and all of the same group/pattern (a Royal Flush)
+ * RoyalFlush is an class made asserting if an array of App\Poker\PokerCard consist of the highest valued cards
+ * and all of the same group/pattern (a Royal Flush)
  */
 class RoyalFlush
 {
     /**
-     * $grouping is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain cards of the same group/pattern
+     * $grouping is an property containing an object for asserting if an array of App\Poker\PokerCard objects
+     * contain cards of the same group/pattern
      *
      * @var object
      */
@@ -31,9 +33,9 @@ class RoyalFlush
      * Constructing method for the class
      *
      * The method creates two objects App\Assert\Grouping and App\Assert\Royal
-     * 
+     *
      * Using both objects, the object will asses if the content conatin a royal flush
-     * 
+     *
      * @param array $cards an array of App\Poker\PokerCard objects; to be asorted if they contain a royal flush
      */
     public function __construct(array $cards)

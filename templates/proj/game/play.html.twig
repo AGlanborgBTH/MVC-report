@@ -4,16 +4,16 @@
 			{% if game.phase > 3 %}
 				<div class="cardbox">
 					{% include "proj/game/card.html.twig" with {
-						"color": game.dealer.hand[0].get_color(),
-						"pattern": game.dealer.hand[0].get_pattern(),
-						"value": game.dealer.hand[0].get_value()
+						"color": game.dealer.hand[0].getColor(),
+						"pattern": game.dealer.hand[0].getPattern(),
+						"value": game.dealer.hand[0].getValue()
 					} %}
 				</div>
 				<div class="cardbox">
 					{% include "proj/game/card.html.twig" with {
-						"color": game.dealer.hand[1].get_color(),
-						"pattern": game.dealer.hand[1].get_pattern(),
-						"value": game.dealer.hand[1].get_value()
+						"color": game.dealer.hand[1].getColor(),
+						"pattern": game.dealer.hand[1].getPattern(),
+						"value": game.dealer.hand[1].getValue()
 					} %}
 				</div>
 			{% else %}
@@ -28,16 +28,16 @@
 		<div class="hand">
 			<div class="cardbox">
 				{% include "proj/game/card.html.twig" with {
-					"color": game.player.hand[0].get_color(),
-					"pattern": game.player.hand[0].get_pattern(),
-					"value": game.player.hand[0].get_value()
+					"color": game.player.hand[0].getColor(),
+					"pattern": game.player.hand[0].getPattern(),
+					"value": game.player.hand[0].getValue()
 				} %}
 			</div>
 			<div class="cardbox">
 				{% include "proj/game/card.html.twig" with {
-					"color": game.player.hand[1].get_color(),
-					"pattern": game.player.hand[1].get_pattern(),
-					"value": game.player.hand[1].get_value()
+					"color": game.player.hand[1].getColor(),
+					"pattern": game.player.hand[1].getPattern(),
+					"value": game.player.hand[1].getValue()
 				} %}
 			</div>
 		</div>

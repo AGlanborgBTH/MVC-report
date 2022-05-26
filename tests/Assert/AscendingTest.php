@@ -40,7 +40,7 @@ class AscendingTest extends TestCase
 
         $this->assertTrue($ascending->assert($stack, 5));
         $this->assertTrue($ascending->bool);
-        $this->assertEquals($prime->get_points(), $ascending->value[0]);
+        $this->assertEquals($prime->getPoints(), $ascending->value[0]);
     }
 
     /**

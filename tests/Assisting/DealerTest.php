@@ -23,13 +23,13 @@ class DealerTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the dealer_draw method adds an card to the dealers hand and updates points
+     * Construct object and verify that the dealerDraw method adds an card to the dealers hand and updates points
      */
     public function testDealerDealerDraw()
     {
         $bj = new BJ(1);
 
-        $bj->players[0]->set_state(0);
+        $bj->players[0]->setState(0);
         $bj->dealer->hand = array(new BJCard("A", "S"));
         $bj->deck->pile = array(new BJCard("A", "H"));
 
@@ -37,23 +37,23 @@ class DealerTest extends TestCase
 
         $bj->continue();
 
-        $this->assertEquals(11, $bj->dealer->get_points());
+        $this->assertEquals(11, $bj->dealer->getPoints());
 
         $bj->continue();
 
         $this->assertEquals(2, count($bj->dealer->hand));
-        $this->assertEquals(1, $bj->dealer->get_state());
-        $this->assertEquals(12, $bj->dealer->get_points());
+        $this->assertEquals(1, $bj->dealer->getState());
+        $this->assertEquals(12, $bj->dealer->getPoints());
     }
 
     /**
-     * Construct object and verify that the dealer_high method changes all player objects with state 1 to 4
+     * Construct object and verify that the dealerHigh method changes all player objects with state 1 to 4
      */
     public function testDealerHigh()
     {
         $bj = new BJ(1);
 
-        $bj->players[0]->set_state(0);
+        $bj->players[0]->setState(0);
         $bj->dealer->hand = array(new BJCard("K", "S"), new BJCard("K", "H"), new BJCard("K", "C"));
 
         $bj->stand();
@@ -62,12 +62,12 @@ class DealerTest extends TestCase
 
         $bj->continue();
 
-        $this->assertEquals(4, $bj->players[0]->get_state());
-        $this->assertEquals(2, $bj->dealer->get_state());
+        $this->assertEquals(4, $bj->players[0]->getState());
+        $this->assertEquals(2, $bj->dealer->getState());
     }
 
     /**
-     * Construct object and verify that the dealer_land method changes all player objects with state 1 to 2/3/4 when player loose/draw/win
+     * Construct object and verify that the dealerLand method changes all player objects with state 1 to 2/3/4 when player loose/draw/win
      */
     public function testDealerLand()
     {
@@ -79,17 +79,17 @@ class DealerTest extends TestCase
         $bj->dealer->hand = array(new BJCard("Q", "S"), new BJCard("Q", "H"));
 
         foreach ($bj->players as $player) {
-            $player->set_state(1);
-            $player->set_points();
+            $player->setState(1);
+            $player->setPoints();
         }
 
         $bj->continue();
 
         $bj->continue();
 
-        $this->assertEquals(2, $bj->players[0]->get_state());
-        $this->assertEquals(3, $bj->players[1]->get_state());
-        $this->assertEquals(4, $bj->players[2]->get_state());
-        $this->assertEquals(2, $bj->dealer->get_state());
+        $this->assertEquals(2, $bj->players[0]->getState());
+        $this->assertEquals(3, $bj->players[1]->getState());
+        $this->assertEquals(4, $bj->players[2]->getState());
+        $this->assertEquals(2, $bj->dealer->getState());
     }
 }

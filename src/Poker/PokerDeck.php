@@ -16,7 +16,6 @@ use App\Card\Deck;
  */
 class PokerDeck extends Deck
 {
-
     /**
      * Constructing method for the class
      *
@@ -24,30 +23,32 @@ class PokerDeck extends Deck
      */
     public function __construct()
     {
-        $this->distribute_patterns();
+        $this->distributePatterns();
         $this->shuffle();
     }
 
     /**
      * Main method for creating a poker deck
-     * 
-     * The method loops through an array of patterns and runs $this->distribute_values for every pattern, creating an complete deck
+     *
+     * The method loops through an array of patterns and runs $this->distribute_values for every pattern,
+     * creating an complete deck
      */
-    protected function distribute_patterns(): void
+    protected function distributePatterns(): void
     {
         $patterns = array("D", "C", "H", "S");
 
         foreach ($patterns as $pattern) {
-            $this->distribute_values($pattern);
+            $this->distributeValues($pattern);
         }
     }
 
     /**
      * Assisting method for creating a poker deck
-     * 
-     * The method loops through an array of values to create and compelete deck of card objects, with $this->distribute_patterns
+     *
+     * The method loops through an array of values to create and compelete deck of card objects, with
+     * $this->distribute_patterns
      */
-    protected function distribute_values($pattern): void
+    protected function distributeValues($pattern): void
     {
         $values = array("A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K");
 

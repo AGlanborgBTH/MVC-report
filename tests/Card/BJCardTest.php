@@ -27,21 +27,21 @@ class BJCardTest extends TestCase
     {
         $card = new BJCard("A", "S");
 
-        $this->assertEquals(11, $card->get_points());
-        $this->assertEquals("A", $card->get_value());
-        $this->assertEquals("S", $card->get_pattern());
+        $this->assertEquals(11, $card->getPoints());
+        $this->assertEquals("A", $card->getValue());
+        $this->assertEquals("S", $card->getPattern());
     }
 
     /**
-     * Construct object and verify that the reduce_a method changes
+     * Construct object and verify that the reduceA method changes
      * the points property
      */
     public function testBJCardReduceA()
     {
         $card = new BJCard("A", "S");
 
-        $card->reduce_a();
+        $card->reduceA();
 
-        $this->assertEquals(1, $card->get_points());
+        $this->assertEquals(1, $card->getPoints());
     }
 }

@@ -44,7 +44,7 @@ class Card
     /**
      * Get-method for returning the protected $value property
      */
-    public function get_value(): string
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -52,7 +52,7 @@ class Card
     /**
      * Get-method for returning the protected $pattern property
      */
-    public function get_pattern(): string
+    public function getPattern(): string
     {
         return $this->pattern;
     }

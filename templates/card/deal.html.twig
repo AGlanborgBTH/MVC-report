@@ -21,7 +21,7 @@
                 </h2>
                 {% for card in person.hand %}
                     <p class="centered">
-                        {{ card.get_value() ~ card.get_pattern() }}
+                        {{ card.getValue() ~ card.getPattern() }}
                     </p>
                 {% endfor %}
             </div>

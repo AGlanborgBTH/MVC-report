@@ -31,7 +31,7 @@ class PlayerTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the add_card method adds
+     * Construct object and verify that the addCard method adds
      * cards to the hand array-propertie
      */
     public function testAddCard()
@@ -41,13 +41,13 @@ class PlayerTest extends TestCase
 
         $card = $deck->draw();
 
-        $person->add_card($card);
+        $person->addCard($card);
 
         $this->assertNotEmpty($person->hand);
     }
 
     /**
-     * Construct object and verify that the clear_hand method removes
+     * Construct object and verify that the clearHand method removes
      * all cards held in the hand array-property
      */
     public function testEmptyHand()
@@ -57,8 +57,8 @@ class PlayerTest extends TestCase
 
         $card = $deck->draw();
 
-        $person->add_card($card);
-        $person->clear_hand();
+        $person->addCard($card);
+        $person->clearHand();
 
         $this->assertEmpty($person->hand);
     }

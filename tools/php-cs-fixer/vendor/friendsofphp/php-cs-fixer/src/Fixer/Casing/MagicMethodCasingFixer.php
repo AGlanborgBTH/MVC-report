@@ -38,7 +38,7 @@ final class MagicMethodCasingFixer extends AbstractFixer
         '__isset' => '__isset',
         '__serialize' => '__serialize',
         '__set' => '__set',
-        '__set_state' => '__set_state',
+        '__setState' => '__setState',
         '__sleep' => '__sleep',
         '__tostring' => '__toString',
         '__unserialize' => '__unserialize',
@@ -148,7 +148,7 @@ $foo->__INVOKE(1);
             }
 
             if (
-                ('__callstatic' === $name || '__set_state' === $name)
+                ('__callstatic' === $name || '__setState' === $name)
                 && $this->isStaticMethodCall($tokens, $index)
             ) {
                 $this->setTokenToCorrectCasing($tokens, $index, $nameInCorrectCasing);

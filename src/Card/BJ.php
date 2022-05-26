@@ -61,13 +61,13 @@ class BJ
     {
         $this->dealer = new BJPlayer();
         $this->deck = new BJDeck();
-        $this->dealer_draw_two();
+        $this->dealerDrawTwo();
         $count = 0;
 
         while ($num > 0) {
             array_push($this->players, new BJPlayer());
 
-            $this->player_draw_two($count);
+            $this->playerDrawTwo($count);
 
             $num -= 1;
             $count += 1;
@@ -77,10 +77,10 @@ class BJ
     /**
      * Method for adding two BJCard-objects to the $dealer property
      */
-    public function dealer_draw_two(): void
+    public function dealerDrawTwo(): void
     {
-        $this->dealer->add_card($this->deck->draw());
-        $this->dealer->add_card($this->deck->draw());
+        $this->dealer->addCard($this->deck->draw());
+        $this->dealer->addCard($this->deck->draw());
     }
 
     /**
@@ -92,15 +92,15 @@ class BJ
      *
      * @param int $num Select object in $players array-property
      */
-    public function player_draw_two(int $num): void
+    public function playerDrawTwo(int $num): void
     {
         $player = $this->players[$num];
-        $player->add_card($this->deck->draw());
-        $player->add_card($this->deck->draw());
-        $player->set_points();
+        $player->addCard($this->deck->draw());
+        $player->addCard($this->deck->draw());
+        $player->setPoints();
 
-        if ($player->get_points() == 21) {
-            $player->set_state(4);
+        if ($player->getPoints() == 21) {
+            $player->setState(4);
         }
     }
 
@@ -117,14 +117,14 @@ class BJ
     public function hit(): void
     {
         foreach ($this->players as $player) {
-            if ($player->get_state() == 0) {
-                $player->add_card($this->deck->draw());
-                $player->set_points();
+            if ($player->getState() == 0) {
+                $player->addCard($this->deck->draw());
+                $player->setPoints();
 
-                if ($player->get_points() > 21) {
-                    $player->set_state(2);
-                } elseif ($player->get_points() == 21) {
-                    $player->set_state(1);
+                if ($player->getPoints() > 21) {
+                    $player->setState(2);
+                } elseif ($player->getPoints() == 21) {
+                    $player->setState(1);
                 }
                 break;
             }
@@ -138,8 +138,8 @@ class BJ
     public function stand(): void
     {
         foreach ($this->players as $player) {
-            if ($player->get_state() == 0) {
-                $player->set_state(1);
+            if ($player->getState() == 0) {
+                $player->setState(1);
                 break;
             }
         }
@@ -157,9 +157,9 @@ class BJ
      */
     public function continue(): void
     {
-        if ($this->dealer->get_points() == 0) {
-            $this->dealer->set_points();
-            $this->dealer->set_state(1);
+        if ($this->dealer->getPoints() == 0) {
+            $this->dealer->setPoints();
+            $this->dealer->setState(1);
         } else {
             $dealer = new Dealer();
             $dealer->continue($this->dealer, $this->players, $this->deck);

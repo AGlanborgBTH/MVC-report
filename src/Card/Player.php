@@ -27,7 +27,7 @@ class Player
      *
      * @param object $card Card-object to be added to $hand
      */
-    public function add_card(object $card): void
+    public function addCard(object $card): void
     {
         array_push($this->hand, $card);
     }
@@ -35,7 +35,7 @@ class Player
     /**
      * Clears the content held in the $hand array-property
      */
-    public function clear_hand(): void
+    public function clearHand(): void
     {
         $this->hand = array();
     }

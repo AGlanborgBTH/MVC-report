@@ -36,11 +36,11 @@
 <p>
     Coverage syftar på hur mycket en kod är täckt av tester. Kod har oftast ett eller flera scenarion inbyggda in i dem.
     En vanlig metod för att retunera ett värde, t.ex.
-    <code>return $this->value;</code> (src/Card/Card.php)(App/Card/Card::get_value()),
+    <code>return $this->value;</code> (src/Card/Card.php)(App/Card/Card::getValue()),
     bär ett scenario, det scenariot är: att metoden/funktionen blir kallad på. De scenariona, fast de är små och inte bär
     mycket kod, bör bli testade för nutiden och framtiden, då det kan uppstå fel i eller utanför den metoden/funktionen.
     Då bör ett test skrivas, som följande:
-    <code>$this->assertEquals("A", $deck->get_value());</code> (tests/Card/CardTest)(App/Card/CardTest::testCardProperties())
+    <code>$this->assertEquals("A", $deck->getValue());</code> (tests/Card/CardTest)(App/Card/CardTest::testCardProperties())
 </p>
 <p>
     Coverage är för både simpla och complexa funktioner och metoder. Om en metod har flera scenarion, så bör de även bli

@@ -143,11 +143,11 @@
                 $this->value = $val;<br>
                 $this->pattern = $pat;<br>
             }<br>
-            public function get_value(): string<br>
+            public function getValue(): string<br>
             {<br>
                 return $this->value;<br>
             }<br>
-            public function get_pattern(): string<br>
+            public function getPattern(): string<br>
             {<br>
                 return $this->pattern;<br>
             }<br>
@@ -190,11 +190,11 @@
         class Player{<br>
             public $hand = array();<br>
             private $status = -1;<br>
-            public function add_card($card)<br>
+            public function addCard($card)<br>
             {<br>
                 array_push($this->hand, $card);<br>
             }<br>
-            public function clear_hand()<br>
+            public function clearHand()<br>
             {<br>
                 $this->hand = array();<br>
             }<br>

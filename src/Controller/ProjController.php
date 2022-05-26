@@ -25,8 +25,7 @@ class ProjController extends AbstractController
     public function home(
         SessionInterface $session,
         LoginsRepository $loginsRepository
-    ): Response
-    {
+    ): Response {
         $data = [];
 
         if ($session->get("pokerUser")) {
@@ -54,11 +53,10 @@ class ProjController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function home_post(
+    public function homePost(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         $logout = $request->request->get('logout');
 
         if ($logout) {
@@ -89,8 +87,7 @@ class ProjController extends AbstractController
     public function game(
         SessionInterface $session,
         LoginsRepository $loginsRepository
-    ): Response
-    {
+    ): Response {
         if (!$session->get("poker")) {
             $session->set("poker", new \App\Poker\Poker());
         }
@@ -108,7 +105,7 @@ class ProjController extends AbstractController
             $data = ["game" => $session->get("poker")];
         }
 
-        
+
 
         return $this->render('proj/game/game.html.twig', $data);
     }
@@ -120,13 +117,12 @@ class ProjController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function game_post(
+    public function gamePost(
         ManagerRegistry $doctrine,
         SessionInterface $session,
         LoginsRepository $loginsRepository,
         Request $request
-    ): Response
-    {
+    ): Response {
         $bet = $request->request->get('commit_bet');
         $fold = $request->request->get('fold');
         $again = $request->request->get('again');
@@ -137,7 +133,7 @@ class ProjController extends AbstractController
 
         if ($bet) {
             $money = $request->request->get('bet');
-            $poker->recieve_bet($money);
+            $poker->recieveBet($money);
 
             $entityManager = $doctrine->getManager();
 
@@ -210,10 +206,10 @@ class ProjController extends AbstractController
             $entityManager->flush();
 
             $poker->call();
-            $poker->rank_player();
+            $poker->rankPlayer();
         } elseif ($continue) {
-            $poker->rank_dealer();
-            $poker->compare_ranks();
+            $poker->rankDealer();
+            $poker->compareRanks();
 
             if ($poker->phase == 4) {
                 $entityManager = $doctrine->getManager();
@@ -235,8 +231,7 @@ class ProjController extends AbstractController
                 $entityManager->persist($history);
 
                 $entityManager->flush();
-
-            }elseif ($poker->phase == 5) {
+            } elseif ($poker->phase == 5) {
                 $entityManager = $doctrine->getManager();
 
                 $money = $poker->bet;
@@ -250,7 +245,7 @@ class ProjController extends AbstractController
                 $history->setActs(
                     "Account-name: " .
                     $account->getUserName() .
-                    ", DREW in poker and recieved " . 
+                    ", DREW in poker and recieved " .
                     $money .
                     " money back to thier wallet"
                 );
@@ -296,8 +291,7 @@ class ProjController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function login(
-    ): Response
+    public function login(): Response
     {
         return $this->render('proj/user/login.html.twig');
     }
@@ -309,12 +303,11 @@ class ProjController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function login_post(
+    public function loginPost(
         SessionInterface $session,
         LoginsRepository $loginsRepository,
         Request $request
-    ): Response
-    {
+    ): Response {
         $login = $request->request->get('login');
         $account_name = $request->request->get('account_name');
         $password = $request->request->get('password');
@@ -355,11 +348,10 @@ class ProjController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function register_post(
+    public function registerPost(
         ManagerRegistry $doctrine,
         Request $request
-    ): Response
-    {
+    ): Response {
         $register = $request->request->get('register');
         $account_name = $request->request->get('account_name');
         $password = $request->request->get('password');
@@ -399,8 +391,7 @@ class ProjController extends AbstractController
         SessionInterface $session,
         LoginsRepository $loginsRepository,
         HistoryRepository $historyRepository
-    ): Response
-    {
+    ): Response {
         $session->clear();
 
         $data = [
@@ -410,11 +401,11 @@ class ProjController extends AbstractController
 
         $entityManager = $doctrine->getManager();
 
-        foreach($data["login"] as $login) {
+        foreach ($data["login"] as $login) {
             $entityManager->remove($login);
         }
 
-        foreach($data["history"] as $history) {
+        foreach ($data["history"] as $history) {
             $entityManager->remove($history);
         }
 
@@ -452,8 +443,7 @@ class ProjController extends AbstractController
      */
     public function history(
         HistoryRepository $historyRepository
-    ): Response
-    {
+    ): Response {
         $data = [
             "history" => $historyRepository->findAll()
         ];

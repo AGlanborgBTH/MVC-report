@@ -15,11 +15,11 @@ class Set
 {
     /**
      * Method for returning the result; wich of the arrays of App\Assert\Set objects contain the highest value
-     * 
+     *
      * Method is based on the App\Assert\Set class results
-     * 
+     *
      * @param object $player the first of the App\Assert\Set objects to be compared
-     * 
+     *
      * @param object $dealer the second of the App\Assert\Set objects to be compared
      */
     public function result($player, $dealer): int

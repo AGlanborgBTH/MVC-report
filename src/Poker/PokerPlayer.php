@@ -31,7 +31,7 @@ class PokerPlayer
      * Constructing method for the class
      *
      * The method assigns array to $this->hand property if parameter is filled
-     * 
+     *
      * @param array $hand optional parameter for applying an array to the $this->hand property
      */
     public function __construct(array $hand = null)
@@ -43,19 +43,11 @@ class PokerPlayer
 
     /**
      * Method for adding objects to the $this->hand property
-     * 
+     *
      * @param object $card the object to be added to the $this->hand property
      */
-    public function add_card(object $card): void
+    public function addCard(object $card): void
     {
         array_push($this->hand, $card);
-    }
-
-    /**
-     * Method for making the $this->hand property into an empty array
-     */
-    public function remove_cards(): void
-    {
-        $this->hand = [];
     }
 }

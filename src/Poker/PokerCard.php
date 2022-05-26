@@ -33,21 +33,21 @@ class PokerCard extends Card
      * Constructing method for the class
      *
      * The method uses other methods to define value, points, pattern and color
-     * 
+     *
      * @param mixed $value is the value dictating the value and points of the card
-     * 
+     *
      * @param string $value is the value dictating the pattern and color of the card
      */
     public function __construct(mixed $value, string $pattern)
     {
-        $this->define_value($value);
-        $this->define_pattern($pattern);
+        $this->defineValue($value);
+        $this->definePattern($pattern);
     }
 
     /**
      * Method for defining/assigning pattern- and color-value to each respective property
      */
-    protected function define_pattern(string $pattern): void
+    protected function definePattern(string $pattern): void
     {
         $this->pattern = $pattern;
 
@@ -61,12 +61,12 @@ class PokerCard extends Card
     /**
      * Method for defining/assigning value- and points-value to each respective property
      */
-    protected function define_value(mixed $value): void
+    protected function defineValue(mixed $value): void
     {
         $this->value = $value;
 
         if (is_string($value)) {
-            $this->define_points($value);
+            $this->definePoints($value);
         } else {
             $this->points = $value;
         }
@@ -75,7 +75,7 @@ class PokerCard extends Card
     /**
      * Method is for defining points if an string value was entered in the _constructing method
      */
-    protected function define_points(string $value): void
+    protected function definePoints(string $value): void
     {
         if ($value == "A") {
             $this->points = 14;
@@ -91,7 +91,7 @@ class PokerCard extends Card
     /**
      * Get-method for returning the protected $color property
      */
-    public function get_color(): string
+    public function getColor(): string
     {
         return $this->color;
     }
@@ -99,7 +99,7 @@ class PokerCard extends Card
     /**
      * Get-method for returning the protected $points property
      */
-    public function get_points(): int
+    public function getPoints(): int
     {
         return $this->points;
     }

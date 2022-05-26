@@ -9,12 +9,14 @@
 namespace App\Rank;
 
 /**
- * Flush is an class made asserting if an array of App\Poker\PokerCard consist of 5 or more cards that are of the same group/pattern (a flush)
+ * Flush is an class made asserting if an array of App\Poker\PokerCard consist of 5 or more cards that are of the same
+ * group/pattern (a flush)
  */
 class Flush
 {
     /**
-     * $grouping is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a flush
+     * $grouping is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a
+     * flush
      *
      * @var object
      */
@@ -24,7 +26,7 @@ class Flush
      * Constructing method for the class
      *
      * The method creates an object (App\Assert\Grouping) to asses if the content contain a flush
-     * 
+     *
      * @param array $cards an array of App\Poker\PokerCard objects; to be asorted if they contain a flush
      */
     public function __construct(array $cards)

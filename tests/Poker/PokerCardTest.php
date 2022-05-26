@@ -28,10 +28,10 @@ class PokerCardTest extends TestCase
     {
         $poker = new PokerCard("A", "S");
 
-        $this->assertEquals($poker->get_value(), "A");
-        $this->assertEquals($poker->get_points(), 14);
-        $this->assertEquals($poker->get_pattern(), "S");
-        $this->assertEquals($poker->get_color(), "black");
+        $this->assertEquals($poker->getValue(), "A");
+        $this->assertEquals($poker->getPoints(), 14);
+        $this->assertEquals($poker->getPattern(), "S");
+        $this->assertEquals($poker->getColor(), "black");
     }
 
     /**
@@ -41,9 +41,9 @@ class PokerCardTest extends TestCase
     {
         $poker = new PokerCard(1, "H");
 
-        $this->assertEquals($poker->get_value(), 1);
-        $this->assertEquals($poker->get_points(), 1);
-        $this->assertEquals($poker->get_pattern(), "H");
-        $this->assertEquals($poker->get_color(), "red");
+        $this->assertEquals($poker->getValue(), 1);
+        $this->assertEquals($poker->getPoints(), 1);
+        $this->assertEquals($poker->getPattern(), "H");
+        $this->assertEquals($poker->getColor(), "red");
     }
 }

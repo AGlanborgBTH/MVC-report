@@ -45,30 +45,16 @@ class PokerPlayerTest extends TestCase
     }
 
     /**
-     * method for testing that the hand property gains an card when useing add_card method
+     * method for testing that the hand property gains an card when useing addCard method
      */
     public function testPokerPlayerAddCard()
     {
         $card = new PokerCard("A", "S");
         $poker = new PokerPlayer();
 
-        $poker->add_card($card);
+        $poker->addCard($card);
 
         $this->assertNotEmpty($poker->hand);
         $this->assertContains($card, $poker->hand);
-    }
-
-    /**
-     * method for testing that the hand property becomes empty when using the remove_cards method
-     */
-    public function testPokerPlayerRemoveCards()
-    {
-        $card = new PokerCard("A", "S");
-        $poker = new PokerPlayer([$card, new PokerCard("A", "H")]);
-
-        $poker->remove_cards();
-
-        $this->assertEmpty($poker->hand);
-        $this->assertNotContains($card, $poker->hand);
     }
 }

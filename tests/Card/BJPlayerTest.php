@@ -27,25 +27,25 @@ class BJPlayerTest extends TestCase
     {
         $player = new BJPlayer();
 
-        $this->assertEquals(0, $player->get_state());
-        $this->assertEquals(0, $player->get_points());
+        $this->assertEquals(0, $player->getState());
+        $this->assertEquals(0, $player->getPoints());
     }
 
     /**
-     * Construct object and verify that the set_state method changes
+     * Construct object and verify that the setState method changes
      * the state property
      */
     public function testBJPlayerSetState()
     {
         $player = new BJPlayer();
 
-        $player->set_state(10);
+        $player->setState(10);
 
-        $this->assertEquals(10, $player->get_state());
+        $this->assertEquals(10, $player->getState());
     }
 
     /**
-     * Construct object and verify that the set_points method does not
+     * Construct object and verify that the setPoints method does not
      * change the points propery if the hand propery does not contain
      * any card objects
      */
@@ -53,13 +53,13 @@ class BJPlayerTest extends TestCase
     {
         $player = new BJPlayer();
 
-        $player->set_points();
+        $player->setPoints();
 
-        $this->assertEquals(0, $player->get_points());
+        $this->assertEquals(0, $player->getPoints());
     }
 
     /**
-     * Construct object and verify that the set_points method changes
+     * Construct object and verify that the setPoints method changes
      * the points propety when the hand property has a card object in
      * itself
      */
@@ -68,15 +68,15 @@ class BJPlayerTest extends TestCase
         $player = new BJPlayer();
         $deck = new BJDeck();
 
-        $player->add_card($deck->draw());
+        $player->addCard($deck->draw());
 
-        $player->set_points();
+        $player->setPoints();
 
-        $this->assertNotEquals(0, $player->get_points());
+        $this->assertNotEquals(0, $player->getPoints());
     }
 
     /**
-     * Construct object and verify that the set_points method changes
+     * Construct object and verify that the setPoints method changes
      * the points propety when the hand property has a card object in
      * itself
      */
@@ -87,17 +87,17 @@ class BJPlayerTest extends TestCase
         $heart = new BJCard("K", "H");
         $club = new BJCard("K", "C");
 
-        $player->add_card($spade);
-        $player->add_card($heart);
-        $player->add_card($club);
+        $player->addCard($spade);
+        $player->addCard($heart);
+        $player->addCard($club);
 
-        $player->set_points();
+        $player->setPoints();
 
-        $this->assertEquals(30, $player->get_points());
+        $this->assertEquals(30, $player->getPoints());
     }
 
     /**
-     * Construct object and verify that the set_points method changes
+     * Construct object and verify that the setPoints method changes
      * the points earned when the total sum is greater than 21 and
      * the hand property contains an ace-card
      */
@@ -108,17 +108,17 @@ class BJPlayerTest extends TestCase
         $six = new BJCard("6", "H");
         $nine = new BJCard("9", "C");
 
-        $player->add_card($ace);
-        $player->add_card($six);
-        $player->add_card($nine);
+        $player->addCard($ace);
+        $player->addCard($six);
+        $player->addCard($nine);
 
-        $player->set_points();
+        $player->setPoints();
 
-        $this->assertEquals(16, $player->get_points());
+        $this->assertEquals(16, $player->getPoints());
     }
 
     /**
-     * Construct object and verify that the set_points method changes
+     * Construct object and verify that the setPoints method changes
      * the point-value of only one ace card when two are drawn
      */
     public function testBJPlayerSetPointsTwoAce()
@@ -127,11 +127,11 @@ class BJPlayerTest extends TestCase
         $spade = new BJCard("A", "S");
         $heart = new BJCard("A", "H");
 
-        $player->add_card($spade);
-        $player->add_card($heart);
+        $player->addCard($spade);
+        $player->addCard($heart);
 
-        $player->set_points();
+        $player->setPoints();
 
-        $this->assertEquals(12, $player->get_points());
+        $this->assertEquals(12, $player->getPoints());
     }
 }

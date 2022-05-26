@@ -14,7 +14,7 @@ class DiceController extends AbstractController
     /**
      * @Route("/dice", name="dice-home")
      */
-    public function dice_home(): Response
+    public function diceHome(): Response
     {
         $die = new \App\Dice\Dice();
         $data = [
@@ -29,7 +29,7 @@ class DiceController extends AbstractController
     /**
      * @Route("/dice/roll/{numRolls}", name="dice-roll")
      */
-    public function dice_roll(int $numRolls): Response
+    public function diceRoll(int $numRolls): Response
     {
         $die = new \App\Dice\Dice();
 
@@ -50,7 +50,7 @@ class DiceController extends AbstractController
     /**
      * @Route("/dice/graphic", name="dice-graphic-home")
      */
-    public function dice_graphic_home(): Response
+    public function diceGraphicHome(): Response
     {
         $die = new \App\Dice\DiceGraphic();
         $data = [
@@ -65,7 +65,7 @@ class DiceController extends AbstractController
     /**
      * @Route("/dice/graphic/roll/{numRolls}", name="dice-graphic-roll")
      */
-    public function dice_graphic_roll(int $numRolls): Response
+    public function diceGraphicRoll(int $numRolls): Response
     {
         $die = new \App\Dice\DiceGraphic();
 
@@ -90,7 +90,7 @@ class DiceController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function dice_hand_home(): Response
+    public function diceHandHome(): Response
     {
         return $this->render('dice/hand.html.twig');
     }
@@ -102,7 +102,7 @@ class DiceController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function dice_hand_process(
+    public function diceHandProcess(
         Request $request,
         SessionInterface $session
     ): Response {

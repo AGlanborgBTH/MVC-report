@@ -19,7 +19,7 @@ class LibraryController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function library_home(
+    public function libraryHome(
         CharacterRepository $characterRepository
     ): Response {
         $data = [
@@ -36,7 +36,7 @@ class LibraryController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function create_home(): Response
+    public function createHome(): Response
     {
         return $this->render('library/create.html.twig');
     }
@@ -48,7 +48,7 @@ class LibraryController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function create_post(
+    public function createPost(
         ManagerRegistry $doctrine,
         Request $request
     ): Response {
@@ -72,7 +72,7 @@ class LibraryController extends AbstractController
                 $character->setRace($race);
                 $character->setGender($gender);
 
-                $character = $this->img_setup($character, $img);
+                $character = $this->imgSetup($character, $img);
             }
             $entityManager->persist($character);
             $entityManager->flush();
@@ -88,7 +88,7 @@ class LibraryController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function show_home(
+    public function showHome(
         CharacterRepository $characterRepository,
         int $id
     ): Response {
@@ -106,7 +106,7 @@ class LibraryController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function update_home(
+    public function updateHome(
         CharacterRepository $characterRepository,
         int $id
     ): Response {
@@ -124,7 +124,7 @@ class LibraryController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function update_post(
+    public function updatePost(
         ManagerRegistry $doctrine,
         Request $request,
         int $id
@@ -146,7 +146,7 @@ class LibraryController extends AbstractController
                     $character->setRace($race);
                     $character->setGender($gender);
 
-                    $character = $this->img_setup($character, $img);
+                    $character = $this->imgSetup($character, $img);
                 }
 
                 $entityManager->flush();
@@ -163,7 +163,7 @@ class LibraryController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function delete_home(
+    public function deleteHome(
         CharacterRepository $characterRepository,
         int $id
     ): Response {
@@ -181,7 +181,7 @@ class LibraryController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function delete_post(
+    public function deletePost(
         ManagerRegistry $doctrine,
         Request $request,
         int $id
@@ -201,7 +201,8 @@ class LibraryController extends AbstractController
         return $this->redirectToRoute('library-home');
     }
 
-    private function img_setup($character, $img) {
+    private function imgSetup($character, $img)
+    {
         if ($img) {
             $img = strtolower($img);
             $img = str_replace(" ", "_", $img);

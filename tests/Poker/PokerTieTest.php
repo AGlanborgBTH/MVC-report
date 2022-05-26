@@ -50,9 +50,9 @@ class PokerTieTest extends TestCase
             new PokerCard("A", "C")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -84,9 +84,9 @@ class PokerTieTest extends TestCase
             new PokerCard("A", "C")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -116,9 +116,9 @@ class PokerTieTest extends TestCase
             new PokerCard(2, "C")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -148,9 +148,9 @@ class PokerTieTest extends TestCase
             new PokerCard(4, "S")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -180,9 +180,9 @@ class PokerTieTest extends TestCase
             new PokerCard(10, "S")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -212,9 +212,9 @@ class PokerTieTest extends TestCase
             new PokerCard(7, "H")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -244,9 +244,9 @@ class PokerTieTest extends TestCase
             new PokerCard(7, "H")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -276,9 +276,9 @@ class PokerTieTest extends TestCase
             new PokerCard(7, "H")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -308,9 +308,9 @@ class PokerTieTest extends TestCase
             new PokerCard(7, "H")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }
@@ -340,9 +340,9 @@ class PokerTieTest extends TestCase
             new PokerCard("J", "H")
         ];
 
-        $poker->rank_player();
-        $poker->rank_dealer();
-        $poker->compare_ranks();
+        $poker->rankPlayer();
+        $poker->rankDealer();
+        $poker->compareRanks();
 
         $this->assertEquals($poker->phase, 5);
     }

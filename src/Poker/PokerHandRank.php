@@ -14,56 +14,64 @@ namespace App\Poker;
 class PokerHandRank
 {
     /**
-     * $royal_flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a royal flush
+     * $royal_flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects
+     * contain a royal flush
      *
      * @var object
      */
     public object $royal_flush;
 
     /**
-     * $straight_flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a straight flush
+     * $straight_flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects
+     * contain a straight flush
      *
      * @var object
      */
     public object $straight_flush;
 
     /**
-     * $four is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain four of the same kind
+     * $four is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain
+     * four of the same kind
      *
      * @var object
      */
     public object $four;
 
     /**
-     * $full_house is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a full house
+     * $full_house is an property containing an object for asserting if an array of App\Poker\PokerCard objects
+     * contain a full house
      *
      * @var object
      */
     public object $full_house;
 
     /**
-     * $flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a flush
+     * $flush is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a
+     * flush
      *
      * @var object
      */
     public object $flush;
 
     /**
-     * $straight is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a straight
+     * $straight is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain
+     * a straight
      *
      * @var object
      */
     public object $straight;
 
     /**
-     * $three is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain three of the same kind
+     * $three is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain three
+     * of the same kind
      *
      * @var object
      */
     public object $three;
 
     /**
-     * $two_pair is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain two pairs
+     * $two_pair is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain
+     * two pairs
      *
      * @var object
      */
@@ -80,12 +88,12 @@ class PokerHandRank
      * Main method for asserting the rank of two arrays with App\Poker\PokerCard objects
      *
      * @param array $hand the first of two arrays conatining App\Poker\PokerCard objects; to be asserted rank
-     * 
+     *
      * @param array $table the second of two arrays conatining App\Poker\PokerCard objects; to be asserted rank
      */
     public function initialize(array $hand, array $table): void
     {
-        $stack = $this->make_pile($hand, $table);
+        $stack = $this->makePile($hand, $table);
         $this->royal_flush = new \App\Rank\RoyalFlush($stack);
         $this->straight_flush = new \App\Rank\StraightFlush($stack);
         $this->four = new \App\Rank\Four($stack);
@@ -99,14 +107,14 @@ class PokerHandRank
 
     /**
      * Supporting method for the $this->initialize method
-     * 
+     *
      * The method combines the two arrays entered into the $this->initialize method
      *
      * @param array $hand the first of two arrays conatining App\Poker\PokerCard objects; to be combined
-     * 
+     *
      * @param array $table the second of two arrays conatining App\Poker\PokerCard objects; to be combined
      */
-    protected function make_pile(array $hand, array $table): array
+    protected function makePile(array $hand, array $table): array
     {
         $final = $hand;
 

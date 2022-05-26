@@ -43,7 +43,7 @@ class BJPlayer extends Player
     /**
      * Get-method for returning the protected $state property
      */
-    public function get_state(): int
+    public function getState(): int
     {
         return $this->state;
     }
@@ -53,7 +53,7 @@ class BJPlayer extends Player
      *
      * @param int $num Parameter dictating the state of the player object
      */
-    public function set_state(int $num): void
+    public function setState(int $num): void
     {
         $this->state = $num;
     }
@@ -61,7 +61,7 @@ class BJPlayer extends Player
     /**
      * Get-method for returning the protected $points property
      */
-    public function get_points(): int
+    public function getPoints(): int
     {
         return $this->points;
     }
@@ -74,19 +74,19 @@ class BJPlayer extends Player
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */
-    public function set_points(): void
+    public function setPoints(): void
     {
         $this->points = 0;
 
         foreach ($this->hand as $card) {
-            $this->points += $card->get_points();
+            $this->points += $card->getPoints();
         }
 
         if ($this->points > 21) {
             foreach ($this->hand as $card) {
-                if ($card->get_points() == "11") {
-                    $card->reduce_a();
-                    $this->set_points();
+                if ($card->getPoints() == "11") {
+                    $card->reduceA();
+                    $this->setPoints();
                     break;
                 }
             }

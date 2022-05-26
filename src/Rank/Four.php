@@ -9,12 +9,14 @@
 namespace App\Rank;
 
 /**
- * Four is an class made asserting if an array of App\Poker\PokerCard consist of 4 of the same points/value value (a Four of a kind)
+ * Four is an class made asserting if an array of App\Poker\PokerCard consist of 4 of the same points/value value
+ * (a Four of a kind)
  */
 class Four
 {
     /**
-     * $matching is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain four of a kind
+     * $matching is an property containing an object for asserting if an array of App\Poker\PokerCard objects
+     * contain four of a kind
      *
      * @var object
      */
@@ -24,7 +26,7 @@ class Four
      * Constructing method for the class
      *
      * The method creates an object (App\Assert\Matching) to asses if the content contain four of a kind
-     * 
+     *
      * @param array $cards an array of App\Poker\PokerCard objects; to be asorted if they contain four of a kind
      */
     public function __construct(array $cards)

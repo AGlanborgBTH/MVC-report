@@ -8,40 +8,40 @@
                 <div class="cardbox">
                     {% if game.phase > 2 %}
                         {% include "proj/game/card.html.twig" with {
-                            "color": game.table.hand[4].get_color(),
-                            "pattern": game.table.hand[4].get_pattern(),
-                            "value": game.table.hand[4].get_value()
+                            "color": game.table.hand[4].getColor(),
+                            "pattern": game.table.hand[4].getPattern(),
+                            "value": game.table.hand[4].getValue()
                         } %}
                     {% endif %}
                 </div>
                 <div class="cardbox">
                     {% if game.phase > 2 %}
                         {% include "proj/game/card.html.twig" with {
-                            "color": game.table.hand[3].get_color(),
-                            "pattern": game.table.hand[3].get_pattern(),
-                            "value": game.table.hand[3].get_value()
+                            "color": game.table.hand[3].getColor(),
+                            "pattern": game.table.hand[3].getPattern(),
+                            "value": game.table.hand[3].getValue()
                         } %}
                     {% endif %}
                 </div>
                 <div class="cardbox">
                     {% include "proj/game/card.html.twig" with {
-                        "color": game.table.hand[2].get_color(),
-                        "pattern": game.table.hand[2].get_pattern(),
-                        "value": game.table.hand[2].get_value()
+                        "color": game.table.hand[2].getColor(),
+                        "pattern": game.table.hand[2].getPattern(),
+                        "value": game.table.hand[2].getValue()
                     } %}
                 </div>
                 <div class="cardbox">
                     {% include "proj/game/card.html.twig" with {
-                        "color": game.table.hand[1].get_color(),
-                        "pattern": game.table.hand[1].get_pattern(),
-                        "value": game.table.hand[1].get_value()
+                        "color": game.table.hand[1].getColor(),
+                        "pattern": game.table.hand[1].getPattern(),
+                        "value": game.table.hand[1].getValue()
                     } %}
                 </div>
                 <div class="cardbox">
                     {% include "proj/game/card.html.twig" with {
-                        "color": game.table.hand[0].get_color(),
-                        "pattern": game.table.hand[0].get_pattern(),
-                        "value": game.table.hand[0].get_value()
+                        "color": game.table.hand[0].getColor(),
+                        "pattern": game.table.hand[0].getPattern(),
+                        "value": game.table.hand[0].getValue()
                     } %}
                 </div>
         {% else %}

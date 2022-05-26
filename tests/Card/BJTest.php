@@ -32,7 +32,7 @@ class BJTest extends TestCase
     }
 
     /**
-     * Construct object and verify that the dealer_draw_two method adds two objects to the dealer property's hand-property
+     * Construct object and verify that the dealerDrawTwo method adds two objects to the dealer property's hand-property
      */
     public function testBJDealerDrawTwo()
     {
@@ -40,14 +40,14 @@ class BJTest extends TestCase
 
         $initial = count($bj->dealer->hand);
 
-        $bj->dealer_draw_two();
+        $bj->dealerDrawTwo();
 
         $this->assertNotEmpty($bj->dealer->hand);
         $this->assertEquals($initial + 2, count($bj->dealer->hand));
     }
 
     /**
-     * Construct object and verify that the player_draw_two method adds two objects to the player hand-property
+     * Construct object and verify that the playerDrawTwo method adds two objects to the player hand-property
      */
     public function testBJPlayerDrawTwo()
     {
@@ -55,28 +55,28 @@ class BJTest extends TestCase
 
         $initial = count($bj->players[0]->hand);
 
-        $bj->player_draw_two(0);
+        $bj->playerDrawTwo(0);
 
         $this->assertNotEmpty($bj->players[0]->hand);
         $this->assertEquals($initial + 2, count($bj->players[0]->hand));
     }
 
     /**
-     * Construct object and verify that the player_draw_two method changes state to 4 when max points is reached
+     * Construct object and verify that the playerDrawTwo method changes state to 4 when max points is reached
      */
     public function testBJPlayerDrawTwoMax()
     {
         $bj = new BJ(1);
 
         $bj->players[0]->hand = array();
-        $bj->players[0]->set_state(0);
-        $bj->players[0]->set_points();
+        $bj->players[0]->setState(0);
+        $bj->players[0]->setPoints();
 
         $bj->deck->pile = array(new BJCard("A", "S"), new BJCard("K", "H"));
 
-        $bj->player_draw_two(0);
+        $bj->playerDrawTwo(0);
 
-        $this->assertEquals(4,  $bj->players[0]->get_state());
+        $this->assertEquals(4,  $bj->players[0]->getState());
     }
 
 
@@ -87,7 +87,7 @@ class BJTest extends TestCase
     {
         $bj = new BJ(1);
 
-        $bj->players[0]->set_state(0);
+        $bj->players[0]->setState(0);
 
         $initial = count($bj->players[0]->hand);
 
@@ -105,11 +105,11 @@ class BJTest extends TestCase
 
         $bj->deck->pile = array(new BJCard("A", "S"));
         $bj->players[0]->hand = array(new BJCard("K", "S"));
-        $bj->players[0]->set_state(0);
+        $bj->players[0]->setState(0);
 
         $bj->hit();
 
-        $this->assertEquals(1, $bj->players[0]->get_state());
+        $this->assertEquals(1, $bj->players[0]->getState());
     }
 
     /**
@@ -121,11 +121,11 @@ class BJTest extends TestCase
 
         $bj->deck->pile = array(new BJCard("K", "C"));
         $bj->players[0]->hand = array(new BJCard("K", "S"), new BJCard("K", "H"));
-        $bj->players[0]->set_state(0);
+        $bj->players[0]->setState(0);
 
         $bj->hit();
 
-        $this->assertEquals(2, $bj->players[0]->get_state());
+        $this->assertEquals(2, $bj->players[0]->getState());
     }
 
     /**
@@ -137,14 +137,14 @@ class BJTest extends TestCase
 
         foreach ($bj->players as $player) {
             $player->hand = array(new BJCard(2, "S"));
-            $player->set_state(0);
-            $player->set_points();
+            $player->setState(0);
+            $player->setPoints();
         }
 
         $bj->stand();
 
-        $this->assertEquals(1, $bj->players[0]->get_state());
-        $this->assertEquals(0, $bj->players[1]->get_state());
+        $this->assertEquals(1, $bj->players[0]->getState());
+        $this->assertEquals(0, $bj->players[1]->getState());
     }
 
     /**
@@ -156,11 +156,11 @@ class BJTest extends TestCase
 
         $bj->stand();
 
-        $this->assertEquals(0, $bj->dealer->get_state());
+        $this->assertEquals(0, $bj->dealer->getState());
 
         $bj->continue();
 
-        $this->assertEquals(1, $bj->dealer->get_state());
+        $this->assertEquals(1, $bj->dealer->getState());
 
         $bj->continue();
     }

@@ -32,9 +32,9 @@ class Royal
 
     /**
      * Main method for asserting if the objects are matching
-     * 
+     *
      * The method returns an boolean value, that is stored in the $this->bool propertie, when the methods have been run
-     * 
+     *
      * @param array $stack is the array to be asserted if it contains the objects to be counted as royal
      */
     public function assert(array $stack): bool
@@ -46,9 +46,10 @@ class Royal
 
     /**
      * Assisting method for the $this->assert method
-     * 
-     * The method checks for values that match the preset, and if the $stack array contains all preset-values, it then assigns an boolean value to the $this->bool property
-     * 
+     *
+     * The method checks for values that match the preset, and if the $stack array contains all preset-values, it then
+     * assigns an boolean value to the $this->bool property
+     *
      * @param array $stack is the array to be asserted if it conatins matching objects
      */
     protected function adduce(array $stack): void
@@ -57,7 +58,7 @@ class Royal
 
         foreach ($stack as $card) {
             foreach ($royal as $roy) {
-                if ($card->get_value() == $roy) {
+                if ($card->getValue() == $roy) {
                     $royal = array_diff($royal, [$roy]);
                 }
             }

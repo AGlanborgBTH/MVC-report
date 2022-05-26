@@ -19,7 +19,8 @@ class Four
     public object $matching;
 
     /**
-     * $fallback is an object used for asserting wish of two arrays of App\Poker\PokerCard objects contain the highest valued cards
+     * $fallback is an object used for asserting wish of two arrays of App\Poker\PokerCard objects contain the highest
+     * valued cards
      */
     public object $fallback;
 
@@ -27,29 +28,29 @@ class Four
      * Constructing method for the class
      *
      * Assigns the $this->matching value of the class with an App\Stalemate\Matching object
-     * 
+     *
      * Assigns the $this->fallback value of the class with an App\Stalemate\Fallback object
      */
     public function __construct()
     {
-        $this->matching = new Matching;
-        $this->fallback = new Fallback;
+        $this->matching = new Matching();
+        $this->fallback = new Fallback();
     }
 
     /**
      * Method for returning the result; wich of the 'characters' contain the highest valued cards
-     * 
+     *
      * @param object $player the first of two App\Poker\PokerHandRank objects to be compared
-     * 
+     *
      * @param object $dealer the second of two App\Poker\PokerHandRank objects to be compared
-     * 
+     *
      * @param array $player_hand the first of the arrays to be compared
-     * 
+     *
      * @param array $dealer_hand the second of the arrays to be compared
-     * 
+     *
      * @param array $table_hand an array containing cards; shared among $player and $dealer
      */
-    public function result(object $player, object $dealer, array $player_hand, array $dealer_hand, array $table_hand): int
+    public function result($player, $dealer, $player_hand, $dealer_hand, $table_hand): int
     {
         $matching = $this->matching->result($player, $dealer);
 

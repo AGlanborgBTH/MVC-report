@@ -9,12 +9,14 @@
 namespace App\Rank;
 
 /**
- * FullHouse is an class made asserting if an array of App\Poker\PokerCard consist of 3 of the same points/value value and another 2 of the same points/value (a Full House)
+ * FullHouse is an class made asserting if an array of App\Poker\PokerCard consist of 3 of the same points/value value
+ * and another 2 of the same points/value (a Full House)
  */
 class FullHouse
 {
     /**
-     * $set is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a full house
+     * $set is an property containing an object for asserting if an array of App\Poker\PokerCard objects contain a full
+     * house
      *
      * @var object
      */
@@ -24,7 +26,7 @@ class FullHouse
      * Constructing method for the class
      *
      * The method creates an object (App\Assert\Set) to asses if the content contain a full house
-     * 
+     *
      * @param array $cards an array of App\Poker\PokerCard objects; to be asorted if they contain a full house
      */
     public function __construct(array $cards)

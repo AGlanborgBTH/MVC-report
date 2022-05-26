@@ -87,7 +87,7 @@ final class VoidReturnFixer extends AbstractFixer
             [T_STRING, '__destruct'],
             [T_STRING, '__isset'],
             [T_STRING, '__serialize'],
-            [T_STRING, '__set_state'],
+            [T_STRING, '__setState'],
             [T_STRING, '__sleep'],
             [T_STRING, '__toString'],
         ];

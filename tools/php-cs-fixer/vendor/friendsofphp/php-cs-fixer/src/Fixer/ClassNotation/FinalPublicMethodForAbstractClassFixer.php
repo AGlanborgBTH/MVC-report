@@ -39,7 +39,7 @@ final class FinalPublicMethodForAbstractClassFixer extends AbstractFixer
         '__wakeup' => true,
         '__tostring' => true,
         '__invoke' => true,
-        '__set_state' => true,
+        '__setState' => true,
         '__clone' => true,
         '__debuginfo' => true,
     ];

@@ -18,7 +18,7 @@ class GameController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function game_home(): Response
+    public function gameHome(): Response
     {
         return $this->render('game/index.html.twig');
     }
@@ -30,7 +30,7 @@ class GameController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function card_home(): Response
+    public function cardHome(): Response
     {
         return $this->render('card/game.html.twig');
     }
@@ -42,7 +42,7 @@ class GameController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function doc_home(): Response
+    public function docHome(): Response
     {
         return $this->render('game/doc.html.twig');
     }
@@ -54,7 +54,7 @@ class GameController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function play_home(
+    public function playHome(
         SessionInterface $session
     ): Response {
         if ($session->get("blackjack")) {
@@ -71,7 +71,7 @@ class GameController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function play_post(
+    public function playPost(
         Request $request,
         SessionInterface $session
     ): Response {

@@ -18,7 +18,7 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function card_home(): Response
+    public function cardHome(): Response
     {
         return $this->render('card/index.html.twig');
     }
@@ -30,7 +30,7 @@ class CardController extends AbstractController
      *      methods={"POST"}
      * )
      */
-    public function dice_hand_process(
+    public function diceHandProcess(
         Request $request,
         SessionInterface $session
     ): Response {
@@ -50,12 +50,12 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_home(
+    public function deckHome(
         SessionInterface $session
     ): Response {
         $deck = $session->get("carddeck") ?? new \App\Card\Deck();
 
-        [$diamonds, $clubs, $hearts, $spades] = $this->sort_deck($deck);
+        [$diamonds, $clubs, $hearts, $spades] = $this->sortDeck($deck);
 
         $data = [
            "diamonds" => $diamonds,
@@ -76,7 +76,7 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_shuffle(
+    public function deckShuffle(
         SessionInterface $session
     ): Response {
         $deck = $session->get("carddeck") ?? new \App\Card\Deck();
@@ -87,9 +87,9 @@ class CardController extends AbstractController
 
         foreach ($deck->pile as $card) {
             if ($pile == "") {
-                $pile = $pile . $card->get_value() . $card->get_pattern();
+                $pile = $pile . $card->getValue() . $card->getPattern();
             } else {
-                $pile = $card->get_value() . $card->get_pattern() . " | " . $pile;
+                $pile = $card->getValue() . $card->getPattern() . " | " . $pile;
             }
         }
 
@@ -107,7 +107,7 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_draw(
+    public function deckDraw(
         SessionInterface $session
     ): Response {
         $deck = $session->get("carddeck") ?? new \App\Card\Deck();
@@ -117,7 +117,7 @@ class CardController extends AbstractController
         if (is_null($card)) {
             $this->addFlash("card", "Deck empty");
         } else {
-            $this->addFlash("card", $card->get_value() . $card->get_pattern());
+            $this->addFlash("card", $card->getValue() . $card->getPattern());
         }
 
         $data = ["rem" => count($deck->pile)];
@@ -134,7 +134,7 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_draw_mutiple(
+    public function deckDrawMultiple(
         int $numDraw,
         SessionInterface $session
     ): Response {
@@ -147,7 +147,7 @@ class CardController extends AbstractController
                 if (is_null($card)) {
                     $this->addFlash("card", "None");
                 } else {
-                    $this->addFlash("card", $card->get_value() . $card->get_pattern());
+                    $this->addFlash("card", $card->getValue() . $card->getPattern());
                 }
             }
         } else {
@@ -168,7 +168,7 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_deal(
+    public function deckDeal(
         int $numPlayers,
         int $numCards,
         SessionInterface $session
@@ -187,25 +187,25 @@ class CardController extends AbstractController
             }
             $count = $temp - $all * $numPlayers;
             if ($numCards >= $numPlayers) {
-                for ($x = 0; $x < $numPlayers; $x ++) {
+                for ($x = 0; $x < $numPlayers; $x++) {
                     $person = new \App\Card\Player();
                     if (count($deck->pile) > 0) {
-                        for ($y = 0; $y < $all; $y ++) {
-                            $person->add_card($deck->draw());
+                        for ($y = 0; $y < $all; $y++) {
+                            $person->addCard($deck->draw());
                         }
                     }
                     if ($count > 0 and count($deck->pile) > 0) {
-                        $person->add_card($deck->draw());
-                        $count --;
+                        $person->addCard($deck->draw());
+                        $count--;
                     }
                     $this->addFlash("person", $person);
                 }
             } else {
-                for ($x = 0; $x < $numPlayers; $x ++) {
+                for ($x = 0; $x < $numPlayers; $x++) {
                     $person = new \App\Card\Player();
                     if ($count > 0 and count($deck->pile) > 0) {
-                        $person->add_card($deck->draw());
-                        $count --;
+                        $person->addCard($deck->draw());
+                        $count--;
                     }
                     $this->addFlash("person", $person);
                 }
@@ -225,12 +225,12 @@ class CardController extends AbstractController
      *      methods={"GET","HEAD"}
      * )
      */
-    public function deck_home_two(
+    public function deckHomeTwo(
         SessionInterface $session
     ): Response {
         $deck = $session->get("carddeck2") ?? new \App\Card\DeckWith2Jokers();
 
-        [$diamonds, $clubs, $hearts, $spades, $remaining] = $this->sort_deck($deck);
+        [$diamonds, $clubs, $hearts, $spades, $remaining] = $this->sortDeck($deck);
 
         $data = [
             "diamonds" => $diamonds,
@@ -245,7 +245,8 @@ class CardController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
-    private function sort_deck($deck) {
+    private function sortDeck($deck)
+    {
         $diamonds = "";
         $clubs = "";
         $hearts = "";
@@ -253,16 +254,16 @@ class CardController extends AbstractController
         $remaining = "";
 
         foreach ($deck->ordered as $card) {
-            if ($card->get_pattern() == "D") {
-                $diamonds = $diamonds . $card->get_value() . $card->get_pattern() . " | ";
-            } elseif ($card->get_pattern() == "C") {
-                $clubs = $clubs . $card->get_value() . $card->get_pattern() . " | ";
-            } elseif ($card->get_pattern() == "H") {
-                $hearts = $hearts . $card->get_value() . $card->get_pattern() . " | ";
-            } elseif ($card->get_pattern() == "S") {
-                $spades = $spades . $card->get_value() . $card->get_pattern() . " | ";
+            if ($card->getPattern() == "D") {
+                $diamonds = $diamonds . $card->getValue() . $card->getPattern() . " | ";
+            } elseif ($card->getPattern() == "C") {
+                $clubs = $clubs . $card->getValue() . $card->getPattern() . " | ";
+            } elseif ($card->getPattern() == "H") {
+                $hearts = $hearts . $card->getValue() . $card->getPattern() . " | ";
+            } elseif ($card->getPattern() == "S") {
+                $spades = $spades . $card->getValue() . $card->getPattern() . " | ";
             } else {
-                $remaining = $remaining . $card->get_value() . $card->get_pattern() . " | ";
+                $remaining = $remaining . $card->getValue() . $card->getPattern() . " | ";
             }
         }
 

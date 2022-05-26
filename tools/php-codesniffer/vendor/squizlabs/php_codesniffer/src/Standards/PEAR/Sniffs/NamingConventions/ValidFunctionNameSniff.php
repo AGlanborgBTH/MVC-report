@@ -37,7 +37,7 @@ class ValidFunctionNameSniff extends AbstractScopeSniff
         'unserialize' => true,
         'tostring'    => true,
         'invoke'      => true,
-        'set_state'   => true,
+        'setState'   => true,
         'clone'       => true,
         'debuginfo'   => true,
     ];

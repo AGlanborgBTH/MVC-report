@@ -14,18 +14,19 @@ namespace App\Stalemate;
 class Fallback
 {
     /**
-     * Method for returning the result; wich of the arrays of App\Poker\PokerCard objects contain the highest valued cards
-     * 
+     * Method for returning the result; wich of the arrays of App\Poker\PokerCard objects contain the highest
+     * valued cards
+     *
      * Method is based on the App\Poker\PokerTie class results
-     * 
+     *
      * @param array $player the first of the arrays to be compared
-     * 
+     *
      * @param array $dealer the second of the arrays to be compared
-     * 
+     *
      * @param array $table an array containing cards; shared among $player and $dealer
-     * 
+     *
      * @param mixed $points int or array of numbers for counting which card values are legal and not
-     * 
+     *
      * @param int $num the amount of cards the $player and $dealer must find the highest of
      */
     public function result(array $player, array $dealer, array $table, mixed $points, int $num): int
@@ -54,41 +55,42 @@ class Fallback
     }
 
     /**
-     * Assisting method for $this->result for returning the result; wich of the arrays of App\Poker\PokerCard objects contain the highest valued cards
-     * 
+     * Assisting method for $this->result for returning the result; wich of the arrays of App\Poker\PokerCard
+     * objects contain the highest valued cards
+     *
      * The method searches for the highest card among $player, $dealer and $table, and returns result
-     * 
+     *
      * @param array $player the first of the arrays to be compared
-     * 
+     *
      * @param array $dealer the second of the arrays to be compared
-     * 
+     *
      * @param array $table an array containing cards; shared among $player and $dealer
-     * 
+     *
      * @param array $arr int or array of numbers for counting which card values are legal and not
      */
     protected function find(array $player, array $dealer, array $table, array $arr): array
     {
         $final = [0, "table"];
 
-        foreach($player as $card) {
-            if (!in_array($card->get_points(), $arr) and $card->get_points() > $final[0]) {
-                $final = [$card->get_points(), "player"];
+        foreach ($player as $card) {
+            if (!in_array($card->getPoints(), $arr) and $card->getPoints() > $final[0]) {
+                $final = [$card->getPoints(), "player"];
             }
         }
 
-        foreach($dealer as $card) {
-            if (!in_array($card->get_points(), $arr) and $card->get_points() >= $final[0]) {
-                if ($card->get_points() == $final[0]) {
-                    $final = [$card->get_points(), "table"];
+        foreach ($dealer as $card) {
+            if (!in_array($card->getPoints(), $arr) and $card->getPoints() >= $final[0]) {
+                if ($card->getPoints() == $final[0]) {
+                    $final = [$card->getPoints(), "table"];
                 } else {
-                    $final = [$card->get_points(), "dealer"];
+                    $final = [$card->getPoints(), "dealer"];
                 }
             }
         }
 
-        foreach($table as $card) {
-            if (!in_array($card->get_points(), $arr) and $card->get_points() > $final[0]) {
-                $final = [$card->get_points(), "table"];
+        foreach ($table as $card) {
+            if (!in_array($card->getPoints(), $arr) and $card->getPoints() > $final[0]) {
+                $final = [$card->getPoints(), "table"];
             }
         }
 

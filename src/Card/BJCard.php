@@ -36,7 +36,7 @@ class BJCard extends Card
     {
         $this->value = $val;
         $this->pattern = $pat;
-        $this->set_points();
+        $this->setPoints();
     }
 
     /**
@@ -47,7 +47,7 @@ class BJCard extends Card
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */
-    protected function set_points(): void
+    protected function setPoints(): void
     {
         $value = $this->value;
 
@@ -56,14 +56,14 @@ class BJCard extends Card
         } elseif ($value == "J" or $value == "Q" or $value == "K") {
             $this->points = 10;
         } else {
-            $this->points = (int) $this->get_value();
+            $this->points = (int) $this->getValue();
         }
     }
 
     /**
      * Get-method for returning the protected $points property
      */
-    public function get_points(): int
+    public function getPoints(): int
     {
         return $this->points;
     }
@@ -76,7 +76,7 @@ class BJCard extends Card
      * This method follows the rules of BJ and sets the points depending
      * on that factor
      */
-    public function reduce_a(): void
+    public function reduceA(): void
     {
         if ($this->value == "A") {
             $this->points = 1;
