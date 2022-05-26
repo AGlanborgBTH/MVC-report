@@ -15,12 +15,100 @@
     Det kortspel jag har valt att göra är 'Texas hold'em casino style'.
 </p>
 <p>
-    Mitt spel kommer följa de regeler som är presenterade på
+    Mitt spel kommer följa de regler som är presenterade på
     <a href="https://en.wikipedia.org/wiki/Casino_hold_%27em" target="_blank">Casino hold'em wikipedia sida</a>
+    med små ändringar; som att man inte får tillbaka mer än 2x de pengar man lägger ut och man kan inte göra ett side bet.
 </p>
 <p>
-    Jag kommer skapa nya klasser för att skapa spelet, men som expanderar och återanvänder gamla klasser (App\Card klasser),
-    för att spara tid och arbeta ergonomiskt, med snygg kod.
+    Detta projekt består av nya och återanändna klasser för att uppnå minimal komplexitet och ultimat kod snygghet.
+</p>
+<h2>
+    Dokumentation
+</h2>
+<p>
+    Projektet består av många delar, och expanderades exseptionellt under detta kursmoment. Från att bestå av några få klasser
+    och kontrollers som jobbade lätt mellan varandra, till att bli ett projekt med nästan tre gånger storlek, med nya klasser
+    och en stor kontroller som sammarbetar med både klasser och databas.
+</p>
+<p>
+    Projektet var gjort under välldigt kort tid och det kan synas under närmare titt. Men det var gjort med ett mål i sikte:
+    att inte vara komplext. Projektet bär just nu endast 3 klasser som har en komplexitet över 10. Orsaken till detta var att
+    under projektets gång så var det ingen rädsla att skapa en extra klass för att dra ner på komplexiteten.
+</p>
+<p>
+    Resultatet med detta projekt blev super bra. phpstan klagar på endast en av mina klasser, resten är gjorda av doctrine.
+    Jag skulle ändra på min ProjController och fixa de problem som phpstan klagar på, men jag har svårt att tyda vad det är
+    som den vill att jag ska ändra, dessutom tror jag att jag uppfyller de kraven, men indirekt.
+</p>
+<p>
+    phpmetrics och phpmc hittar endast 3 nya klasser som överstiger 10 i komplexitet, vilket enligt mig är en acceptabled mängd.
+    Från början hade PokerTie klassen en komplexitet av 19, men efter att ha delat den i två (PokerHigh och PokerLow) så blev
+    komplexiteten 11.
+</p>
+<p>
+    I helhet är projektet skrivet med snygg kod. Inga rekommendationer/krav blev brutna, utöver de tidigare nämnda klasserna.
+    Koden följer alla kodvalidatorer så bra som möjlig och projektet verkar fungera i stort sätt.
+</p>
+<p>
+    För framtiden, om jag skulle återkomma till detta projekt, så har alla klasser och metoder kommentarer som förklarar deras
+    och allt är sorterat in i grupper för att förtydliga syfte. De grupperingar som projektet innehåller är följande:
+</p>
+<ul>
+    <li>
+        Assert: Klasser som kollar vilka kriterier händer uppfyller
+    </li>
+    <li>
+        Poker: Klasser som har direkt påverkan på spelet och tillhör de styrande klasserna för spelet.
+    </li>
+    <li>
+        Rank: Klasser som används för att bestämma värden av händer
+    </li>
+    <li>
+        Stalemate: Klasser som har syftet att komma fram till vilken hand som är mäst värd
+    </li>
+</ul>
+<p>
+    Koden som kunde ha varit stor, klumpig och otydlig blev istället fin och sorterad med många klasser och metoder (oftast) med
+    endast ett syfte.
+</p>
+<h3>
+    Sammanfattning
+</h3>
+<p>
+    Eftersom ingen klass är särskilt komplex, alla klasser och metoder har en kommentar som förklarar innehållet, inga regler
+    satta av validators bryts och klasserna är sorterade i grupper, så tycker jag att koden är snyggt gjort och kan räknas som
+    snygg
+</p>
+<h2>
+    Mina åsikter
+</h2>
+<p>
+    Detta prjekt blev inte klart. Jag har inte tid att göra klart hela projektet i tid. Men jag uppnådde nästan allt jag vill hinna med.
+</p>
+<p>
+    Projektet består för tillfället av alla de krav som tillhör krav 1, 2, 3 och även halva krav 5 och krav 6. Jag hade önskat
+    att jag hann med och skiva för krav 4, men jag hinner inte vid det här laget.
+</p>
+<p>
+    Det jag saknar för krav 5 är en egen profil sida för användare och en profil bild, samt några av de uppgifter en administratör
+    kan åtkomma. Detta är inte för att jag inte kan eller saknar förmågan, det är endast för att jag inte har haft tid. Om man
+    inspekterar min kod för databasen och hur jag har gjort med inloggning, utloggning, registrering och hur pengarna ändras i
+    databasen, så ser man att jag har gjort de krav men på andra sätt. Om jag hade en dag till så skulle jag ha hunnit bli klar med
+    detta krav och kanske även krav 4.
+</p>
+<p>
+    Jag hade velat göra så att alla klasser i hela min 'me' mapp blev under 10 i komplexitet, men det hinner jag tyvärr inte.
+</p>
+<p>
+    I en perfekt värld så skulle jag ha fixat de buggar som finns i spelet. För tillfället finns det (de buggar som jag vet om:)
+    att om man har en flush, men en flush som inte är straight, men man har en straight också så räknas det som en royal flush
+    och straight verkar inte fungera som jag hade tänkt. Om man har 4 på raken så räknas det som en straigt, men i testerna så
+    ger den endast rätt på 5 på raken. Jag vet inte hur det har hänt, men jag skulle ha viljat fixa det innan jag publisera detta
+    projekt
+</p>
+<p>
+    Jag såg att jag har välldigt många fel om jag höjre kraven på phpmc, men jag känner att kraven satta av phpmc 5 var rätt så
+    passande och känndes relativt tydliga och bra att följa.
 </p>
 
 {% endblock %}

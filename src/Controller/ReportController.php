@@ -33,6 +33,14 @@ class ReportController extends AbstractController
     }
 
     /**
+     * @Route("/redovisa", name="redovisa")
+     */
+    public function redovisa(): Response
+    {
+        return $this->render('report/report.html.twig', []);
+    }
+
+    /**
      * @Route("/metrics", name="metrics")
      */
     public function metrics(): Response
